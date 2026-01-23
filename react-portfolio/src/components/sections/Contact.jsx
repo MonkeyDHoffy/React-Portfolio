@@ -3,7 +3,7 @@ import React from 'react';
 // TODO: Implement the contact form logic
 const Contact = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
         <form className="flex flex-col space-y-4">

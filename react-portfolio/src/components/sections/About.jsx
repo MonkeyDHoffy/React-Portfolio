@@ -3,7 +3,7 @@ import React from 'react';
 // TODO: Add personal information and background details
 const About = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 text-text-light" id="about">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <p className="text-lg">

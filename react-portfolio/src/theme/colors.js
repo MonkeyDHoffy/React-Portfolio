@@ -3,23 +3,23 @@
 
 const colors = {
   // Hauptfarbe - wird für wichtige Elemente wie Buttons, Links verwendet
-  primary: '#3B82F6', // Blau
+  primary: '#1C1C1C', // Dunkelgrau
   
   // Sekundärfarbe - für Akzente und Hover-Effekte
   secondary: '#8B5CF6', // Lila
   
   // Hintergrundfarben
   background: {
-    main: '#FFFFFF',      // Haupthintergrund (weiß)
-    dark: '#1F2937',      // Dunkler Hintergrund für Sections
-    light: '#F3F4F6',     // Heller Hintergrund für Abwechslung
+    main: '#1C1C1C',      // Haupthintergrund (dunkel)
+    dark: '#0F0F0F',      // Noch dunkler Hintergrund für Sections
+    light: '#2A2A2A',     // Hellerer Hintergrund für Abwechslung
   },
   
   // Textfarben
   text: {
-    primary: '#1F2937',   // Haupttext (dunkelgrau)
-    secondary: '#6B7280', // Sekundärtext (hellgrau)
-    light: '#FFFFFF',     // Weißer Text auf dunklem Hintergrund
+    primary: '#FFFFFF',   // Haupttext (weiß) - wichtig für dunklen Hintergrund!
+    secondary: '#A0A0A0', // Sekundärtext (hellgrau)
+    light: '#FFFFFF',     // Weißer Text
   },
   
   // Akzentfarben für besondere Elemente

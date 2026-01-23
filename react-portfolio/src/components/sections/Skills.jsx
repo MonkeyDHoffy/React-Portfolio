@@ -3,7 +3,7 @@ import skillsData from '../../data/skills'; // Importing skills data
 
 const Skills = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 text-text-light" id="skills">
       <h2 className="text-3xl font-bold text-center mb-6">My Skills</h2>
       <div className="flex flex-wrap justify-center">
         {skillsData.map((skill) => (

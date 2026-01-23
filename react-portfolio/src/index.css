@@ -5,3 +5,33 @@
 /* Custom global styles can be added below this line */
 
 /* TODO: Add any additional custom styles for your portfolio here */
+
+
+.hero-gradient {
+  /* Erklärung: Eigene Klasse ist lesbarer als komplexe Tailwind-Utilities */
+  background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-gradient {
+  /* Erklärung: leichte Schattierung über dem Hero-Hintergrund */
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Cursor-Spotlight Overlay (global) */
+.cursor-spotlight {
+  pointer-events: none;            /* keine Blockade für Maus-Events */
+  position: absolute;
+  inset: 0;                        /* füllt den Layout-Container */
+  background: radial-gradient(
+    200px circle at var(--x, -100px) var(--y, -100px),
+    #3DCFB680 0%,
+    transparent 60%
+  );
+  /* TODO: Radius (200px) und Übergang (60%) feinjustieren */
+}
