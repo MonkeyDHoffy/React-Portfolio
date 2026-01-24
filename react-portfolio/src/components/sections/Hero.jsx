@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../layout/Header';
 import { useLang } from '../../context/LanguageContext';
+import './ultrastylischelinien.css';
+
+// Icon-Hover: wechselt zwischen base und hover Bild per Events
+function IconWithHover({ baseSrc, hoverSrc, alt, className }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <div
+      className={className}
+      style={{ position: 'relative', pointerEvents: 'auto' }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <img src={hover ? hoverSrc : baseSrc} alt={alt} />
+    </div>
+  );
+}
 
 const Hero = () => {
   const { t } = useLang();
@@ -27,6 +43,32 @@ const Hero = () => {
         </button>
 </div>
       
+      </div>
+
+      {/* Links */}
+      <div className="ultrastylischelinielinks">
+        <div className="leftCircle"><img className="movingarrow" src="/assets/heropics/movingarrow.png" alt="" /></div>
+        <div className="leftLine"></div>
+      </div>
+
+      {/* Rechts: Events via Inline-Styles aktivieren */}
+      <div className="ultrastylischelinierechts" style={{ pointerEvents: 'auto' }}>
+        <div className="rightCircle flex flex-col gap-8">
+          <IconWithHover
+            baseSrc="/assets/heropics/giticon.png"
+            hoverSrc="/assets/heropics/giticonHover.png"
+            alt="GitHub"
+            className="relative -top-4 pointercss"
+          />
+          <IconWithHover
+            baseSrc="/assets/heropics/linkedinicon.png"
+            hoverSrc="/assets/heropics/linkediniconHover.png"
+            alt="LinkedIn"
+            className="relative -top-4 pointercss"
+          />
+        </div>
+        <div className="rightLine"></div>
+        <p className="rightText">hoffgross@web.de</p>
       </div>
     </section>
   );
