@@ -1,23 +1,35 @@
 import React from 'react';
-import LanguageToggle from '../ui/LanguageToggle'; // Erklärung: Sprach-Button einbinden
-import { useLang } from '../../context/LanguageContext'; // Erklärung: useLang Hook importieren
+import LanguageToggle from '../ui/LanguageToggle';
+import { useLang } from '../../context/LanguageContext';
 
-// Header component for the portfolio
 const Header = () => {
-  const { t } = useLang(); // Erklärung: t() Funktion aus dem LanguageContext holen
+  const { t } = useLang();
   return (
-    <header className="header-gradient flex justify-between items-center text-text-primary p-4">
+    <header className="header-gradient flex justify-between items-center text-text-primary p-4 h-[98px]">
       <div className="container mx-auto flex justify-between items-center">
         <div className="HeaderNavigation justify-between items-center flex gap-8">
-          {/* Erklärung: ersetzt das statische English-Icon */}
           <div><LanguageToggle size="default" /></div>
-          <div><p>{t('header.about')}</p></div>
-          <div><p>{t('header.skills')}</p></div>
-          <div><p>{t('header.projects')}</p></div>
+          <button
+            type="button"
+            className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors bg-transparent p-0 cursor-pointer"
+          >
+            {t('header.about')}
+          </button>
+          <button
+            type="button"
+            className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors bg-transparent p-0 cursor-pointer"
+          >
+            {t('header.skills')}
+          </button>
+          <button
+            type="button"
+            className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors bg-transparent p-0 cursor-pointer"
+          >
+            {t('header.projects')}
+          </button>
         </div>
       </div>
       <div className="Logo">
-        {/* Erklärung: Dateien in public/ per absolutem Pfad laden */}
         <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 w-auto" />
       </div>
     </header>

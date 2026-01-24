@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 right-0 z-10"><Header /></div>
       <div className="pt-20 text-center z-10">
         {/* h1: Fira Code, weight 400, 40px, line-height 100%, letter-spacing 0 */}
-        <h1 className="font-fira font-normal text-[40px] leading-[100%] tracking-[0] mb-4">
+        <h1 className="font-firacode font-normal text-[40px] leading-[100%] tracking-[0] mb-4">
           {t('hero.subtitle')}
         </h1>
 
@@ -18,10 +18,15 @@ const Hero = () => {
         <p className="font-karla font-bold text-[128px] leading-[100%] tracking-[-0.02em] mb-8">
           {t('hero.title')}
         </p>
-
-        <button className="border border-text-primary text-text-primary px-4 py-2 rounded-lg hover:bg-background-light transition">
+<div className="gap-4 flex justify-center">
+    <button className="border border-text-primary text-text-primary px-4 py-2 rounded-lg hover:bg-background-light transition">
           {t('hero.cta')}
         </button>
+          <button className="border border-text-primary text-text-primary px-4 py-2 rounded-lg hover:bg-background-light transition">
+          {t('hero.cta')}
+        </button>
+</div>
+      
       </div>
     </section>
   );

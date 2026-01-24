@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body { font-family: 'Inter', sans-serif; }
-}
+
 
 /* Custom global styles can be added below this line */
 
@@ -38,4 +36,12 @@
     transparent 60%
   );
   /* TODO: Radius (200px) und Übergang (60%) feinjustieren */
+}
+
+.font-firacode {
+  font-family: 'Fira Code', monospace;
+}
+
+.font-karla {
+  font-family: 'Karla', sans-serif;
 }
