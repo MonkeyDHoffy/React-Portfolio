@@ -1,22 +1,25 @@
 import React from 'react';
-import Skills from '../sections/Skills';
+import LanguageToggle from '../ui/LanguageToggle'; // Erklärung: Sprach-Button einbinden
+import { useLang } from '../../context/LanguageContext'; // Erklärung: useLang Hook importieren
 
 // Header component for the portfolio
 const Header = () => {
+  const { t } = useLang(); // Erklärung: t() Funktion aus dem LanguageContext holen
   return (
     <header className="header-gradient flex justify-between items-center text-text-primary p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="HeaderNavigation justify-between items-center flex gap-8">
-            <div><img src="" alt="" /></div>
-            <div><p>About me</p></div>
-            <div><p>Skills</p></div>
-            <div><p>Projects</p></div>
-          </div>
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="HeaderNavigation justify-between items-center flex gap-8">
+          {/* Erklärung: ersetzt das statische English-Icon */}
+          <div><LanguageToggle size="default" /></div>
+          <div><p>{t('header.about')}</p></div>
+          <div><p>{t('header.skills')}</p></div>
+          <div><p>{t('header.projects')}</p></div>
         </div>
-        <div className="Logo">
-          {/* Erklärung: Dateien in public/ per absolutem Pfad laden */}
-          <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 w-auto" />
-        </div>
+      </div>
+      <div className="Logo">
+        {/* Erklärung: Dateien in public/ per absolutem Pfad laden */}
+        <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 w-auto" />
+      </div>
     </header>
   );
 };

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body { font-family: 'Inter', sans-serif; }
+}
+
 /* Custom global styles can be added below this line */
 
 /* TODO: Add any additional custom styles for your portfolio here */

@@ -9,37 +9,39 @@ import About from './components/sections/About';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
+import { LanguageProvider } from './context/LanguageContext';
 
 const App = () => {
   return (
-    // Layout umschließt alle Komponenten und gibt ihnen einen einheitlichen Hintergrund
-    <Layout>
-      <div className="flex flex-col min-h-screen">
-        {/* Header component that contains the site title and logo */}
-        {/* <Header /> */}
+    <LanguageProvider defaultLang="de">
+      <Layout>
+        <div className="flex flex-col min-h-screen">
+          {/* Header component that contains the site title and logo */}
+          {/* <Header /> */}
 
-        {/* Navigation component for navigating between sections */}
-        {/* <Navigation /> */}
+          {/* Navigation component for navigating between sections */}
+          {/* <Navigation /> */}
 
-        {/* Hero section that introduces the portfolio */}
-        <Hero />
+          {/* Hero section that introduces the portfolio */}
+          <Hero />
 
-        {/* About section that provides information about the portfolio owner */}
-        <About />
+          {/* About section that provides information about the portfolio owner */}
+          <About />
 
-        {/* Projects section that showcases the owner's work */}
-        <Projects />
+          {/* Projects section that showcases the owner's work */}
+          <Projects />
 
-        {/* Skills section that lists the owner's skills */}
-        <Skills />
+          {/* Skills section that lists the owner's skills */}
+          <Skills />
 
-        {/* Contact section for getting in touch */}
-        <Contact />
+          {/* Contact section for getting in touch */}
+          <Contact />
 
-        {/* Footer component that contains copyright and links */}
-        <Footer />
-      </div>
-    </Layout>
+          {/* Footer component that contains copyright and links */}
+          <Footer />
+        </div>
+      </Layout>
+    </LanguageProvider>
   );
 };
 
