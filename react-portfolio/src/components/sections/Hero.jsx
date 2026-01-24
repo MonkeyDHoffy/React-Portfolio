@@ -5,7 +5,7 @@ import { useLang } from '../../context/LanguageContext';
 const Hero = () => {
   const { t } = useLang();
   return (
-    <section className="hero-gradient relative flex flex-col items-center justify-center h-screen text-text-primary overflow-hidden">
+    <section className="hero-gradient relative flex flex-col items-center justify-center h-screen text-text-primary overflow-hidden px-24">
       <div className="cursor-spotlight absolute inset-0 z-0" />
       <div className="absolute top-0 left-0 right-0 z-10"><Header /></div>
       <div className="pt-20 text-center z-10">
@@ -20,10 +20,10 @@ const Hero = () => {
         </p>
 <div className="gap-4 flex justify-center">
     <button className="border border-text-primary text-text-primary px-4 py-2 rounded-lg hover:bg-background-light transition">
-          {t('hero.cta')}
+          {t('hero.workbtn')}
         </button>
           <button className="border border-text-primary text-text-primary px-4 py-2 rounded-lg hover:bg-background-light transition">
-          {t('hero.cta')}
+          {t('hero.contactbtn')}
         </button>
 </div>
       

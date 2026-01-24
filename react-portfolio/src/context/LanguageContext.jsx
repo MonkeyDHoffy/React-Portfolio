@@ -3,54 +3,37 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 const LanguageContext = createContext(null);
 
 const translations = {
-  de: {
-    hero: {
-      title: 'Jannik Hoff',
-      subtitle: 'Frontendentwickler',
-      cta: 'Mehr erfahren',
-    },
-    header: {
-      about: 'Über mich',
-      skills: 'Fähigkeiten',
-      projects: 'Projekte',
-    },
-    about: {
-      title: 'Über mich',
-      p1: 'Kurze Vorstellung, Hintergrund und Erfahrung.',
-      p2: 'Persönliche Details oder Interessen.',
-    },
-    skills: { title: 'Meine Fähigkeiten' },
-    contact: { title: 'Kontakt' },
+  hero: {
+    title:   { de: 'Jannik Hoff',          en: 'Jannik Hoff' },
+    subtitle:{ de: 'Frontendentwickler',   en: 'Frontend Developer' },
+    workbtn:     { de: 'Meine Projekte',        en: 'check my work' },
+    contactbtn:  { de: 'Kontaktier mich',         en: 'Contact Me' },
   },
-  en: {
-    hero: {
-      title: 'Jannik Hoff',
-      subtitle: 'Frontend Developer',
-      cta: 'Learn More',
-    },
-    header: {
-      about: 'About me',
-      skills: 'Skills',
-      projects: 'Projects',
-    },
-    about: {
-      title: 'About Me',
-      p1: 'Brief introduction, background, and experience.',
-      p2: 'Personal details or interests.',
-    },
-    skills: { title: 'My Skills' },
-    contact: { title: 'Contact Me' },
+  header: {
+    about:   { de: 'Über mich',            en: 'About me' },
+    skills:  { de: 'Fähigkeiten',          en: 'Skills' },
+    projects:{ de: 'Projekte',             en: 'Projects' },
   },
+  about: {
+    title: { de: 'Über mich', en: 'About Me' },
+    p1:    { de: 'Kurze Vorstellung, Hintergrund und Erfahrung.', en: 'Brief introduction, background, and experience.' },
+    p2:    { de: 'Persönliche Details oder Interessen.',          en: 'Personal details or interests.' },
+  },
+  skills:  { title: { de: 'Meine Fähigkeiten', en: 'My Skills' } },
+  contact: { title: { de: 'Kontakt',           en: 'Contact Me' } },
 };
 
 export function LanguageProvider({ children, defaultLang = 'de' }) {
   const [lang, setLang] = useState(defaultLang);
 
+  // t('hero.subtitle') -> nimmt node[lang] aus der nebeneinanderliegenden Struktur
   const t = useMemo(() => {
-    // Einfacher t()-Resolver: t('hero.title')
     return (key) => {
       const parts = key.split('.');
-      return parts.reduce((obj, part) => (obj && obj[part] ? obj[part] : null), translations[lang]) ?? key;
+      const node = parts.reduce((obj, part) => (obj && obj[part] !== undefined ? obj[part] : null), translations);
+      if (node == null) return key;
+      if (typeof node === 'string') return node;       // Fallback für alte Einträge
+      return node[lang] ?? key;
     };
   }, [lang]);
 

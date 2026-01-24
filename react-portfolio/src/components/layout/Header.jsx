@@ -1,11 +1,12 @@
 import React from 'react';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useLang } from '../../context/LanguageContext';
+import FadeText from '../ui/FadeText';
 
 const Header = () => {
   const { t } = useLang();
   return (
-    <header className="header-gradient flex justify-between items-center text-text-primary p-4 h-[98px]">
+       <header className="header-gradient flex justify-between items-center text-text-primary p-4 h-[98px] px-24">
       <div className="container mx-auto flex justify-between items-center">
         <div className="HeaderNavigation justify-between items-center flex gap-8">
           <div><LanguageToggle size="default" /></div>
@@ -30,7 +31,7 @@ const Header = () => {
         </div>
       </div>
       <div className="Logo">
-        <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 w-auto" />
+        <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 h-[48px] w-auto" />
       </div>
     </header>
   );
