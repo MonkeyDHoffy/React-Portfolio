@@ -1,5 +1,5 @@
 /* Banner unten im Hero platzieren */
-.banner-container {
+.banner-wrapper {
   position: absolute;
   bottom: 50px;
   left: -21px;
@@ -7,13 +7,36 @@
   height: 61.99999848887589px;
   transform: rotate(-3deg);
   opacity: 1;
+  background: #FFFFFF1F;
+  backdrop-filter: blur(5.300000190734863px);
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: hidden; /* Wichtig: versteckt überlaufenden Inhalt */
+  display: flex;
+  align-items: center;
   padding: 12px 32px;
+}
+
+/* Die animierte Schiene */
+.banner-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+/* Einzelner Content-Block */
+.banner-content {
   display: flex;
   align-items: center;
   gap: 56px;
-  background: #FFFFFF1F;
-  box-sizing: border-box;
-  z-index: 10; /* über Linien/Content */
-  backdrop-filter: blur(5.300000190734863px)
+  flex-shrink: 0; /* Verhindert Komprimierung */
+}
 
+/* Fließband-Animation: bewegt sich von rechts nach links */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* -50% weil Inhalt dupliziert ist */
+  }
 }
