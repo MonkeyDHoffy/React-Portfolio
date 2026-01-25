@@ -6,8 +6,11 @@ const translations = {
   hero: {
     title:   { de: 'Jannik Hoff',          en: 'Jannik Hoff' },
     subtitle:{ de: 'Frontendentwickler',   en: 'Frontend Developer' },
-    workbtn:     { de: 'Meine Projekte',        en: 'check my work' },
+    workbtn:     { de: 'Meine Projekte',        en: 'Check my work' },
     contactbtn:  { de: 'Kontaktier mich',         en: 'Contact Me' },
+    bannerone:   { de: 'Verfügbar für Remote-Arbeit', en: 'Available for remote work' },
+    bannertwo:   { de: 'Frontendentwickler', en: 'Frontend Developer' },
+    bannerthree: { de: 'Ansässig in Saarlouis', en: "Based in Saarlouis" },
   },
   header: {
     about:   { de: 'Über mich',            en: 'About me' },

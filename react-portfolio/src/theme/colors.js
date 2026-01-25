@@ -3,10 +3,10 @@
 
 const colors = {
   // Hauptfarbe - wird für wichtige Elemente wie Buttons, Links verwendet
-  primary: '#1C1C1C', // Dunkelgrau
+  primary: '#ffffff', // Dunkelgrau
   
   // Sekundärfarbe - für Akzente und Hover-Effekte
-  secondary: '#8B5CF6', // Lila
+  secondary: '#3DCFB6', // Lila
   
   // Hintergrundfarben
   background: {
@@ -18,7 +18,7 @@ const colors = {
   // Textfarben
   text: {
     primary: '#FFFFFF',   // Haupttext (weiß) - wichtig für dunklen Hintergrund!
-    secondary: '#A0A0A0', // Sekundärtext (hellgrau)
+    secondary: '#3DCFB6', // Sekundärtext (hellgrau)
     light: '#FFFFFF',     // Weißer Text
   },
   
