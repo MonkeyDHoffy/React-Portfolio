@@ -22,6 +22,15 @@ export default function Banner({ children }) {
         <div className="banner-content">{content}</div>
         <div className="banner-content">{content}</div>
         <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+            <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+            <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
+        <div className="banner-content">{content}</div>
       </div>
       {children}
     </div>

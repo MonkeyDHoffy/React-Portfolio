@@ -11,32 +11,30 @@
   backdrop-filter: blur(5.300000190734863px);
   box-sizing: border-box;
   z-index: 10;
-  overflow: hidden; /* Wichtig: versteckt überlaufenden Inhalt */
+  overflow: hidden; 
   display: flex;
   align-items: center;
   padding: 12px 32px;
 }
 
-/* Die animierte Schiene */
 .banner-track {
   display: flex;
-  animation: scroll 20s linear infinite;
+  animation: scroll 180s linear infinite;
 }
 
-/* Einzelner Content-Block */
 .banner-content {
   display: flex;
   align-items: center;
   gap: 56px;
-  flex-shrink: 0; /* Verhindert Komprimierung */
+  flex-shrink: 0; 
 }
 
-/* Fließband-Animation: bewegt sich von rechts nach links */
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* -50% weil Inhalt dupliziert ist */
+    transform: translateX(-50%); 
   }
 }
