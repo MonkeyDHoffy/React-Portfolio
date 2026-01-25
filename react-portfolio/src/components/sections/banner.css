@@ -1,0 +1,19 @@
+/* Banner unten im Hero platzieren */
+.banner-container {
+  position: absolute;
+  bottom: 50px;
+  left: -21px;
+  width: 150%;
+  height: 61.99999848887589px;
+  transform: rotate(-3deg);
+  opacity: 1;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  background: #FFFFFF1F;
+  box-sizing: border-box;
+  z-index: 10; /* über Linien/Content */
+  backdrop-filter: blur(5.300000190734863px)
+
+}
