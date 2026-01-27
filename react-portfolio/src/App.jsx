@@ -9,6 +9,7 @@ import About from './components/sections/About';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
+import GlowBackground from './components/layout/GlowBackground';
 import { LanguageProvider } from './context/LanguageContext';
 
 const App = () => {
@@ -19,19 +20,13 @@ const App = () => {
           
           <Hero />
 
-        
-          <About />
+          <GlowBackground>
+            <About />
+            <Skills />
+            <Projects />
+          </GlowBackground>
 
-          <Skills />
-
-         
-          <Projects />
-
-          
-
-       
           <Contact />
-
       
           <Footer />
         </div>

@@ -4,13 +4,8 @@ import skillsData from '../../data/skills';
 const Skills = () => {
   return (
     <section 
-      className="relative text-white py-24 overflow-hidden"
-      style={{
-        backgroundImage: 'url(/assets/skills/skillbackground.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      id="skills"
+      className="relative text-white py-24"
     >
       <div className="max-w-7xl mx-auto px-6">
         
@@ -51,7 +46,6 @@ const Skills = () => {
           {/* RIGHT: Skills Grid */}
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-10 place-items-center">
             
-            {/* Skill Item Component */}
             <div className="skill-item">
               <img src="assets/skills/html.png" className="w-12 h-12 mb-2" alt="HTML" />
               <span>HTML</span>
@@ -77,7 +71,7 @@ const Skills = () => {
               <span>Angular</span>
             </div>
 
-              <div className="skill-item">
+            <div className="skill-item">
               <img src="assets/skills/react.png" className="w-12 h-12 mb-2" alt="React" />
               <span>React</span>
             </div>
