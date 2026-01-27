@@ -79,11 +79,19 @@ body {
 
 .pictureofmeShadow img {
   transform: translate(-48px, 48px);
-  transition: transform 0.4s ease;
+  transition: transform 2s ease;
+  animation: reveal-image linear forwards;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
 }
 
-.pictureofmeShadow:hover img {
-  transform: translate(0, 0);
+@keyframes reveal-image {
+  from {
+    transform: translate(-48px, 48px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
 }
 
 .diagonalShadow {
@@ -94,9 +102,9 @@ body {
   z-index: 0;
   background: repeating-linear-gradient(
     45deg,
-    #3DCFB640 0px,
-    #3DCFB640 2px,
-    transparent 4px,
-    transparent 24px
+    #3DCFB6 0px,
+    #3DCFB6 1px,      /* Etwas dicker = konsistenter */
+    transparent 2px,
+    transparent 30px  /* Angepasster Abstand */
   );
 }
