@@ -1,7 +1,7 @@
 /* Banner unten im Hero platzieren */
 .banner-wrapper {
   position: absolute;
-  bottom: 50px;
+  bottom: 80px;
   left: -21px;
   width: 150%;
   height: 61.99999848887589px;

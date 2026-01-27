@@ -52,7 +52,7 @@
     position: absolute;
     bottom: 0;
     right: 96px;
-    height: 232px;
+    height: 256px;
     pointer-events: none;
 }
 .ultrastylischelinierechts .rightLine {
@@ -89,7 +89,7 @@ line-height: 120%;
 letter-spacing: 0%;
   position: absolute;
   right: 0;
-  top: -130%;
+  top: -150%;
   transform: translateX(50%) rotate(180deg); /* 180° Flip => effektiv -90° (links) */
   writing-mode: vertical-rl;
   text-orientation: sideways;

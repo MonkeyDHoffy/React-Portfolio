@@ -16,7 +16,7 @@ const About = () => {
         <div className="whoiam w-[568px] h-[568px] rounded-[30px] flex flex-col ml-20 p-10">
           <h1 className="-mt-5 mb-5 font-karla text-secondary">Who I Am</h1>
           <div 
-            className="aboutme-description border rounded-[30px] flex-1 gap-8 p-10 flex flex-col justify-start" 
+            className="aboutme-description border border-secondary rounded-[30px] flex-1 gap-8 p-10 flex flex-col justify-start" 
             style={{ backgroundColor: colors.background.greencontainer }}
           >
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">About me</h2>
