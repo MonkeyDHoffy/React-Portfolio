@@ -31,7 +31,7 @@ const Header = () => {
         </div>
       </div>
       <div className="Logo">
-        <img src="/assets/headerpics/logo.png" alt="Logo" className="h-8 h-[48px] w-auto" />
+        <img src="/assets/headerpics/JHOFF.png" alt="Logo" className="h-8 h-[48px] w-auto" />
       </div>
     </header>
   );

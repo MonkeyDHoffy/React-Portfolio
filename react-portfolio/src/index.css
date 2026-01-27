@@ -8,6 +8,33 @@
 
 /* TODO: Add any additional custom styles for your portfolio here */
 
+body {
+  cursor: url('/assets/cursor.png'), auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C1C; /* Dunkler Hintergrund wie deine Webseite */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3DCFB6; /* Deine Secondary-Farbe */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2db89f; /* Etwas dunkler beim Hover */
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3DCFB6 #1C1C1C;
+}
 
 .hero-gradient {
   /* Erklärung: Eigene Klasse ist lesbarer als komplexe Tailwind-Utilities */

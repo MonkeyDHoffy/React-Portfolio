@@ -11,6 +11,7 @@ const colors = {
   // Hintergrundfarben
   background: {
     main: '#1C1C1C',      // Haupthintergrund (dunkel)
+    greencontainer: '#3DCFB61A',
     dark: '#0F0F0F',      // Noch dunkler Hintergrund für Sections
     light: '#2A2A2A',     // Hellerer Hintergrund für Abwechslung
   },
