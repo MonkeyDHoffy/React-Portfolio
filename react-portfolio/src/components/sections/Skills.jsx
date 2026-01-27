@@ -3,7 +3,15 @@ import skillsData from '../../data/skills';
 
 const Skills = () => {
   return (
-    <section className="relative text-white py-24 overflow-hidden">
+    <section 
+      className="relative text-white py-24 overflow-hidden"
+      style={{
+        backgroundImage: 'url(/assets/skills/skillbackground.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Headline */}
