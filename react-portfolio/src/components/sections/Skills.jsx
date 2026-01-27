@@ -1,109 +1,108 @@
 import React from 'react';
-import skillsData from '../../data/skills'; // Importing skills data
+import skillsData from '../../data/skills';
 
 const Skills = () => {
   return (
-<section class="relative bg-neutral-950 text-white py-24 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <!-- Headline -->
-    <p class="text-teal-400 tracking-wide mb-2">Technologies</p>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      
-      <!-- LEFT: Skill Card -->
-      <div class="relative">
-        <div class="bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-2xl p-8 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)]">
-          
-          <h2 class="text-4xl font-bold text-teal-400 mb-6">
-            Skill Set
-          </h2>
-
-          <p class="text-neutral-300 leading-relaxed mb-6">
-            A short introduction of your skills. Highlight your experience of using
-            different front-end technologies and emphasise your openness to learning
-            and adapting to new technologies. Show how important it is for you to
-            keep up with the rapid changes in web development.
-          </p>
-
-          <p class="font-semibold mb-2">
-            You need <span class="text-teal-400">another skill?</span>
-          </p>
-
-          <p class="text-neutral-400 mb-8">
-            Feel free to contact me. I look forward to expanding on my previous knowledge.
-          </p>
-
-          <button class="px-6 py-3 border border-teal-400 text-teal-400 rounded-full hover:bg-teal-400 hover:text-neutral-900 transition">
-            Let’s talk
-          </button>
-        </div>
-      </div>
-
-      <!-- RIGHT: Skills Grid -->
-      <div class="grid grid-cols-3 sm:grid-cols-4 gap-10 place-items-center">
+    <section className="relative text-white py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
         
-        <!-- Skill Item Component -->
-        <div class="skill-item">
-          <img src="/icons/html.svg" class="w-12 h-12 mb-2" />
-          <span>HTML</span>
-        </div>
+        {/* Headline */}
+        <p className="text-teal-400 tracking-wide mb-2">Technologies</p>
 
-        <div class="skill-item">
-          <img src="/icons/css.svg" class="w-12 h-12 mb-2" />
-          <span>CSS</span>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          
+          {/* LEFT: Skill Card */}
+          <div className="relative">
+            <div className="bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-2xl p-8 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)]">
+              
+              <h2 className="text-4xl font-bold text-teal-400 mb-6">
+                Skill Set
+              </h2>
 
-        <div class="skill-item">
-          <img src="/icons/js.svg" class="w-12 h-12 mb-2" />
-          <span>JavaScript</span>
-        </div>
+              <p className="text-neutral-300 leading-relaxed mb-6">
+                A short introduction of your skills. Highlight your experience of using
+                different front-end technologies and emphasise your openness to learning
+                and adapting to new technologies. Show how important it is for you to
+                keep up with the rapid changes in web development.
+              </p>
 
-        <div class="skill-item">
-          <img src="/icons/material.svg" class="w-12 h-12 mb-2" />
-          <span>Material Design</span>
-        </div>
+              <p className="font-semibold mb-2">
+                You need <span className="text-teal-400">another skill?</span>
+              </p>
 
-        <div class="skill-item">
-          <img src="/icons/ts.svg" class="w-12 h-12 mb-2" />
-          <span>TypeScript</span>
-        </div>
+              <p className="text-neutral-400 mb-8">
+                Feel free to contact me. I look forward to expanding on my previous knowledge.
+              </p>
 
-        <div class="skill-item">
-          <img src="/icons/angular.svg" class="w-12 h-12 mb-2" />
-          <span>Angular</span>
-        </div>
+              <button className="px-6 py-3 border border-teal-400 text-teal-400 rounded-full hover:bg-teal-400 hover:text-neutral-900 transition">
+                Let's talk
+              </button>
+            </div>
+          </div>
 
-        <div class="skill-item">
-          <img src="/icons/firebase.svg" class="w-12 h-12 mb-2" />
-          <span>Firebase</span>
-        </div>
+          {/* RIGHT: Skills Grid */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-10 place-items-center">
+            
+            {/* Skill Item Component */}
+            <div className="skill-item">
+              <img src="assets/skills/html.png" className="w-12 h-12 mb-2" alt="HTML" />
+              <span>HTML</span>
+            </div>
 
-        <div class="skill-item">
-          <img src="/icons/git.svg" class="w-12 h-12 mb-2" />
-          <span>Git</span>
-        </div>
+            <div className="skill-item">
+              <img src="assets/skills/css.png" className="w-12 h-12 mb-2" alt="CSS" />
+              <span>CSS</span>
+            </div>
 
-        <div class="skill-item">
-          <img src="/icons/api.svg" class="w-12 h-12 mb-2" />
-          <span>REST-API</span>
-        </div>
+            <div className="skill-item">
+              <img src="assets/skills/javascript.png" className="w-12 h-12 mb-2" alt="JavaScript" />
+              <span>JavaScript</span>
+            </div>
 
-        <div class="skill-item">
-          <img src="/icons/scrum.svg" class="w-12 h-12 mb-2" />
-          <span>Scrum</span>
-        </div>
+            <div className="skill-item">
+              <img src="assets/skills/typescript.png" className="w-12 h-12 mb-2" alt="TypeScript" />
+              <span>TypeScript</span>
+            </div>
 
-        <div class="skill-item text-teal-400">
-          <img src="/icons/growth.svg" class="w-12 h-12 mb-2" />
-          <span>Growth mindset</span>
-        </div>
+            <div className="skill-item">
+              <img src="assets/skills/angular.png" className="w-12 h-12 mb-2" alt="Angular" />
+              <span>Angular</span>
+            </div>
 
+              <div className="skill-item">
+              <img src="assets/skills/react.png" className="w-12 h-12 mb-2" alt="React" />
+              <span>React</span>
+            </div>
+
+            <div className="skill-item">
+              <img src="assets/skills/firebase.png" className="w-12 h-12 mb-2" alt="Firebase" />
+              <span>Firebase</span>
+            </div>
+
+            <div className="skill-item">
+              <img src="assets/skills/git.png" className="w-12 h-12 mb-2" alt="Git" />
+              <span>Git</span>
+            </div>
+
+            <div className="skill-item">
+              <img src="assets/skills/api.png" className="w-12 h-12 mb-2" alt="REST-API" />
+              <span>REST-API</span>
+            </div>
+
+            <div className="skill-item">
+              <img src="assets/skills/scrum.png" className="w-12 h-12 mb-2" alt="Scrum" />
+              <span>Scrum</span>
+            </div>
+
+            <div className="skill-item text-teal-400">
+              <img src="assets/skills/grow.png" className="w-12 h-12 mb-2" alt="Growth mindset" />
+              <span>Growth mindset</span>
+            </div>
+
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
   );
 };
 
