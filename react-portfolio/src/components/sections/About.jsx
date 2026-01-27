@@ -6,13 +6,16 @@ const About = () => {
   return (
     <section className="" id="about">
       <div className="aboutme-wrapper flex justify-center items-center px-24 py-10">
-        <div className="pictureofmeShadow">
-          <img 
-            className="w-[568px] h-[568px] rounded-[30px] opacity-100 object-cover grayscale" 
-            src="/assets/aboutme/thedeveloper.jpg" 
-            alt="" 
-          />
-        </div>
+    <div className="pictureofmeShadow relative w-[568px] h-[568px]">
+  <div className="diagonalShadow"></div>
+
+  <img 
+    className="relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
+    src="/assets/aboutme/thedeveloper.jpg" 
+    alt="" 
+  />
+</div>
+
         <div className="whoiam w-[568px] h-[568px] rounded-[30px] flex flex-col ml-20 p-10">
           <h1 className="-mt-5 mb-5 font-karla text-secondary">Who I Am</h1>
           <div 
