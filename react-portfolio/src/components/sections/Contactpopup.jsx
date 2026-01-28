@@ -1,13 +1,11 @@
 import React from 'react';
-import './Contactpopup.css';
-
-const Contactpopup = () => {
+const Contactpopup = ({ img }) => {
     return (
-        <div className="pictureofmeShadow relative w-[568px] h-[568px] -mt-72">
-          <div className="diagonalShadow"></div>
+        <div className="pictureofmeShadow relative w-[296px] h-[192px] rounded-[30px] overflow-hidden">
+          <div className="diagonalShadowPopup"></div>
           <img 
-            className="relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
-            src="/assets/aboutme/thedeveloper.jpg" 
+            className="relative z-10 w-[296px] h-[192px] rounded-[30px] object-cover grayscale" 
+            src={img || "/assets/aboutme/thedeveloper.jpg"} 
             alt="" 
           />
         </div>
