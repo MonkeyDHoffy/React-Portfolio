@@ -26,15 +26,15 @@ const About = () => {
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">{t('about.title')}</h2>
             <span>{t('about.p1')}</span>
             <div className="flex gap-4 group">
-              <img className="h-[32px] w-[32px]" src="assets/aboutme/location_on.png" alt="" />
+              <img className="h-[32px] w-[32px]" src="/assets/aboutme/location_on.png" alt="" />
               <p className="opacity-70 group-hover:opacity-100 transition-opacity duration-300">{t('about.location')}</p>
             </div>
             <div className="flex gap-4 group">
-              <img className="h-[32px] w-[32px]" src="assets/aboutme/cognition.png" alt="" />
+              <img className="h-[32px] w-[32px]" src="/assets/aboutme/cognition.png" alt="" />
               <p className="opacity-70 group-hover:opacity-100 transition-opacity duration-300">{t('about.cognition')}</p>
             </div>
             <div className="flex gap-4 group">
-              <img className="h-[32px] w-[32px]" src="assets/aboutme/new_releases.png" alt="" />
+              <img className="h-[32px] w-[32px]" src="/assets/aboutme/new_releases.png" alt="" />
               <p className="opacity-70 group-hover:opacity-100 transition-opacity duration-300">{t('about.new_releases')}</p>
             </div>
           </div>

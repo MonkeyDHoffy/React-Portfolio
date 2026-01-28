@@ -85,6 +85,11 @@ body {
   animation-range: entry 30% cover 50%;
 }
 
+.pictureofmeShadow.popup img {
+  transform: translate(0, 0);
+  animation: none;
+}
+
 @keyframes reveal-image {
   from {
     transform: translate(-48px, 48px);

@@ -47,57 +47,57 @@ const Skills = () => {
           <div className="w-[568px] h-[568px] grid grid-cols-3 gap-8 place-items-center content-center">
             
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/html.png" className="w-12 h-12 mb-2" alt="HTML" />
+              <img src="/assets/skills/html.png" className="w-12 h-12 mb-2" alt="HTML" />
               <span>HTML</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/css.png" className="w-12 h-12 mb-2" alt="CSS" />
+              <img src="/assets/skills/css.png" className="w-12 h-12 mb-2" alt="CSS" />
               <span>CSS</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/javascript.png" className="w-12 h-12 mb-2" alt="JavaScript" />
+              <img src="/assets/skills/javascript.png" className="w-12 h-12 mb-2" alt="JavaScript" />
               <span>JavaScript</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/typescript.png" className="w-12 h-12 mb-2" alt="TypeScript" />
+              <img src="/assets/skills/typescript.png" className="w-12 h-12 mb-2" alt="TypeScript" />
               <span>TypeScript</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/angular.png" className="w-12 h-12 mb-2" alt="Angular" />
+              <img src="/assets/skills/angular.png" className="w-12 h-12 mb-2" alt="Angular" />
               <span>Angular</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/react.png" className="w-12 h-12 mb-2" alt="React" />
+              <img src="/assets/skills/react.png" className="w-12 h-12 mb-2" alt="React" />
               <span>React</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/firebase.png" className="w-12 h-12 mb-2" alt="Firebase" />
+              <img src="/assets/skills/firebase.png" className="w-12 h-12 mb-2" alt="Firebase" />
               <span>Firebase</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/git.png" className="w-12 h-12 mb-2" alt="Git" />
+              <img src="/assets/skills/git.png" className="w-12 h-12 mb-2" alt="Git" />
               <span>Git</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/api.png" className="w-12 h-12 mb-2" alt="REST-API" />
+              <img src="/assets/skills/api.png" className="w-12 h-12 mb-2" alt="REST-API" />
               <span>REST-API</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center">
-              <img src="assets/skills/scrum.png" className="w-12 h-12 mb-2" alt="Scrum" />
+              <img src="/assets/skills/scrum.png" className="w-12 h-12 mb-2" alt="Scrum" />
               <span>Scrum</span>
             </div>
 
             <div className="skill-item flex flex-col items-center text-center text-teal-400">
-              <img src="assets/skills/grow.png" className="w-12 h-12 mb-2" alt="Growth mindset" />
+              <img src="/assets/skills/grow.png" className="w-12 h-12 mb-2" alt="Growth mindset" />
               <span>Growth mindset</span>
             </div>
 
