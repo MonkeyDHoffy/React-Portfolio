@@ -6,7 +6,7 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
         
         {/* LEFT CARD */}
-        <div className="rounded-2xl p-10">
+        <div className="rounded-2xl p-10 w-[568px]">
           <p className="text-sm font-karla text-secondary mb-4">
             Contact me
           </p>
@@ -33,7 +33,7 @@ const Contact = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-2xl p-10">
+        <div className="rounded-2xl p-10 w-[568px]">
           <form className="space-y-8">
             
             {/* Name */}
@@ -44,7 +44,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="Your name goes here"
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500"
+                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors"
               />
             </div>
 
@@ -56,7 +56,7 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="youremail@email.com"
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500"
+                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors"
               />
             </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
               <textarea
                 rows={3}
                 placeholder="Hello Lukas, I am interested in..."
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 resize-none"
+                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors resize-none"
               />
             </div>
 
@@ -76,7 +76,7 @@ const Contact = () => {
             <div className="flex items-start gap-3 text-sm text-gray-400">
               <input
                 type="checkbox"
-                className="mt-1 accent-secondary"
+                className="mt-1 accent-secondary hover:cursor-pointer"
               />
               <p className="font-karla">
                 I've read the{" "}

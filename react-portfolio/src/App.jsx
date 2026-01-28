@@ -20,7 +20,7 @@ const App = () => {
         <div className="flex flex-col min-h-screen">
           
           <Hero />
-          <Banner />  {/* Banner hier rausnehmen aus Hero */}
+  
           
           <GlowBackground>
             <About />

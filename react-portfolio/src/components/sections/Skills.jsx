@@ -32,7 +32,7 @@ const Skills = () => {
                 You need <span className="text-teal-400">another skill?</span>
               </p>
 
-              <p className="text-neutral-400 mb-8">
+              <p className="text-neutral-400 mb-8 hover:text-primary transition-colors duration-1000">
                 Feel free to contact me. I look forward to expanding on my previous knowledge.
               </p>
 
