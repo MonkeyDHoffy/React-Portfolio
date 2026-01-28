@@ -11,6 +11,7 @@ import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
 import GlowBackground from './components/layout/GlowBackground';
 import { LanguageProvider } from './context/LanguageContext';
+import Banner from './components/sections/banner';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
         <div className="flex flex-col min-h-screen">
           
           <Hero />
-
+          <Banner />  {/* Banner hier rausnehmen aus Hero */}
+          
           <GlowBackground>
             <About />
             <Skills />

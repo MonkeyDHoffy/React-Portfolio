@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from '../layout/Header';
+import ContentWrapper from '../layout/ContentWrapper';
 import { useLang } from '../../context/LanguageContext';
 import './ultrastylischelinien.css';
 import Banner from './banner';
@@ -22,10 +23,10 @@ function IconWithHover({ baseSrc, hoverSrc, alt, className }) {
 const Hero = () => {
   const { t } = useLang();
   return (
-    <section className="hero-gradient relative flex flex-col items-center justify-center h-screen text-text-primary overflow-hidden px-24">
+    <section className="hero-gradient relative flex flex-col items-center justify-center h-screen text-text-primary overflow-hidden">
       <div className="cursor-spotlight absolute inset-0 z-0" />
       <div className="absolute top-0 left-0 right-0 z-10"><Header /></div>
-      <div className="pt-20 text-center z-10">
+        <div className="pt-20 text-center z-10 relative">
         <h1 className="font-firacode font-normal text-[40px] leading-[100%] tracking-[0] mb-4">
           {t('hero.subtitle')}
         </h1>
@@ -41,7 +42,7 @@ const Hero = () => {
             {t('hero.contactbtn')}
           </button>
         </div>
-      </div>
+        </div>
 
       <div className="ultrastylischelinielinks">
         <div className="leftCircle"><img className="movingarrow" src="/assets/heropics/movingarrow.png" alt="" /></div>

@@ -12,7 +12,7 @@ const Skills = () => {
         <div className="flex items-start gap-20">
           
           {/* LEFT: Skill Card */}
-          <div className="flex flex-col">
+          <div className="flex flex-col -ml-20">
             <p className="-mt-5 mb-5 font-karla text-secondary">Technologies</p>
             <div className="relative w-[568px] h-[568px]">
             <div className="bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-[30px] p-10 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)] w-full h-full flex flex-col justify-between">
@@ -36,7 +36,7 @@ const Skills = () => {
                 Feel free to contact me. I look forward to expanding on my previous knowledge.
               </p>
 
-              <button className="px-6 py-3 border border-teal-400 text-teal-400 rounded-full hover:bg-teal-400 hover:text-neutral-900 transition">
+              <button className="px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-[150px] text-center">
                 Let's talk
               </button>
               </div>

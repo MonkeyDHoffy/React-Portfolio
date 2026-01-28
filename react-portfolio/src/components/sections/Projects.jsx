@@ -6,32 +6,58 @@ import { useLang } from '../../context/LanguageContext';
 
 const Projects = () => {
   return (
-        <section className="" id="about">
-      <div className="aboutme-wrapper flex justify-center items-center px-24 py-10">
-        <div className="pictureofmeShadow">
-          <img 
-            className="w-[568px] h-[568px] rounded-[30px] opacity-100" 
-            src="/assets/aboutme/thedeveloper.jpg" 
-            alt="" 
-          />
-        </div>
-        <div className="whoiam w-[568px] h-[568px] rounded-[30px] border flex flex-col justify-center items-center ml-20 p-10">
-          <h1>Who I Am</h1>
-          <div className="aboutme-description border rounded-[30px] h-[540px] gap-8 p-10 flex flex-col justify-start">
-            <h2 className="font-firacode">About me</h2>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, perferendis eum. Voluptatem, vel. Iste, cum corporis aut laboriosam est minus nesciunt, dolorem mollitia repellendus odit culpa similique velit repudiandae tempore voluptates repellat atque!</span>
-            <div className="flex gap-4"><img className="h-[32px] w-[32px]" src="assets/aboutme/location_on.png" alt="" /><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, voluptate?</p></div>
-            <div className="flex gap-4"><img className="h-[32px] w-[32px]" src="assets/aboutme/cognition.png" alt="" /><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempore velit magnam pariatur nihil?</p></div>
-            <div className="flex gap-4"><img className="h-[32px] w-[32px]" src="assets/aboutme/new_releases.png" alt="" /><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, odit perspiciatis.</p></div>
+    <section className="text-white px-8 py-16" id="projects">
+      {/* Header */}
+      <div className="max-w-5xl mx-auto">
+        <p className="font-karla text-sm text-secondary mb-2">Portfolio</p>
+
+        <h2 className="font-firacode text-5xl font-bold text-secondary mb-4">
+          Featured Projects
+        </h2>
+
+        <p className="font-karla text-gray-400 max-w-xl mb-10">
+          Explore a selection of my work here - Interact with projects to see my skills in action.
+        </p>
+
+        {/* Top Divider */}
+        <div className="border-t border-secondary mb-6"></div>
+        {/* Project List */}
+        <div className="space-y-6">
+
+          {/* Project Item */}
+          <div className="flex font-firacode items-center justify-between py-4 border-b border-secondary">
+            <h3 className="text-xl font-semibold tracking-wide">
+              Join
+            </h3>
+            <span className="text-sm text-gray-400">
+              Angular | TypeScript | HTML | CSS | Firebase
+            </span>
           </div>
+
+          {/* Project Item */}
+          <div className="flex font-firacode items-center justify-between py-4 border-b border-secondary">
+            <h3 className="text-xl font-semibold tracking-wide">
+              El Pollo Loco
+            </h3>
+            <span className="text-sm text-gray-400">
+              HTML | CSS | JavaScript
+            </span>
+          </div>
+
+          {/* Project Item */}
+          <div className="flex font-firacode items-center justify-between py-4 border-b border-secondary">
+            <h3 className="text-xl font-semibold tracking-wide">
+              DA Bubble
+            </h3>
+            <span className="text-sm text-gray-400">
+              Angular | Firebase | TypeScript
+            </span>
+          </div>
+
         </div>
       </div>
-
     </section>
   );
 };
 
 export default Projects;
-
-// TODO: Implement the Card component to display project details
-// TODO: Ensure projectsData contains the necessary fields (id, title, description, link) for each project
