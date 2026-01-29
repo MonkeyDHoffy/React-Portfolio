@@ -12,6 +12,7 @@ import Contact from './components/sections/Contact';
 import GlowBackground from './components/layout/GlowBackground';
 import { LanguageProvider } from './context/LanguageContext';
 import Banner from './components/sections/banner';
+import Gallery from './components/sections/Gallery';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
             <Skills />
             <Projects />
           </GlowBackground>
-
+<Gallery />
           <Contact />
       
           <Footer />
