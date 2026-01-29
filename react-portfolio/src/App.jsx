@@ -1,6 +1,6 @@
 import React from 'react';
 // Layout-Komponente importieren - umschließt die gesamte App
-import Layout from './components/layout/layout';
+import Layout from './components/layout/Layout';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 // import Navigation from './components/layout/Navigation';
