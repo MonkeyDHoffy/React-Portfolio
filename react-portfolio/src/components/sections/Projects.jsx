@@ -82,7 +82,6 @@ const Projects = () => {
 
         {/* Right Card */}
 
-
         </div>
       </PageContainer>
     </section>

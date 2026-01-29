@@ -10,41 +10,41 @@ const Skills = () => {
     >
       <PageContainer>
         <div className="flex justify-center items-center">
-          <div className="flex items-start gap-20">
+          <div className="flex items-start gap-16">
             
             {/* LEFT: Skill Card */}
-            <div className="flex flex-col -ml-20">
-              <p className="-mt-5 mb-5 font-karla text-secondary">Technologies</p>
-              <div className="relative w-[568px] h-[568px]">
-                <div className="bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-[30px] p-10 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)] w-full h-full flex flex-col justify-between">
-                  
-                  <h2 className="ont-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
-                    Skill Set
-                  </h2>
+                  <div className="flex flex-col">
+                    <p className="mb-5 font-karla text-secondary">Technologies</p>
+                    <div className="relative w-[568px] h-[568px]">
+                    <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-full h-full">
+                      
+                      <h2 className="ont-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
+                      Skill Set
+                      </h2>
 
-              <p className="text-neutral-300 leading-relaxed mb-6">
-                A short introduction of your skills. Highlight your experience of using
-                different front-end technologies and emphasise your openness to learning
-                and adapting to new technologies. Show how important it is for you to
-                keep up with the rapid changes in web development.
-              </p>
+                    <p className="text-neutral-300 leading-relaxed mb-6">
+                    A short introduction of your skills. Highlight your experience of using
+                    different front-end technologies and emphasise your openness to learning
+                    and adapting to new technologies. Show how important it is for you to
+                    keep up with the rapid changes in web development.
+                    </p>
 
-              <p className="font-semibold mb-2">
-                You need <span className="text-teal-400">another skill?</span>
-              </p>
+                    <p className="font-semibold mb-2">
+                    You need <span className="text-teal-400">another skill?</span>
+                    </p>
 
-              <p className="text-neutral-400 mb-8 hover:text-primary transition-colors duration-1000">
-                Feel free to contact me. I look forward to expanding on my previous knowledge.
-              </p>
+                    <p className="text-neutral-400 mb-8 hover:text-primary transition-colors duration-1000">
+                    Feel free to contact me. I look forward to expanding on my previous knowledge.
+                    </p>
 
-                  <button className="px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-[150px] text-center">
-                    Let's talk
-                  </button>
-                </div>
-              </div>
-            </div>
+                      <button className="px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-[150px] text-center">
+                      Let's talk
+                      </button>
+                    </div>
+                    </div>
+                  </div>
 
-            {/* RIGHT: Skills Grid */}
+                  {/* RIGHT: Skills Grid */}
             <div className="w-[568px] h-[568px] grid grid-cols-3 gap-8 place-items-center content-center">
             
             <div className="skill-item flex flex-col items-center text-center">
@@ -111,3 +111,5 @@ const Skills = () => {
 };
 
 export default Skills;
+
+// bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-[30px] p-10 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)] w-full h-full flex flex-col justify-between

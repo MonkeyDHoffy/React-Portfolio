@@ -13,17 +13,16 @@ const About = () => {
         <div className="pictureofmeShadow relative w-[568px] h-[568px] -mt-72">
           <div className="diagonalShadow"></div>
           <img 
-            className="relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
+            className="movingpic relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
             src="/assets/aboutme/thedeveloper.jpg" 
             alt="" 
           />
         </div>
 
-        <div className="whoiam rounded-[30px] flex flex-col ml-20">
+        <div className="whoiam  flex flex-col ml-20">
           <h1 className="-mt-5 mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
           <div 
-            className="aboutme-description border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-[568px] h-[568px]" 
-            style={{ backgroundColor: colors.background.greencontainer }}
+            className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-[568px] h-[568px]"
           >
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">{t('about.title')}</h2>
             <span>{t('about.p1')}</span>
