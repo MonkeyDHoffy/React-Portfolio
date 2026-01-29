@@ -3,6 +3,7 @@ import { useRef } from 'react';
 // Diese Komponente umschließt alle anderen Komponenten
 // Sie stellt sicher, dass alles den gleichen Hintergrund hat
 function Layout({ children }) {
+  const DEBUG_LAYOUT = true;
   // Pseudocode:
   // - Ref auf den Layout-Container
   // - onMouseMove: relative Cursorposition berechnen
@@ -23,6 +24,7 @@ function Layout({ children }) {
     <div
       ref={layoutRef}
       onMouseMove={handleMouseMove}
+      data-debug={DEBUG_LAYOUT ? 'true' : 'false'}
       className="bg-background-main text-text-primary min-h-screen relative"
     >
       {/* Overlay: liegt unter dem Inhalt */}

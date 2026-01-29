@@ -1,10 +1,12 @@
 import React from 'react';
 import Contactpopup from './Contactpopup';
+import PageContainer from '../layout/PageContainer';
 
 const Projects = () => {
   return (
-    <section className="text-white px-24 py-24 relative" id="projects">
-      <div className="flex justify-start gap-8">
+    <section className="text-white py-24 relative debug-component" id="projects">
+      <PageContainer>
+        <div className="flex justify-start gap-8">
         
         {/* Left Card */}
         <div className="w-[880px] h-[568px]">
@@ -81,7 +83,8 @@ const Projects = () => {
         {/* Right Card */}
 
 
-      </div>
+        </div>
+      </PageContainer>
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import React from 'react';
+import PageContainer from '../layout/PageContainer';
 
 const Contact = () => {
   return (
-    <section className="text-white px-8 py-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section className="text-white py-20 debug-component">
+      <PageContainer>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
         {/* LEFT CARD */}
         <div className="rounded-2xl p-10 w-[568px]">
@@ -100,7 +102,8 @@ const Contact = () => {
           </form>
         </div>
 
-      </div>
+        </div>
+      </PageContainer>
     </section>
   );
 };

@@ -114,3 +114,19 @@ body {
   );
 }
 
+/* Debug: Layout-Grenzen sichtbar machen */
+[data-debug="true"] .page-container {
+  outline: 1px dashed #f97316;
+  outline-offset: -1px;
+}
+
+[data-debug="true"] section {
+  outline: 1px dashed #22c55e;
+  outline-offset: -1px;
+}
+
+[data-debug="true"] .debug-component {
+  outline: 1px dashed #3b82f6;
+  outline-offset: -1px;
+}
+

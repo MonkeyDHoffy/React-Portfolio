@@ -1,16 +1,14 @@
 import React from 'react';
+import PageContainer from './PageContainer';
 
 /**
- * ContentWrapper - Zentraler Container für konsistente Content-Breite
- * - Begrenzt Content auf max-w-[1920px] (oder 1440px)
- * - Sorgt für einheitliche Seitenabstände (px-24)
- * - Backgrounds bleiben fullwidth
+ * ContentWrapper (deprecated) - Use PageContainer instead.
  */
 const ContentWrapper = ({ children, className = '' }) => {
   return (
-    <div className={`max-w-[1920px] mx-auto px-24 ${className}`}>
+    <PageContainer className={className}>
       {children}
-    </div>
+    </PageContainer>
   );
 };
 

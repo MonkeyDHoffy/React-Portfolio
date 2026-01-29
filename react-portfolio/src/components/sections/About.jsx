@@ -1,13 +1,15 @@
 import React from 'react';
 import colors from '../../theme/colors';
 import { useLang } from '../../context/LanguageContext';
+import PageContainer from '../layout/PageContainer';
 
 const About = () => {
   const { t } = useLang();
   
   return (
-    <section className="" id="about">
-      <div className="aboutme-wrapper flex justify-center items-center px-24 pt-56">
+    <section className="debug-component" id="about">
+      <PageContainer className="pt-56">
+        <div className="aboutme-wrapper flex justify-center items-center">
         <div className="pictureofmeShadow relative w-[568px] h-[568px] -mt-72">
           <div className="diagonalShadow"></div>
           <img 
@@ -39,7 +41,8 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </PageContainer>
 
     </section>
   );

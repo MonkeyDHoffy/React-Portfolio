@@ -1,11 +1,12 @@
 import React from 'react';
+import PageContainer from './PageContainer';
 
 // Footer component for the portfolio
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-neutral-900 to-neutral-950 text-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <footer className="w-full text-white debug-component">
+      <PageContainer className="py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* LEFT: Logo + Info */}
           <div className="flex justify-start flex-col gap-4">
             {/* Logo */}
@@ -14,9 +15,9 @@ const Footer = () => {
             </div>
 
             {/* Meta Info */}
-            <div className="font-karla flex flex-col justify-center text-sm text-neutral-400 gap-1">
+            <div className="font-karla flex flex-col justify-center text-sm text-neutral-400 gap-1 hover:text-white transition-all transition-duration-30000">
               <p>Web Developer</p>
-              <p>Munich, Germany</p>
+              <p>Saarlouis, Germany</p>
             </div>
           </div>
 
@@ -29,13 +30,13 @@ const Footer = () => {
 
           {/* RIGHT: Links */}
           <div className="flex flex-col items-center gap-3">
-            <href>Github</href>
-            <href>Email</href>
-            <href>Legal Notice</href>
+            <a className="hover:text-secondary" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">Github</a>
+            <a className="hover:text-secondary" href="mailto:your.email@example.com">Email</a>
+            <a className="hover:text-secondary" href="/legal-notice">Legal Notice</a>
             {/* Add links here */}
           </div>
         </div>
-      </div>
+      </PageContainer>
     </footer>
   );
 };
