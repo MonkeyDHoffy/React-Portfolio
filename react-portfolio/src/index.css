@@ -53,12 +53,19 @@ body {
 }
 
 /* Cursor-Spotlight Overlay (global) */
+@property --cursor-size {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 200px;
+}
+
 .cursor-spotlight {
   pointer-events: none;            /* keine Blockade für Maus-Events */
   position: absolute;
   inset: 0;                        /* füllt den Layout-Container */
+  transition: --cursor-size 240ms ease;
   background: radial-gradient(
-    200px circle at var(--x, -100px) var(--y, -100px),
+    var(--cursor-size, 200px) circle at var(--x, -100px) var(--y, -100px),
     #3DCFB680 0%,
     transparent 60%
   );
