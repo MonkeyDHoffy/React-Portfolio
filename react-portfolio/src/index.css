@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Layout vars aligned with PageContainer */
+:root {
+  --page-max-width: 80rem; /* max-w-7xl */
+  --page-padding: clamp(1.5rem, 2vw, 3rem); /* px-6 → px-12 */
+  --page-container-offset: max(
+    var(--page-padding),
+    calc((100vw - var(--page-max-width)) / 2 + var(--page-padding))
+  );
+}
+
 
 
 /* Custom global styles can be added below this line */

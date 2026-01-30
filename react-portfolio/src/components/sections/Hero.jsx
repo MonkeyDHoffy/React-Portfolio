@@ -49,7 +49,7 @@ const Hero = () => {
       </div>
 
       <div className="ultrastylischelinierechts" style={{ pointerEvents: 'auto' }}>
-        <div className="rightCircle flex flex-col gap-8">
+        <div className="rightCircle flex flex-col gap-4">
           <IconWithHover
             baseSrc="/assets/heropics/giticon.png"
             hoverSrc="/assets/heropics/giticonHover.png"

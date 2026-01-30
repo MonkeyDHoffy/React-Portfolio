@@ -7,10 +7,10 @@ const About = () => {
   const { t } = useLang();
   
   return (
-    <section className="debug-component" id="about">
-      <PageContainer className="pt-56">
+    <section className="debug-component py-8" id="about">
+      <PageContainer>
         <div className="aboutme-wrapper flex justify-center items-center">
-        <div className="pictureofmeShadow relative w-[568px] h-[568px] -mt-72">
+        <div className="pictureofmeShadow relative w-[568px] h-[568px]">
           <div className="diagonalShadow"></div>
           <img 
             className="movingpic relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
@@ -20,7 +20,7 @@ const About = () => {
         </div>
 
         <div className="whoiam  flex flex-col ml-20">
-          <h1 className="-mt-5 mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
+          <h1 className="mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
           <div 
             className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-[568px] h-[568px]"
           >

@@ -6,7 +6,7 @@ const Skills = () => {
   return (
     <section 
       id="skills"
-      className="relative text-white py-24 debug-component"
+      className="relative text-white py-8 debug-component"
     >
       <PageContainer>
         <div className="flex justify-center items-center">

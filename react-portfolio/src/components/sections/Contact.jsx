@@ -3,7 +3,7 @@ import PageContainer from '../layout/PageContainer';
 
 const Contact = () => {
   return (
-    <section className="text-white py-20 debug-component">
+    <section className="text-white py-8 debug-component">
       <PageContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
@@ -28,7 +28,7 @@ const Contact = () => {
 
           <p className="text-gray-400">
             Need a Frontend developer?{" "}
-            <span className="text-secondary font-medium cursor-pointer hover:underline">
+            <span className="text-secondary font-medium">
               Let's talk!
             </span>
           </p>
@@ -39,7 +39,7 @@ const Contact = () => {
           <form className="space-y-8">
             
             {/* Name */}
-            <div>
+            <div className="">
               <label className="font-firacode block text-secondary text-sm mb-2">
                 What's your name?
               </label>
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
 
             {/* Email */}
-            <div>
+            <div className="">
               <label className="font-firacode block text-secondary text-sm mb-2">
                 What's your email?
               </label>
@@ -69,7 +69,7 @@ const Contact = () => {
               </label>
               <textarea
                 rows={3}
-                placeholder="Hello Lukas, I am interested in..."
+                placeholder="Hello Jannik, I am interested in..."
                 className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors resize-none"
               />
             </div>
