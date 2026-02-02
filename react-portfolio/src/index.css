@@ -121,6 +121,17 @@ html, body {
   );
 }
 
+/* Disable scroll effect on small screens (<= 1024px) */
+@media (max-width: 1024px) {
+  .movingpic {
+    animation: none !important;
+    transform: translate(0, 0) !important;
+  }
+  .movingpic.js-reveal {
+    transform: translate(0, 0) !important;
+  }
+}
+
 .pictureofmeShadow.popup img {
   transform: translate(0, 0);
   animation: none;

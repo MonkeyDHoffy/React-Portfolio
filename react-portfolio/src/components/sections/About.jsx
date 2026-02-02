@@ -14,23 +14,44 @@ const About = () => {
   useEffect(() => {
     const el = imgRef.current;
     if (!el) return;
-    el.classList.add('js-reveal');
+
+    let observer = null;
 
     const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        const ratio = entry.intersectionRatio;
-        el.style.setProperty('--reveal-progress', String(ratio));
-      },
-      { root: null, threshold: thresholds }
-    );
-    observer.observe(el);
+    const enable = () => {
+      if (observer) return;
+      el.classList.add('js-reveal');
+      observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          const ratio = entry.intersectionRatio;
+          el.style.setProperty('--reveal-progress', String(ratio));
+        },
+        { root: null, threshold: thresholds }
+      );
+      observer.observe(el);
+    };
 
-    return () => {
-      observer.disconnect();
+    const disable = () => {
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
       el.classList.remove('js-reveal');
       el.style.removeProperty('--reveal-progress');
+    };
+
+    const mq = window.matchMedia('(max-width: 1024px)');
+    const apply = () => {
+      if (mq.matches) disable(); else enable();
+    };
+    apply();
+    const onChange = () => apply();
+    mq.addEventListener('change', onChange);
+
+    return () => {
+      mq.removeEventListener('change', onChange);
+      disable();
     };
   }, []);
   
