@@ -7,11 +7,11 @@ export default function Banner({ children }) {
 
   const content = (
     <>
-      <div className="text-text-secondary font-karla text-[32px] leading-[120%]">{t('hero.bannerone')}</div>
+      <div className="text-text-secondary font-karla text-[20px] sm:text-[24px] md:text-[32px] leading-[120%]">{t('hero.bannerone')}</div>
       <div style={{ width: '8px', height: '8px', backgroundColor: '#3DCFB6', borderRadius: '50%' }}></div>
-      <div className="text-text-secondary font-karla text-[32px] leading-[120%]">{t('hero.bannertwo')}</div>
+      <div className="text-text-secondary font-karla text-[20px] sm:text-[24px] md:text-[32px] leading-[120%]">{t('hero.bannertwo')}</div>
       <div style={{ width: '8px', height: '8px', backgroundColor: '#3DCFB6', borderRadius: '50%' }}></div>
-      <div className="text-text-secondary font-karla text-[32px] leading-[120%]">{t('hero.bannerthree')}</div>
+      <div className="text-text-secondary font-karla text-[20px] sm:text-[24px] md:text-[32px] leading-[120%]">{t('hero.bannerthree')}</div>
       <div style={{ width: '8px', height: '8px', backgroundColor: '#3DCFB6', borderRadius: '50%' , marginRight: '56px'}}></div>
     </>
   );

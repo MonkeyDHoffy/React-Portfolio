@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import quotesImg from '../../assets/gallery/quotes.png';
 import arrowForwardImg from '../../assets/gallery/arrow_forward.png';
 import PageContainer from '../layout/PageContainer';
@@ -12,11 +12,18 @@ const cards = [
 
 const Gallery = () => {
 	const [activeIndex, setActiveIndex] = useState(1);
+	const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+	useEffect(() => {
+		const onResize = () => setVw(window.innerWidth);
+		window.addEventListener('resize', onResize);
+		return () => window.removeEventListener('resize', onResize);
+	}, []);
 	const total = cards.length;
 
-	const cardWidth = 568;
+	const cardWidth = Math.min(568, Math.floor(vw * 0.9));
 	const cardHeight = 240;
-	const cardGap = 48;
+	const cardGap = Math.min(48, Math.floor(vw * 0.05));
 	const trackOffset = (cardWidth + cardGap) * activeIndex;
 
 	const goPrev = () => setActiveIndex((i) => (i - 1 + total) % total);
@@ -32,7 +39,7 @@ const Gallery = () => {
 							 {cards.map((card, i) => (
 								 <div
 									 key={card.title}
-									 className={`shrink-0 rounded-2xl border border-secondary p-8 transition-all duration-500 ease-out relative mt-8 ${
+									 className={`shrink-0 rounded-2xl border border-secondary p-6 md:p-8 transition-all duration-500 ease-out relative mt-8 ${
 										 i === activeIndex
 											 ? 'ring-1 ring-secondary/60 scale-100 bg-[#26524b99]'
 											 : 'scale-95 opacity-70 bg-background-greencontainer hover:opacity-90 hover:ring-1 hover:ring-white/20'
@@ -49,10 +56,10 @@ const Gallery = () => {
 										 <img className=""
 											 src={quotesImg}
 											 alt="Quotes"
-											 style={{ position: 'absolute', top: -24, left: -52, width: 89, height: 64, pointerEvents: 'none' }}
+											 style={{ position: 'absolute', top: -24, left: -52, width: Math.min(89, Math.floor(vw * 0.12)), height: Math.min(64, Math.floor(vw * 0.08)), pointerEvents: 'none' }}
 										 />
 									 )}
-									 <h3 className="font-firacode text-xl text-white mb-2">{card.title}</h3>
+									 <h3 className="font-firacode text-lg md:text-xl text-white mb-2">{card.title}</h3>
 									 <p className="text-primary">{card.text}</p>
 								 </div>
 							 ))}

@@ -12,7 +12,7 @@ const Projects = () => {
         <div className="flex justify-start gap-8">
         
         {/* Left Card */}
-        <div className="w-[880px] h-[568px]">
+        <div className="w-full max-w-[880px] h-auto lg:h-[568px]">
           <p className="font-karla text-sm text-secondary mb-2">Portfolio</p>
 
           <h2 className="font-firacode text-5xl font-bold text-secondary mb-4">

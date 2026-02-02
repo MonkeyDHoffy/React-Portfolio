@@ -7,9 +7,9 @@ import PageContainer from './PageContainer';
 const Header = () => {
   const { t } = useLang();
   return (
-    <header className="header-gradient text-text-primary h-[98px] debug-component">
+    <header className="header-gradient text-text-primary h-[72px] md:h-[98px] debug-component">
       <PageContainer className="flex h-full items-center justify-between">
-        <div className="HeaderNavigation justify-between items-center flex gap-8">
+        <div className="HeaderNavigation justify-between items-center flex flex-wrap gap-4 sm:gap-6 md:gap-8">
           <div><LanguageToggle size="default" /></div>
           <button
             type="button"
@@ -31,7 +31,7 @@ const Header = () => {
           </button>
         </div>
         <div className="Logo">
-          <img src={logoImg} alt="Logo" className="h-8 h-[48px] w-auto" />
+          <img src={logoImg} alt="Logo" className="h-8 md:h-12 w-auto" />
         </div>
       </PageContainer>
     </header>

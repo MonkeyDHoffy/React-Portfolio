@@ -31,18 +31,18 @@ const Hero = () => {
       <div className="cursor-spotlight absolute inset-0 z-0" />
       <div className="absolute top-0 left-0 right-0 z-10"><Header /></div>
         <div className="pt-20 text-center z-10 relative">
-        <h1 className="font-firacode font-normal text-[40px] leading-[100%] tracking-[0] mb-4">
+        <h1 className="font-firacode font-normal text-[24px] sm:text-[32px] md:text-[40px] leading-[100%] tracking-[0] mb-4">
           {t('hero.subtitle')}
         </h1>
 
-        <p className="font-karla font-bold text-[128px] leading-[100%] tracking-[-0.02em] mb-8">
+        <p className="font-karla font-bold text-[56px] sm:text-[80px] md:text-[96px] lg:text-[128px] leading-[100%] tracking-[-0.02em] mb-8">
           {t('hero.title')}
         </p>
         <div className="gap-4 flex justify-center">
-          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-[180px]">
+          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
             {t('hero.workbtn')}
           </button>
-          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-[180px]">
+          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
             {t('hero.contactbtn')}
           </button>
         </div>
