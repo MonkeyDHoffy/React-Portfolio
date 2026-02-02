@@ -23,6 +23,12 @@ body {
   cursor: url('./assets/cursor.png'), auto;
 }
 
+/* Prevent horizontal whitespace/scroll bleeding on small viewports */
+html, body {
+  overflow-x: hidden;
+  background-color: #0F0F0F; /* match dark theme to avoid white edge */
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;

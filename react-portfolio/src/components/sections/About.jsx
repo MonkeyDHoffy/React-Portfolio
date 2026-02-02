@@ -13,8 +13,8 @@ const About = () => {
   return (
     <section className="debug-component py-8" id="about">
       <PageContainer>
-        <div className="aboutme-wrapper flex justify-center items-center">
-        <div className="pictureofmeShadow relative w-[568px] h-[568px]">
+        <div className="aboutme-wrapper flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0">
+        <div className="pictureofmeShadow relative lg:w-[568px] lg:h-[568px] w-full h-auto max-w-[568px]">
           <div className="diagonalShadow"></div>
           <img 
             className="movingpic relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
@@ -23,10 +23,10 @@ const About = () => {
           />
         </div>
 
-        <div className="whoiam  flex flex-col ml-20">
+        <div className="whoiam flex flex-col lg:ml-20 ml-0 w-full lg:w-auto">
           <h1 className="mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
           <div 
-            className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-[568px] h-[568px]"
+            className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start lg:w-[568px] lg:h-[568px] w-full h-auto"
           >
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">{t('about.title')}</h2>
             <span>{t('about.p1')}</span>

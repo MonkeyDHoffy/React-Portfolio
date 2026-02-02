@@ -7,7 +7,7 @@ import bubbleImg from '../../assets/projects/bubble.png';
 
 const Projects = () => {
   return (
-    <section className="text-white py-8 relative debug-component" id="projects">
+    <section className="text-white py-8 relative overflow-hidden debug-component" id="projects">
       <PageContainer>
         <div className="flex justify-start gap-8">
         
