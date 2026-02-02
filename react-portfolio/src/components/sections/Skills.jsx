@@ -23,13 +23,13 @@ const Skills = () => {
     >
       <PageContainer>
         <div className="flex justify-center items-center">
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0">
             
             {/* LEFT: Skill Card */}
                   <div className="flex flex-col">
                     <p className="mb-5 font-karla text-secondary">{t('skills.label')}</p>
-                    <div className="relative w-full lg:w-[620px] max-w-[620px] h-auto lg:h-[568px]">
-                    <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col w-full h-auto lg:h-full lg:min-h-[568px] overflow-hidden">
+                    <div className="relative w-full lg:w-[568px] max-w-[568px] h-auto lg:h-[568px]">
+                    <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col w-full max-w-[568px] h-auto lg:h-full lg:min-h-[568px] overflow-hidden">
                       
                       <h2 className="font-firacode font-bold text-[36px] sm:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
                       {t('skills.title')}
@@ -55,7 +55,7 @@ const Skills = () => {
                   </div>
 
                   {/* RIGHT: Skills Grid */}
-            <div className="w-full lg:w-[620px] max-w-[620px] h-auto lg:h-[568px] grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 place-items-center content-center">
+            <div className="w-full lg:w-[568px] max-w-[568px] h-auto lg:h-[568px] grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 place-items-center content-center lg:ml-20">
             
             <div className="skill-item flex flex-col items-center text-center">
               <img src={htmlIcon} className="w-12 h-12 mb-2" alt="HTML" />
