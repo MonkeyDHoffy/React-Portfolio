@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLang } from '../../context/LanguageContext';
 import skillsData from '../../data/skills';
 import PageContainer from '../layout/PageContainer';
 import htmlIcon from '../../assets/skills/html.png';
@@ -14,6 +15,7 @@ import scrumIcon from '../../assets/skills/scrum.png';
 import growIcon from '../../assets/skills/grow.png';
 
 const Skills = () => {
+  const { t } = useLang();
   return (
     <section 
       id="skills"
@@ -25,31 +27,28 @@ const Skills = () => {
             
             {/* LEFT: Skill Card */}
                   <div className="flex flex-col">
-                    <p className="mb-5 font-karla text-secondary">Technologies</p>
+                    <p className="mb-5 font-karla text-secondary">{t('skills.label')}</p>
                     <div className="relative w-full lg:w-[620px] max-w-[620px] h-auto lg:h-[568px]">
                     <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col w-full h-auto lg:h-full lg:min-h-[568px] overflow-hidden">
                       
                       <h2 className="font-firacode font-bold text-[36px] sm:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
-                      Skill Set
+                      {t('skills.title')}
                       </h2>
 
                     <p className="text-neutral-300 leading-relaxed mb-6">
-                    A short introduction of your skills. Highlight your experience of using
-                    different front-end technologies and emphasise your openness to learning
-                    and adapting to new technologies. Show how important it is for you to
-                    keep up with the rapid changes in web development.
+                      {t('skills.intro')}
                     </p>
 
                     <p className="font-semibold mb-2">
-                    You need <span className="text-teal-400">another skill?</span>
+                      {t('skills.prompt')}
                     </p>
 
                     <p className="text-neutral-400 mb-8 hover:text-primary transition-colors duration-1000">
-                    Feel free to contact me. I look forward to expanding on my previous knowledge.
+                      {t('skills.outro')}
                     </p>
 
                       <button className="mt-auto px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-auto min-w-[140px] md:w-[150px] text-center">
-                      Let's talk
+                        {t('skills.cta')}
                       </button>
                     </div>
                     </div>

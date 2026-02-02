@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLang } from '../../context/LanguageContext';
 import Contactpopup from './Contactpopup';
 import PageContainer from '../layout/PageContainer';
 import joinImg from '../../assets/projects/join.png';
@@ -6,6 +7,7 @@ import polloImg from '../../assets/projects/pollo.png';
 import bubbleImg from '../../assets/projects/bubble.png';
 
 const Projects = () => {
+  const { t } = useLang();
   return (
     <section className="text-white py-8 relative overflow-hidden debug-component" id="projects">
       <PageContainer>
@@ -13,14 +15,14 @@ const Projects = () => {
         
         {/* Left Card */}
         <div className="w-full max-w-[880px] h-auto lg:h-[568px]">
-          <p className="font-karla text-sm text-secondary mb-2">Portfolio</p>
+          <p className="font-karla text-sm text-secondary mb-2">{t('projects.label')}</p>
 
           <h2 className="font-firacode text-5xl font-bold text-secondary mb-4">
-            Featured Projects
+            {t('projects.title')}
           </h2>
 
           <p className="font-karla text-gray-400 max-w-xl mb-10">
-            Explore a selection of my work here - Interact with projects to see my skills in action.
+            {t('projects.intro')}
           </p>
 
           {/* Top Divider */}
