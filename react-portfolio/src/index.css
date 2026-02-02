@@ -104,8 +104,21 @@ html, body {
 .movingpic {
   transform: translate(0, 0);
   animation: reveal-image linear forwards;
-  animation-timeline: view();
+  animation-duration: 1s; /* required for scroll-timeline to map progress */
+  /* Use explicit view timeline for robust scroll-driven animations */
+  view-timeline-name: --movingpic;
+  view-timeline-axis: block;
+  animation-timeline: --movingpic;
   animation-range: entry 30% cover 50%;
+}
+
+/* JS-driven progressive reveal as robust fallback */
+.movingpic.js-reveal {
+  animation: none;
+  transform: translate(
+    calc(32px * var(--reveal-progress, 0)),
+    calc(-32px * var(--reveal-progress, 0))
+  );
 }
 
 .pictureofmeShadow.popup img {

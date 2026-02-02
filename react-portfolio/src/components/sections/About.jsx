@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import devImg from '../../assets/aboutme/thedeveloper.jpg';
 import locationIcon from '../../assets/aboutme/location_on.png';
 import cognitionIcon from '../../assets/aboutme/cognition.png';
@@ -9,14 +9,39 @@ import PageContainer from '../layout/PageContainer';
 
 const About = () => {
   const { t } = useLang();
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+    el.classList.add('js-reveal');
+
+    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        const ratio = entry.intersectionRatio;
+        el.style.setProperty('--reveal-progress', String(ratio));
+      },
+      { root: null, threshold: thresholds }
+    );
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      el.classList.remove('js-reveal');
+      el.style.removeProperty('--reveal-progress');
+    };
+  }, []);
   
   return (
     <section className="debug-component py-8" id="about">
       <PageContainer>
         <div className="aboutme-wrapper flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0">
-        <div className="pictureofmeShadow relative lg:w-[568px] lg:h-[568px] w-full h-auto max-w-[568px]">
+        <div className="pictureofmeShadow relative w-full max-w-[568px] h-[360px] sm:h-[420px] lg:h-[568px]">
           <div className="diagonalShadow"></div>
           <img 
+            ref={imgRef}
             className="movingpic relative z-10 w-full h-full rounded-[30px] object-cover grayscale" 
             src={devImg} 
             alt="" 
@@ -26,7 +51,7 @@ const About = () => {
         <div className="whoiam flex flex-col lg:ml-20 ml-0 w-full lg:w-auto">
           <h1 className="mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
           <div 
-            className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start lg:w-[568px] lg:h-[568px] w-full h-auto"
+            className="aboutme-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-full lg:w-[568px] h-auto lg:h-[568px]"
           >
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">{t('about.title')}</h2>
             <span>{t('about.p1')}</span>

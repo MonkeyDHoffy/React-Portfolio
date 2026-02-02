@@ -26,8 +26,8 @@ const Skills = () => {
             {/* LEFT: Skill Card */}
                   <div className="flex flex-col">
                     <p className="mb-5 font-karla text-secondary">Technologies</p>
-                    <div className="relative w-full max-w-[568px] h-auto lg:h-[568px]">
-                    <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col justify-start w-full h-full">
+                    <div className="relative w-full lg:w-[620px] max-w-[620px] h-auto lg:h-[568px]">
+                    <div className="skill-description bg-background-greencontainer border border-secondary rounded-[30px] gap-8 p-10 flex flex-col w-full h-auto lg:h-full lg:min-h-[568px] overflow-hidden">
                       
                       <h2 className="font-firacode font-bold text-[36px] sm:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
                       Skill Set
@@ -48,7 +48,7 @@ const Skills = () => {
                     Feel free to contact me. I look forward to expanding on my previous knowledge.
                     </p>
 
-                      <button className="px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-auto min-w-[140px] md:w-[150px] text-center">
+                      <button className="mt-auto px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-auto min-w-[140px] md:w-[150px] text-center">
                       Let's talk
                       </button>
                     </div>
@@ -56,7 +56,7 @@ const Skills = () => {
                   </div>
 
                   {/* RIGHT: Skills Grid */}
-            <div className="w-full max-w-[568px] h-auto lg:h-[568px] grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 place-items-center content-center">
+            <div className="w-full lg:w-[620px] max-w-[620px] h-auto lg:h-[568px] grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 place-items-center content-center">
             
             <div className="skill-item flex flex-col items-center text-center">
               <img src={htmlIcon} className="w-12 h-12 mb-2" alt="HTML" />
