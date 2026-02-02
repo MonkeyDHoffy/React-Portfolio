@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImg from '../../assets/headerpics/JHOFF.png';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from './PageContainer';
@@ -30,7 +31,7 @@ const Header = () => {
           </button>
         </div>
         <div className="Logo">
-          <img src="/assets/headerpics/JHOFF.png" alt="Logo" className="h-8 h-[48px] w-auto" />
+          <img src={logoImg} alt="Logo" className="h-8 h-[48px] w-auto" />
         </div>
       </PageContainer>
     </header>

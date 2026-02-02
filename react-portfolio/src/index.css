@@ -19,7 +19,8 @@
 /* TODO: Add any additional custom styles for your portfolio here */
 
 body {
-  cursor: url('/assets/cursor.png'), auto;
+  /* Use relative asset so Vite rewrites with base */
+  cursor: url('./assets/cursor.png'), auto;
 }
 
 /* Scrollbar Styling */

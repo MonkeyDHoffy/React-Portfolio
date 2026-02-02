@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import quotesImg from '../../assets/gallery/quotes.png';
+import arrowForwardImg from '../../assets/gallery/arrow_forward.png';
 import PageContainer from '../layout/PageContainer';
 import colors from '../../theme/colors';
 
@@ -45,7 +47,7 @@ const Gallery = () => {
 								 >
 									 {i === activeIndex && (
 										 <img className=""
-											 src="/assets/gallery/quotes.png"
+											 src={quotesImg}
 											 alt="Quotes"
 											 style={{ position: 'absolute', top: -24, left: -52, width: 89, height: 64, pointerEvents: 'none' }}
 										 />
@@ -58,9 +60,9 @@ const Gallery = () => {
 					</div>
 
 					<div className="flex items-center justify-center gap-6">
-						 <button type="button" onClick={goPrev} className="h-10 w-10 rounded-full border-white/20 text-white hover:border-secondary hover:text-secondary transition flex items-center justify-center hover:scale-110" aria-label="Previous card">
-						   <img src="/assets/gallery/arrow_forward.png" alt="Previous" className="w-6 h-6 transform rotate-180" />
-						 </button>
+												 <button type="button" onClick={goPrev} className="h-10 w-10 rounded-full border-white/20 text-white hover:border-secondary hover:text-secondary transition flex items-center justify-center hover:scale-110" aria-label="Previous card">
+													 <img src={arrowForwardImg} alt="Previous" className="w-6 h-6 transform rotate-180" />
+												 </button>
 
 						<div className="flex items-center gap-2">
 							{cards.map((_, i) => (
@@ -76,9 +78,9 @@ const Gallery = () => {
 							))}
 						</div>
 
-						 <button type="button" onClick={goNext} className="h-10 w-10 rounded-full border-white/20 text-white hover:border-secondary hover:text-secondary transition flex items-center justify-center hover:scale-110" aria-label="Next card">
-						   <img src="/assets/gallery/arrow_forward.png" alt="Next" className="w-6 h-6" />
-						 </button>
+												 <button type="button" onClick={goNext} className="h-10 w-10 rounded-full border-white/20 text-white hover:border-secondary hover:text-secondary transition flex items-center justify-center hover:scale-110" aria-label="Next card">
+													 <img src={arrowForwardImg} alt="Next" className="w-6 h-6" />
+												 </button>
 					</div>
 				</div>
 			</PageContainer>

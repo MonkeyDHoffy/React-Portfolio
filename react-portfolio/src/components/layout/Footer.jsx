@@ -1,5 +1,6 @@
 import React from 'react';
 import PageContainer from './PageContainer';
+import logoImg from '../../assets/headerpics/JHOFF.png';
 
 // Footer component for the portfolio
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="flex justify-start flex-col gap-4">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <img className="w-[123px] h-[48px]" src="assets/headerpics/JHOFF.png" alt="" />
+              <img className="w-[123px] h-[48px]" src={logoImg} alt="" />
             </div>
 
             {/* Meta Info */}

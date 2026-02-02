@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import movingArrow from '../../assets/heropics/movingarrow.png';
+import gitIcon from '../../assets/heropics/giticon.png';
+import gitIconHover from '../../assets/heropics/giticonHover.png';
+import linkedinIcon from '../../assets/heropics/linkedinicon.png';
+import linkedinIconHover from '../../assets/heropics/linkediniconHover.png';
 import Header from '../layout/Header';
 import { useLang } from '../../context/LanguageContext';
 import './ultrastylischelinien.css';
@@ -44,21 +49,21 @@ const Hero = () => {
         </div>
 
       <div className="ultrastylischelinielinks">
-        <div className="leftCircle"><img className="movingarrow" src="/assets/heropics/movingarrow.png" alt="" /></div>
+        <div className="leftCircle"><img className="movingarrow" src={movingArrow} alt="" /></div>
         <div className="leftLine"></div>
       </div>
 
       <div className="ultrastylischelinierechts" style={{ pointerEvents: 'auto' }}>
         <div className="rightCircle flex flex-col gap-4">
           <IconWithHover
-            baseSrc="/assets/heropics/giticon.png"
-            hoverSrc="/assets/heropics/giticonHover.png"
+            baseSrc={gitIcon}
+            hoverSrc={gitIconHover}
             alt="GitHub"
             className="relative -top-4 pointercss"
           />
           <IconWithHover
-            baseSrc="/assets/heropics/linkedinicon.png"
-            hoverSrc="/assets/heropics/linkediniconHover.png"
+            baseSrc={linkedinIcon}
+            hoverSrc={linkedinIconHover}
             alt="LinkedIn"
             className="relative -top-4 pointercss"
           />

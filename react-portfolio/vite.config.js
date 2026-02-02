@@ -3,14 +3,16 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Use root in dev, subpath in production
+  base: process.env.NODE_ENV === 'production' ? '/portfolio/dist/' : '/',
   plugins: [react()],
   server: {
-    port: 3000, // Set the development server port
+    port: 3000,
   },
   build: {
-    outDir: 'dist', // Output directory for the build
+    outDir: 'dist',
   },
   css: {
-    postcss: './postcss.config.js', // Use the PostCSS configuration
+    postcss: './postcss.config.js',
   },
 });

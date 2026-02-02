@@ -1,6 +1,9 @@
 import React from 'react';
 import Contactpopup from './Contactpopup';
 import PageContainer from '../layout/PageContainer';
+import joinImg from '../../assets/projects/join.png';
+import polloImg from '../../assets/projects/pollo.png';
+import bubbleImg from '../../assets/projects/bubble.png';
 
 const Projects = () => {
   return (
@@ -39,7 +42,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img="/assets/projects/join.png" />
+                <Contactpopup img={joinImg} />
               </div>
             </div>
 
@@ -56,7 +59,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img="/assets/projects/pollo.png" />
+                <Contactpopup img={polloImg} />
               </div>
             </div>
 
@@ -73,7 +76,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img="/assets/projects/bubble.png" />
+                <Contactpopup img={bubbleImg} />
               </div>
             </div>
 
