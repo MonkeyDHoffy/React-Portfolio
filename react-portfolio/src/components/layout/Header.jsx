@@ -59,7 +59,7 @@ const Header = () => {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={toggleMenu}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/20 bg-black/20 backdrop-blur hover:bg-black/30 transition"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md backdrop-blur hover:bg-black/30 transition"
           >
             <img src={menuIcon} alt="" className="w-5 h-5" />
           </button>
@@ -80,17 +80,17 @@ const Header = () => {
               <nav aria-label="Hauptnavigation">
                 <ul className="space-y-3">
                   <li>
-                    <a href="#about" onClick={closeMenu} className="block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.about')}</a>
+                    <a href="#about" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.about')}</a>
                   </li>
                   <li>
-                    <a href="#skills" onClick={closeMenu} className="block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.skills')}</a>
+                    <a href="#skills" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.skills')}</a>
                   </li>
                   <li>
-                    <a href="#projects" onClick={closeMenu} className="block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.projects')}</a>
+                    <a href="#projects" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.projects')}</a>
                   </li>
                 </ul>
               </nav>
-              <div className="mt-5 pt-4 border-t border-white/10 flex justify-center">
+              <div className="mt-5 pt-4 flex justify-center">
                 <LanguageToggle size="default" />
               </div>
             </div>

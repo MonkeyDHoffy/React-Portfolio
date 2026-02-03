@@ -3,14 +3,15 @@ import quotesImg from '../../assets/gallery/quotes.png';
 import arrowForwardImg from '../../assets/gallery/arrow_forward.png';
 import PageContainer from '../layout/PageContainer';
 import colors from '../../theme/colors';
-
-const cards = [
-	{ title: 'Card One', text: 'Short description for the first card.' },
-	{ title: 'Card Two', text: 'Short description for the second card.' },
-	{ title: 'Card Three', text: 'Short description for the third card.' },
-];
+import { useLang } from '../../context/LanguageContext';
 
 const Gallery = () => {
+    const { t } = useLang();
+    const cards = [
+    	{ title: t('gallery.card1.title'), text: t('gallery.card1.text') },
+    	{ title: t('gallery.card2.title'), text: t('gallery.card2.text') },
+    	{ title: t('gallery.card3.title'), text: t('gallery.card3.text') },
+    ];
 	const [activeIndex, setActiveIndex] = useState(1);
 	const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 

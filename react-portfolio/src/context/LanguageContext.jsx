@@ -21,39 +21,39 @@ const translations = {
     whoiam:       { de: 'Wer ich bin', en: 'Who I Am' },
     title:        { de: 'Über mich', en: 'About Me' },
     p1:           {
-      de: 'Ich bin Frontend‑Entwickler mit Fokus auf React und TypeScript. Ich baue schnelle, zugängliche UIs, arbeite testgetrieben und lege Wert auf sauberen, wartbaren Code.',
-      en: 'I am a frontend developer focused on React and TypeScript. I build fast, accessible UIs, work in a test‑driven way, and care about clean, maintainable code.',
+      de: 'Softwareentwickler mit Schwerpunkt auf sauberer Architektur, klarer Problemlösung und professioneller Zusammenarbeit. Ich entwickle performante, zugängliche Anwendungen und arbeite qualitäts‑ sowie testorientiert mit effizienten Workflows (Versionierung, Code‑Reviews).',
+      en: 'Software developer focused on clean architecture, structured problem solving, and professional collaboration. I build performant, accessible applications and work in a quality‑ and test‑driven way using efficient workflows (version control, code reviews).',
     },
     location:     {
-      de: 'Ansässig in Saarlouis, offen für Remote sowie Hybrid in der Region.',
-      en: 'Based in Saarlouis, open to remote and hybrid opportunities.',
+      de: 'Ansässig in Saarlouis; offen für Remote sowie Hybrid in der Region.',
+      en: 'Based in Saarlouis; open to remote and hybrid roles.',
     },
     cognition:    {
-      de: 'Analytisch und lösungsorientiert: klare Architektur, Performance und gute Developer Experience sind mir wichtig.',
-      en: 'Analytical and solution‑oriented: I value clear architecture, performance, and great developer experience.',
+      de: 'Analytisch und lösungsorientiert: klare Architektur, Performance, Accessibility und eine starke Developer Experience stehen für mich im Fokus.',
+      en: 'Analytical and solution‑oriented: I prioritize clean architecture, performance, accessibility, and strong developer experience.',
     },
     releases:     {
-      de: 'Aktuell arbeite ich an Portfolio‑Projekten und kleinen Tools – unten findest du eine Auswahl.',
-      en: 'Currently working on portfolio projects and small tools — see a selection below.',
+      de: 'Mein Portfolio zeigt reale Projekte aus der Weiterbildung und eigene Arbeiten. Eine Auswahl findest du unten.',
+      en: 'My portfolio showcases real training projects and personal work. A selection is below.',
     },
     new_releases: {
-      de: 'Aktuell arbeite ich an Portfolio‑Projekten und kleinen Tools – unten findest du eine Auswahl.',
-      en: 'Currently working on portfolio projects and small tools — see a selection below.',
+      de: 'Aktuell erweitere ich mein Portfolio mit weiteren praxisnahen Projekten – eine Auswahl findest du unten.',
+      en: 'I am currently adding more practice‑driven projects to my portfolio — see a selection below.',
     },
   },
   skills: {
     label:        { de: 'Technologien', en: 'Technologies' },
     title:        { de: 'Skill Set', en: 'Skill Set' },
     intro:        {
-      de: 'Ein kurzer Überblick über meine Stärken: moderne Frontend‑Stacks, saubere Komponenten, State‑Management, Tests und Performance. Ich lerne schnell und arbeite mich zügig in neue Tools ein.',
-      en: 'A brief overview of my strengths: modern frontend stacks, clean components, state management, testing, and performance. I learn fast and pick up new tools quickly.',
+      de: 'Fundierte Basis in modernen Frontend‑Stacks. Saubere Komponenten, State‑Management, Accessibility, Tests und Performance gehören zu meinem Werkzeugkasten. Praxisnahe Projekte und kontinuierliche Reviews haben meine Fähigkeiten in realen Szenarien geschärft.',
+      en: 'Solid grounding in modern frontend stacks. Clean components, state management, accessibility, testing, and performance are part of my toolkit. Practice‑driven projects and continuous reviews have honed these skills on real scenarios.',
     },
     prompt:       { de: 'Sie brauchen eine andere Technologie?', en: 'Need another technology?' },
     outro:        {
-      de: 'Sprechen Sie mich gern an – ich erweitere mein Know‑how kontinuierlich.',
-      en: 'Feel free to reach out — I continuously expand my skill set.',
+      de: 'Sprechen Sie mich gern an – ich erweitere mein Know‑how kontinuierlich und arbeite mich zügig in neue Tools ein.',
+      en: 'Feel free to reach out — I continuously expand my skill set and ramp up quickly on new tools.',
     },
-    cta:          { de: 'Lass uns sprechen', en: "Let's talk" },
+    cta:          { de: "Let's Talk", en: "Let's Talk" },
   },
   projects: {
     label:        { de: 'Portfolio', en: 'Portfolio' },
@@ -63,23 +63,37 @@ const translations = {
       en: 'Explore a selection of my work — interact with projects to see my skills in action.',
     },
   },
+  gallery: {
+    card1: {
+      title: { de: 'Barrierefreie Benutzeroberflächen', en: 'Accessible Interfaces' },
+      text:  { de: 'Semantische HTML‑Strukturen, ARIA‑Patterns und konsistente Tastaturnavigation. Fokus‑Management, Kontraste und responsives Design gemäß WCAG.', en: 'Semantic HTML, ARIA patterns, and consistent keyboard navigation. Focus management, contrast, and responsive design aligned with WCAG.' },
+    },
+    card2: {
+      title: { de: 'Performance & Architektur', en: 'Performance & Architecture' },
+      text:  { de: 'Klare Komponentenstrukturen, schlanke Bundles, gezieltes Code‑Splitting. Effizientes State‑Management, Caching und profilorientierte Optimierungen.', en: 'Clear component structure, lean bundles, targeted code splitting. Efficient state management, caching, and profiling‑driven optimizations.' },
+    },
+    card3: {
+      title: { de: 'Qualitätssicherung', en: 'Quality Assurance' },
+      text:  { de: 'Automatisierte Tests, Code‑Reviews und saubere Konventionen. Ziel: robuste, wartbare Anwendungen mit verlässlichen Deployments.', en: 'Automated tests, code reviews, and solid conventions. Goal: robust, maintainable apps with reliable deployments.' },
+    },
+  },
   contact: {
     label:        { de: 'Kontaktiere mich', en: 'Contact me' },
     title:        { de: 'Lass uns zusammenarbeiten', en: "Let's work together" },
-    question:     { de: 'Gibt es eine Herausforderung zu lösen?', en: 'Got a problem to solve?' },
+    question:     { de: 'Welche Herausforderung lösen wir gemeinsam?', en: 'Which challenge can we solve together?' },
     blurb:        {
-      de: 'Beschreibe kurz dein Projekt oder die Rolle, für die du suchst. Ich bringe mich pragmatisch ein und liefere wertvolle Beiträge in Frontend‑Teams.',
-      en: 'Tell me about your project or the role you are hiring for. I contribute pragmatically and deliver value in frontend teams.',
+      de: 'Beschreibe kurz dein Projekt oder die Rolle. Ich bringe mich pragmatisch ein, liefere zuverlässig und arbeite professionell, strukturiert und kollaborativ in Frontend‑Teams.',
+      en: 'Describe your project or the role. I contribute pragmatically, deliver reliably, and work professionally, with structure and collaboration in frontend teams.',
     },
-    needdev:      { de: 'Sie brauchen einen Frontend‑Entwickler?', en: 'Need a Frontend developer?' },
-    needdev_cta:  { de: 'Lass uns sprechen!', en: "Let's talk!" },
+    needdev:      { de: 'Sie suchen einen Frontend‑Entwickler?', en: 'Looking for a frontend developer?' },
+    needdev_cta:  { de: 'Lass uns reden!', en: 'Let’s talk!' },
     form: {
       name_label:     { de: 'Wie heißt du?', en: "What's your name?" },
       name_ph:        { de: 'Dein Name', en: 'Your name' },
       email_label:    { de: 'Wie lautet deine E‑Mail?', en: "What's your email?" },
       email_ph:       { de: 'deine@email.de', en: 'youremail@email.com' },
       message_label:  { de: 'Wobei kann ich helfen?', en: 'How can I help you?' },
-      message_ph:     { de: 'Hallo Jannik, ich interessiere mich für…', en: 'Hello Jannik, I am interested in…' },
+      message_ph:     { de: 'Hallo Jannik, ich interessiere mich für…', en: 'Hello Jannik, I’m interested in…' },
       privacy_text:   {
         de: 'Ich habe die Datenschutzrichtlinie gelesen und stimme der Verarbeitung meiner Daten zu.',
         en: 'I have read the privacy policy and agree to the processing of my data as outlined.',

@@ -39,12 +39,12 @@ const Hero = () => {
           {t('hero.title')}
         </p>
         <div className="gap-4 flex justify-center">
-          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
+          <a href="#projects" className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
             {t('hero.workbtn')}
-          </button>
-          <button className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
+          </a>
+          <a href="#contact" className="border text-text-primary hover:text-secondary rounded-[100px] px-6 py-[13px] hover:border-secondary border-primary transition-colors duration-1000 w-auto min-w-[160px] md:w-[180px]">
             {t('hero.contactbtn')}
-          </button>
+          </a>
         </div>
         </div>
 

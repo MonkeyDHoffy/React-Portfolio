@@ -29,6 +29,22 @@ html, body {
   background-color: #0F0F0F; /* match dark theme to avoid white edge */
 }
 
+/* Smooth anchor scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent header overlap on anchor navigation */
+section[id] {
+  scroll-margin-top: 96px; /* header height on md+, safe default */
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 72px; /* smaller header on mobile */
+  }
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;

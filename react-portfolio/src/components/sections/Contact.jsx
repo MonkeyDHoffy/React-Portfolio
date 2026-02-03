@@ -5,7 +5,7 @@ import PageContainer from '../layout/PageContainer';
 const Contact = () => {
   const { t } = useLang();
   return (
-    <section className="text-white py-8 debug-component">
+    <section className="text-white py-8 debug-component" id="contact">
       <PageContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         

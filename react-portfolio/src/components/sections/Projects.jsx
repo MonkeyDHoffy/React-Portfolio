@@ -127,13 +127,13 @@ const Projects = () => {
             {/* Project Item */}
             <div className="relative group">
               <div 
-                className="project1 flex font-firacode items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
+                className="project1 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
                 onClick={() => openProject('join')}
               >
                 <h3 className="text-xl font-semibold tracking-wide">
                   Join
                 </h3>
-                <span className="text-sm text-primary">
+                <span className="text-sm text-primary mt-2 md:mt-0">
                   Angular <span className="text-secondary">|</span> TypeScript <span className="text-secondary">|</span> HTML <span className="text-secondary">|</span> CSS <span className="text-secondary">|</span> Firebase
                 </span>
               </div>
@@ -145,13 +145,13 @@ const Projects = () => {
             {/* Project Item */}
             <div className="relative group">
               <div 
-                className="project2 flex font-firacode items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
+                className="project2 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
                 onClick={() => openProject('pollo')}
               >
                 <h3 className="text-xl font-semibold tracking-wide">
                   El Pollo Loco
                 </h3>
-                <span className="text-sm text-primary">
+                <span className="text-sm text-primary mt-2 md:mt-0">
                   HTML <span className="text-secondary">|</span> CSS <span className="text-secondary">|</span> JavaScript
                 </span>
               </div>
@@ -163,13 +163,13 @@ const Projects = () => {
             {/* Project Item */}
             <div className="relative group">
               <div 
-                className="project3 flex font-firacode items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
+                className="project3 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
                 onClick={() => openProject('bubble')}
               >
                 <h3 className="text-xl font-semibold tracking-wide">
                   DA Bubble
                 </h3>
-                <span className="text-sm text-primary">
+                <span className="text-sm text-primary mt-2 md:mt-0">
                   Angular <span className="text-secondary">|</span> Firebase <span className="text-secondary">|</span> TypeScript
                 </span>
               </div>
