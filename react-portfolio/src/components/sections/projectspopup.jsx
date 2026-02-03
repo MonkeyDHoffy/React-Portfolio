@@ -9,13 +9,13 @@ export const ProjectSlide = ({
   imageSrc,
   imageAlt = "",
   primaryActions = [],
-  nextLabel = "Next project",
+  nextLabel = "Next project →",
   onNextClick,
   onClose,
 }) => {
   return (
     <div
-      className="relative w-[min(92vw,1100px)] max-h-[85vh] overflow-auto rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl"
+      className="relative w-[min(92vw,1100px)] rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl my-8 font-karla"
       style={{ backgroundImage: 'linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%)' }}
     >
       {/* Close Icon */}
@@ -40,8 +40,8 @@ export const ProjectSlide = ({
         {/* Text Content */}
         <div className="md:w-1/2 flex flex-col justify-between gap-8 text-white">
           <div>
-            <p className="text-5xl md:text-6xl font-bold tracking-tight text-secondary">{index}</p>
-            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary">{title}</h1>
+            <p className="text-5xl md:text-6xl font-firacode font-bold tracking-tight text-secondary">{index}</p>
+            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary font-karla">{title}</h1>
           </div>
 
           <div className="space-y-4">
@@ -51,7 +51,7 @@ export const ProjectSlide = ({
 
           <div className="flex flex-wrap items-center gap-3">
             {techStack.map((tech) => (
-              <span key={tech} className="px-3 py-1 rounded-full border border-white/20 text-sm text-white/90">
+              <span key={tech} className="px-3 py-1 rounded-full border-white/20 text-sm text-white/90 font-firacode">
                 {tech}
               </span>
             ))}
@@ -62,7 +62,7 @@ export const ProjectSlide = ({
               <div className="flex flex-wrap gap-4">
                 {primaryActions.map((action) => {
                   const base =
-                    "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary";
+                    "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary font-firacode";
                   const variantClasses =
                     action.variant === "secondary"
                       ? "border border-white/30 bg-transparent hover:bg-white/10 text-white"
@@ -87,7 +87,7 @@ export const ProjectSlide = ({
             <button
               type="button"
               onClick={onNextClick}
-              className="self-start md:self-end text-sm font-medium text-secondary hover:text-white transition"
+              className="self-start md:self-end text-sm font-medium text-secondary hover:text-white transition font-firacode"
             >
               {nextLabel}
             </button>

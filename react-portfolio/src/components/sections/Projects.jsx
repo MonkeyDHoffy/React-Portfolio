@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useLang } from '../../context/LanguageContext';
 import Contactpopup from './Contactpopup';
 import PageContainer from '../layout/PageContainer';
@@ -15,18 +16,39 @@ const Projects = () => {
   const openProject = (key) => setActive(key);
   const closeProject = () => setActive(null);
 
-  // Close on ESC and lock body scroll while open
+  // Close on ESC and robustly lock body scroll while open (mobile-safe)
   useEffect(() => {
     if (!active) return;
     const onKey = (e) => {
       if (e.key === 'Escape') closeProject();
     };
     document.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow;
+
+    const scrollY = window.scrollY || window.pageYOffset;
+    const prev = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      left: document.body.style.left,
+      right: document.body.style.right,
+      width: document.body.style.width,
+      overflow: document.body.style.overflow,
+    };
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
+
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
+      document.body.style.position = prev.position;
+      document.body.style.top = prev.top;
+      document.body.style.left = prev.left;
+      document.body.style.right = prev.right;
+      document.body.style.width = prev.width;
+      document.body.style.overflow = prev.overflow;
+      window.scrollTo(0, scrollY);
     };
   }, [active]);
 
@@ -160,20 +182,25 @@ const Projects = () => {
         </div>
 
         {/* Modal Overlay */}
-        {active && (
-          <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-            onClick={closeProject}
-          >
-            <div className="max-w-[1100px] w-full" onClick={(e) => e.stopPropagation()}>
-              <ProjectSlide
-                {...projectsMap[active]}
-                onClose={closeProject}
-                onNextClick={goNext}
-                nextLabel={t ? t('projects.next') || 'Next project' : 'Next project'}
-              />
+        {active && createPortal(
+          (
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
+              onClick={closeProject}
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="max-w-[1100px] w-full" onClick={(e) => e.stopPropagation()}>
+                <ProjectSlide
+                  {...projectsMap[active]}
+                  onClose={closeProject}
+                  onNextClick={goNext}
+                  nextLabel={t ? t('Next project →') || 'Next project →' : 'Next project →'}
+                />
+              </div>
             </div>
-          </div>
+          ),
+          document.body
         )}
 
         {/* Right Card */}
