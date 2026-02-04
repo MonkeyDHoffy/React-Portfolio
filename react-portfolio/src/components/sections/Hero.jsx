@@ -85,8 +85,8 @@ const Hero = () => {
             - Circle/line sizes and positions: see `ultrastylischelinien.css` for `.rightCircle` / `.rightLine`.
         */}
         <div className="rightCircle flex flex-col gap-4">
-          {/* Mail-Icon nur mobil anzeigen */}
-          <a href="mailto:hoffjannik95@gmail.com" aria-label="Email" className="pointercss md:hidden">
+          {/* Mail-Icon bis Tablet anzeigen (lg und größer ausblenden) */}
+          <a href="mailto:hoffjannik95@gmail.com" aria-label="Email" className="pointercss lg:hidden">
             <IconWithHover
               baseSrc={mailIcon}
               hoverSrc={mailIconHover}
@@ -107,8 +107,8 @@ const Hero = () => {
             className="relative md:-top-4 pointercss"
           />
         </div>
-        {/* Vertikaler Email-Text nur auf Desktop anzeigen */}
-        <a href="mailto:hoffjannik95@gmail.com" className="rightText hidden md:block">hoffjannik95@gmail.com</a>
+        {/* Vertikaler Email-Text nur auf großen Desktops anzeigen (lg+) */}
+        <a href="mailto:hoffjannik95@gmail.com" className="rightText hidden lg:block">hoffjannik95@gmail.com</a>
         <div className="rightLine"></div>
       </div>
       {/* DECORATIVE LINES & ARROWS

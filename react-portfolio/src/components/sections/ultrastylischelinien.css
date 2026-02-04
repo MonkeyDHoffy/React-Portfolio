@@ -161,3 +161,32 @@ letter-spacing: 0%;
 .pointercss {
   cursor: pointer;
 }
+
+/* TABLET TUNING (md to <lg): longer lines and adjusted icon placement */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .ultrastylischelinielinks {
+    /* Make left line group taller on tablet */
+    height: clamp(200px, 34vw, 440px);
+    /* Slightly larger circle so line starts lower */
+    --left-circle-h: clamp(32px, 4.2vw, 58px);
+  }
+  .ultrastylischelinielinks .leftCircle {
+    /* Optional width bump for tablet aesthetics */
+    width: clamp(20px, 3.2vw, 40px);
+  }
+
+  .ultrastylischelinierechts {
+    /* Make right line group taller on tablet */
+    height: clamp(190px, 32vw, 420px);
+    /* Slightly larger circle so line starts lower */
+    --right-circle-h: clamp(32px, 4.2vw, 58px);
+    /* Extra gap keeps icons clearly above the line */
+    --icon-gap: 14px;
+    /* Moderate icon raise inside the circle for tablet */
+    --icon-top-adjust: -64px;
+  }
+  .ultrastylischelinierechts .rightCircle {
+    /* Optional width bump for tablet aesthetics */
+    width: clamp(20px, 3.2vw, 40px);
+  }
+}
