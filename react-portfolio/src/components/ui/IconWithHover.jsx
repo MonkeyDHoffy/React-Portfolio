@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 
-// Reusable hoverable icon that swaps between base and hover images
+/**
+ * IconWithHover
+ * Displays an image that switches source on hover.
+ *
+ * Behavior: Identical output; only internal naming improved.
+ * Props:
+ * - baseSrc: default image source
+ * - hoverSrc: image source shown when hovered
+ * - alt: alt text for the image
+ * - className: optional wrapper classes
+ */
 const IconWithHover = ({ baseSrc, hoverSrc, alt, className = '' }) => {
-  const [hover, setHover] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
+  const containerStyle = { position: 'relative', pointerEvents: 'auto' };
+  const currentSrc = isHovered ? hoverSrc : baseSrc;
+
   return (
     <div
       className={className}
-      style={{ position: 'relative', pointerEvents: 'auto' }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      style={containerStyle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <img src={hover ? hoverSrc : baseSrc} alt={alt} />
+      <img src={currentSrc} alt={alt} />
     </div>
   );
 };

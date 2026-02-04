@@ -6,7 +6,7 @@ import PageContainer from '../layout/PageContainer';
 import joinImg from '../../assets/projects/join.png';
 import polloImg from '../../assets/projects/pollo.png';
 import bubbleImg from '../../assets/projects/bubble.png';
-import { ProjectSlide } from './projectspopup';
+import ProjectSlide from './projectspopup';
 import useEscape from '../../hooks/useEscape';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 

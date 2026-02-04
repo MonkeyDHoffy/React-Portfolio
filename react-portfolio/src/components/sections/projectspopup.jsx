@@ -137,3 +137,5 @@ export const ProjectSlide = ({
     </div>
   );
 };
+
+export default ProjectSlide;

@@ -35,7 +35,22 @@ export default function useBodyScrollLock(active, { preserveScroll = false } = {
       document.body.style.width = prev.width;
       document.body.style.overflow = prev.overflow;
       if (preserveScroll) {
-        window.scrollTo(0, scrollY);
+        // Ensure restoration is instantaneous, not affected by global CSS smooth scrolling.
+        const docEl = document.documentElement;
+        const prevBehavior = docEl.style.scrollBehavior;
+        try {
+          docEl.style.scrollBehavior = 'auto';
+        } catch {}
+        // Use options to explicitly set behavior to 'auto'.
+        try {
+          window.scrollTo({ top: scrollY, left: 0, behavior: 'auto' });
+        } catch {
+          window.scrollTo(0, scrollY);
+        }
+        // Restore previous behavior.
+        try {
+          docEl.style.scrollBehavior = prevBehavior || '';
+        } catch {}
       }
     };
   }, [active, preserveScroll]);
