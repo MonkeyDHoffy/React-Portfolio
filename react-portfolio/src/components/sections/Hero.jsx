@@ -36,7 +36,7 @@ const Hero = () => {
     // - Global text color and overflow are set here.
     <section className="hero-gradient relative flex flex-col items-center justify-start md:justify-center h-screen text-text-primary overflow-hidden debug-component">
       <div className="cursor-spotlight absolute inset-0 z-0" />
-      <div className="absolute top-0 left-0 right-0 z-10"><Header /></div>
+      <div className="absolute top-0 left-0 right-0 z-[100]"><Header /></div>
         {/* HERO CONTENT WRAPPER
             - Top spacing: adjust `pt-8 md:pt-20` → e.g. `pt-4`, `pt-16`, etc.
             - Text alignment: `text-left md:text-center` → change as needed.
