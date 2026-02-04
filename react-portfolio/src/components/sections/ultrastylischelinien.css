@@ -1,15 +1,22 @@
 .ultrastylischelinielinks {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  /* Anchored at bottom. Base (desktop+) values restored. */
+  bottom: 0;
   left: var(--page-container-offset);
-    height: 286px;
-    pointer-events: none;
+  /* Base height (desktop): min 160px, ideal ~24vw, max 286px */
+  height: clamp(160px, 24vw, 286px);
+  /* Ensure line start is always below the circle by a gap */
+  --left-circle-h: clamp(28px, 3.5vw, 48px);
+  --icon-gap: 8px;
+  --line-top: calc(var(--left-circle-h) + var(--icon-gap));
+  pointer-events: none;
 }
 
 .ultrastylischelinielinks .leftLine {
   position: absolute;
   left: 0;
-  top: 75px;
+  /* Computed start offset: circle height + gap */
+  top: var(--line-top);
   bottom: 0;
   width: 1px;
   background: #3DCFB6;
@@ -20,8 +27,9 @@
   position: absolute;
   left: 0;                 /* an die Linie andocken */
   top: 0;                  /* Position nach Bedarf (z. B. 0 oder 50%) */
-  width: 30px;
-  height: 48px;
+  /* Base circle size */
+  width: clamp(18px, 2.5vw, 30px);
+  height: var(--left-circle-h);
   border-radius: 32px;
   opacity: 1;
   border: 1px solid #3DCFB6;
@@ -33,8 +41,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 9px;
-  height: 16px;
+  /* Base arrow size */
+  width: clamp(6px, 0.8vw, 9px);
+  height: clamp(10px, 1.2vw, 16px);
   transform: translate(-50%, -50%);
   animation: moveUpDown 2s infinite ease-in-out;
 }
@@ -44,21 +53,30 @@
     transform: translate(-50%, -50%) translateY(0);
   }
   50% {
-    transform: translate(-50%, -50%) translateY( 10px);
+    transform: translate(-50%, -50%) translateY(10px);
   }
 }
 
 .ultrastylischelinierechts {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  /* Anchored at bottom. Base (desktop+) values restored. */
+  bottom: 0;
   right: var(--page-container-offset);
-    height: 256px;
-    pointer-events: none;
+  /* Base height (desktop): min 140px, ideal ~22vw, max 256px */
+  height: clamp(140px, 22vw, 256px);
+  /* Ensure line start is always below the circle by a gap */
+  --right-circle-h: clamp(28px, 3.5vw, 48px);
+  --icon-gap: 8px;
+  --line-top: calc(var(--right-circle-h) + var(--icon-gap));
+  /* Default desktop image offset inside circle (mobile overrides below) */
+  --icon-top-adjust: -8px;
+  pointer-events: none;
 }
 .ultrastylischelinierechts .rightLine {
   position: absolute;
   right: 0;
-  top: 75px;
+  /* Computed start offset: circle height + gap */
+  top: var(--line-top);
   bottom: 0;
   width: 1px;
   background: #ffffff;
@@ -69,15 +87,52 @@
   position: absolute;
   right: 0;                 /* an die Linie andocken */
   top: 0;                  /* Position nach Bedarf (z. B. 0 oder 50%) */
-  width: 30px;
-  height: 48px;
+  /* Base circle size */
+  width: clamp(18px, 2.5vw, 30px);
+  height: var(--right-circle-h);
   transform: translateX(50%) rotate(0deg); /* über der 1px-Linie zentrieren */
   z-index: 1;              /* vorne */
 }
 
+/* MOBILE-ONLY ENLARGEMENTS (apply only under md breakpoint) */
+@media (max-width: 768px) {
+  /* Taller containers => longer lines on mobile only */
+  .ultrastylischelinielinks {
+    height: clamp(220px, 40vw, 420px);
+    /* Increase circle height on mobile; line top adjusts automatically */
+    --left-circle-h: clamp(34px, 4.6vw, 60px);
+  }
+  .ultrastylischelinielinks .leftCircle {
+    width: clamp(22px, 3.2vw, 40px);
+  }
+
+  .ultrastylischelinierechts {
+    height: clamp(200px, 38vw, 400px);
+    /* Increase circle height on mobile; line top adjusts automatically */
+    --right-circle-h: clamp(34px, 4.6vw, 60px);
+    /* Add extra vertical gap so icons sit above the line */
+    --icon-gap: 12px;
+    /* Control icon vertical offset inside the circle on mobile */
+    --icon-top-adjust: -64px; /* more negative = higher */
+  }
+  /* Neutralize negative top offset on images for mobile */
+  .ultrastylischelinierechts .rightCircle img {
+    position: relative;
+    top: var(--icon-top-adjust);
+  }
+  .ultrastylischelinierechts .rightCircle {
+    width: clamp(22px, 3.2vw, 40px);
+  }
+
+  .movingarrow {
+    width: clamp(7px, 1vw, 12px);
+    height: clamp(12px, 1.6vw, 20px);
+  }
+}
+
 .ultrastylischelinierechts .rightCircle img {
   position: relative;
-  top: -8px; /* weiter nach oben schieben; Wert nach Bedarf anpassen */
+  top: var(--icon-top-adjust); /* controlled by base or mobile override */
 }
 
 .ultrastylischelinierechts .rightText {

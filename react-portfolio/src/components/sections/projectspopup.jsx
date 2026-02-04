@@ -51,7 +51,7 @@ export const ProjectSlide = ({
         onClick={onClose}
         onMouseEnter={() => setIsCloseHover(true)}
         onMouseLeave={() => setIsCloseHover(false)}
-        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center backdrop-blur-sm hover:scale-110 transition"
+        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center hover:scale-110 transition"
       >
         <img
           src={isCloseHover ? closeHover : closeSmall}
@@ -63,7 +63,7 @@ export const ProjectSlide = ({
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-10 lg:px-12 py-8 md:py-10">
         {/* Image – on mobile top, on desktop right */}
         <div className="order-first md:order-last md:w-1/2">
-          <div className="rounded-2xl bg-black/20 border border-white/10 overflow-hidden">
+          <div className="rounded-2xl  overflow-hidden">
             <img src={imageSrc} alt={imageAlt} className="w-full h-full object-cover" />
           </div>
         </div>
