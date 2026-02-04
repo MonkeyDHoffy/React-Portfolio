@@ -6,40 +6,20 @@ import menuIcon from '../../assets/headerpics/menu.png';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from './PageContainer';
+import useEscape from '../../hooks/useEscape';
+import useClickOutside from '../../hooks/useClickOutside';
+import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
 const Header = () => {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'Escape') setOpen(false);
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, []);
+  useEscape(() => setOpen(false), open);
 
-  useEffect(() => {
-    const onClickOutside = (e) => {
-      if (!open) return;
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', onClickOutside);
-    return () => document.removeEventListener('mousedown', onClickOutside);
-  }, [open]);
+  useClickOutside(menuRef, open, () => setOpen(false));
   // Lock body scroll when menu is open
-  useEffect(() => {
-    if (open) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = prev;
-      };
-    }
-  }, [open]);
+  useBodyScrollLock(open);
 
   const closeMenu = () => setOpen(false);
   const toggleMenu = () => setOpen((v) => !v);
@@ -74,8 +54,7 @@ const Header = () => {
             <div
               ref={menuRef}
               id="mobile-menu"
-              className="absolute left-0 right-0 top-0 mx-4 mt-20 rounded-2xl border border-white/15 backdrop-blur p-5 shadow-2xl z-20"
-              style={{ backgroundImage: 'linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%)' }}
+              className="absolute left-0 right-0 top-0 mx-4 mt-20 rounded-2xl border border-white/15 backdrop-blur p-5 shadow-2xl z-20 green-card-gradient"
             >
               <nav aria-label="Hauptnavigation">
                 <ul className="space-y-3">

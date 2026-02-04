@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="flex justify-start flex-col gap-4">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <img className="w-[123px] h-[48px]" src={logoImg} alt="" />
+              <img className="w-[123px] h-[48px]" src={logoImg} alt="JHOFF logo" />
             </div>
 
             {/* Meta Info */}

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import movingArrow from '../../assets/heropics/movingarrow.png';
 import gitIcon from '../../assets/heropics/giticon.png';
 import gitIconHover from '../../assets/heropics/giticonHover.png';
@@ -10,21 +9,7 @@ import Header from '../layout/Header';
 import { useLang } from '../../context/LanguageContext';
 import './ultrastylischelinien.css';
 import Banner from './banner';
-
-// Icon-Hover: wechselt zwischen base und hover Bild per Events
-function IconWithHover({ baseSrc, hoverSrc, alt, className }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <div
-      className={className}
-      style={{ position: 'relative', pointerEvents: 'auto' }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <img src={hover ? hoverSrc : baseSrc} alt={alt} />
-    </div>
-  );
-}
+import IconWithHover from '../ui/IconWithHover';
 
 const Hero = () => {
   const { t } = useLang();

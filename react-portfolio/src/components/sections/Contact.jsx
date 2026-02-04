@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
         {/* LEFT CARD */}
-        <div className="rounded-2xl w-full lg:w-[568px]">
+        <div className="rounded-2xl w-full lg:w-[var(--card-size)]">
           <p className="text-sm font-karla text-secondary mb-4">
             {t('contact.label')}
           </p>
@@ -36,7 +36,7 @@ const Contact = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-2xl w-full lg:w-[568px]">
+        <div className="rounded-2xl w-full lg:w-[var(--card-size)]">
           <form className="space-y-8">
             
             {/* Name */}

@@ -41,8 +41,7 @@ export const ProjectSlide = ({
   const [isCloseHover, setIsCloseHover] = useState(false);
   return (
     <div
-      className="relative w-[min(92vw,1100px)] rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl my-8 font-karla"
-      style={{ backgroundImage: 'linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%)' }}
+      className="relative w-[min(92vw,1100px)] rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl my-8 font-karla green-card-gradient"
     >
       {/* Close Icon */}
       <button

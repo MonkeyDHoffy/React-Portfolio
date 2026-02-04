@@ -7,6 +7,8 @@ import joinImg from '../../assets/projects/join.png';
 import polloImg from '../../assets/projects/pollo.png';
 import bubbleImg from '../../assets/projects/bubble.png';
 import { ProjectSlide } from './projectspopup';
+import useEscape from '../../hooks/useEscape';
+import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
 const Projects = () => {
   const { t } = useLang();
@@ -17,45 +19,14 @@ const Projects = () => {
   const closeProject = () => setActive(null);
 
   // Close on ESC and robustly lock body scroll while open (mobile-safe)
-  useEffect(() => {
-    if (!active) return;
-    const onKey = (e) => {
-      if (e.key === 'Escape') closeProject();
-    };
-    document.addEventListener('keydown', onKey);
-
-    const scrollY = window.scrollY || window.pageYOffset;
-    const prev = {
-      position: document.body.style.position,
-      top: document.body.style.top,
-      left: document.body.style.left,
-      right: document.body.style.right,
-      width: document.body.style.width,
-      overflow: document.body.style.overflow,
-    };
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
-    document.body.style.width = '100%';
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.position = prev.position;
-      document.body.style.top = prev.top;
-      document.body.style.left = prev.left;
-      document.body.style.right = prev.right;
-      document.body.style.width = prev.width;
-      document.body.style.overflow = prev.overflow;
-      window.scrollTo(0, scrollY);
-    };
-  }, [active]);
+  useEscape(() => active && closeProject(), !!active);
+  useBodyScrollLock(!!active, { preserveScroll: true });
 
   const projectsMap = {
     join: {
       index: '01',
       title: 'Join',
+      imageAlt: 'Join project screenshot',
       question: 'What is this project about?',
       description:
         'A task management app inspired by Kanban. Create boards, assign tasks, and collaborate in real time.',
@@ -69,6 +40,7 @@ const Projects = () => {
     pollo: {
       index: '02',
       title: 'El Pollo Loco',
+      imageAlt: 'El Pollo Loco game screenshot',
       question: 'What is this project about?',
       description:
         'A classic 2D browser game built with vanilla web tech. Run, jump, and collect coins!',
@@ -82,6 +54,7 @@ const Projects = () => {
     bubble: {
       index: '03',
       title: 'DA Bubble',
+      imageAlt: 'DA Bubble chat app screenshot',
       question: 'What is this project about?',
       description:
         'A chat application with channels and mentions. Powered by Angular and Firebase for real-time updates.',
@@ -107,7 +80,7 @@ const Projects = () => {
         <div className="flex justify-start gap-8">
         
         {/* Left Card */}
-        <div className="w-full max-w-[880px] h-auto lg:h-[568px]">
+        <div className="w-full max-w-[880px] h-auto lg:h-[var(--card-size)]">
           <p className="font-karla text-sm text-secondary mb-2">{t('projects.label')}</p>
 
           <h2 className="font-firacode text-5xl font-bold text-secondary mb-4">
@@ -138,7 +111,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={joinImg} />
+                <Contactpopup img={joinImg} alt="Join preview" />
               </div>
             </div>
 
@@ -156,7 +129,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={polloImg} />
+                <Contactpopup img={polloImg} alt="El Pollo Loco preview" />
               </div>
             </div>
 
@@ -174,7 +147,7 @@ const Projects = () => {
                 </span>
               </div>
               <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={bubbleImg} />
+                <Contactpopup img={bubbleImg} alt="DA Bubble preview" />
               </div>
             </div>
 
