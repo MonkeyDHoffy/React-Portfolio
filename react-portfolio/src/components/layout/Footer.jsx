@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* RIGHT: Links */}
           <div className="flex flex-col items-center gap-3">
-            <a className="hover:text-secondary" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">Github</a>
+            <a className="hover:text-secondary" href="https://github.com/MonkeyDHoffy" target="_blank" rel="noopener noreferrer">Github</a>
             <a className="hover:text-secondary" href="mailto:your.email@example.com">Email</a>
             <a className="hover:text-secondary" href="/legal-notice">Legal Notice</a>
             {/* Add links here */}

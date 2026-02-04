@@ -63,7 +63,7 @@ const Projects = () => {
       imageSrc: joinImg,
       primaryActions: [
         { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: '#', variant: 'secondary' },
+        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
     pollo: {
@@ -76,7 +76,7 @@ const Projects = () => {
       imageSrc: polloImg,
       primaryActions: [
         { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: '#', variant: 'secondary' },
+        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
     bubble: {
@@ -89,7 +89,7 @@ const Projects = () => {
       imageSrc: bubbleImg,
       primaryActions: [
         { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: '#', variant: 'secondary' },
+        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
   };

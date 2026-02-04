@@ -94,12 +94,14 @@ const Hero = () => {
               className="relative md:-top-4 pointercss"
             />
           </a>
-          <IconWithHover
-            baseSrc={gitIcon}
-            hoverSrc={gitIconHover}
-            alt="GitHub"
-            className="relative md:-top-4 pointercss"
-          />
+          <a href="https://github.com/MonkeyDHoffy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="pointercss">
+            <IconWithHover
+              baseSrc={gitIcon}
+              hoverSrc={gitIconHover}
+              alt="GitHub"
+              className="relative md:-top-4 pointercss"
+            />
+          </a>
           <IconWithHover
             baseSrc={linkedinIcon}
             hoverSrc={linkedinIconHover}

@@ -15,7 +15,7 @@ const Contact = () => {
             {t('contact.label')}
           </p>
 
-          <h2 className="text-5xl font-firacode font-bold text-secondary leading-tight mb-6">
+          <h2 className="font-firacode font-bold text-secondary leading-tight mb-6 text-[clamp(22px,7vw,56px)]">
             {t('contact.title')}
           </h2>
 
