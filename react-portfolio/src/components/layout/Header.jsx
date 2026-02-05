@@ -4,6 +4,7 @@ import logoImg from '../../assets/headerpics/JHOFF.png';
 import mobileLogo from '../../assets/headerpics/jhicon.png';
 import menuIcon from '../../assets/headerpics/menu.png';
 import LanguageToggle from '../ui/LanguageToggle';
+import NavLinks from '../ui/NavLinks';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from './PageContainer';
 import useEscape from '../../hooks/useEscape';
@@ -57,17 +58,7 @@ const Header = () => {
               className="absolute left-0 right-0 top-0 mx-4 mt-20 rounded-2xl border border-white/15 backdrop-blur p-5 shadow-2xl z-20 green-card-gradient"
             >
               <nav aria-label="Hauptnavigation">
-                <ul className="space-y-3">
-                  <li>
-                    <a href="#about" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.about')}</a>
-                  </li>
-                  <li>
-                    <a href="#skills" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.skills')}</a>
-                  </li>
-                  <li>
-                    <a href="#projects" onClick={closeMenu} className="flex justify-center block px-3 py-2 rounded-md font-firacode text-base text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.projects')}</a>
-                  </li>
-                </ul>
+                <NavLinks t={t} onClick={closeMenu} variant="list" />
               </nav>
               <div className="mt-5 pt-4 flex justify-center">
                 <LanguageToggle size="default" />
@@ -83,9 +74,7 @@ const Header = () => {
         <PageContainer className="flex h-[98px] items-center justify-between">
           <div className="HeaderNavigation justify-between items-center flex flex-wrap gap-4 sm:gap-6 md:gap-8">
             <div><LanguageToggle size="default" /></div>
-            <a href="#about" className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.about')}</a>
-            <a href="#skills" className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.skills')}</a>
-            <a href="#projects" className="font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors">{t('header.projects')}</a>
+            <NavLinks t={t} />
           </div>
           <div className="Logo">
             <img src={logoImg} alt="Logo" className="h-12 w-auto" />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TechBadge from "../ui/TechBadge";
 import closeSmall from "../../assets/projects/close_small.png";
 import closeHover from "../../assets/projects/close.png";
 /**
@@ -82,18 +83,7 @@ export const ProjectSlide = ({
           {/* Tech-Stack mit Icon links vom Namen (falls vorhanden) */}
           <div className="flex flex-wrap items-center gap-3">
             {techStack.map((tech) => (
-              // Jedes Badge zeigt optional das dazugehörige Icon. Wir greifen case-insensitiv zu.
-              <span key={tech} className="flex items-center gap-2 px-3 py-1 rounded-full border-white/20 text-sm text-white/90 font-firacode">
-                {/* Nur rendern, wenn ein Icon zur Technologie existiert (z. B. assets/projects/Angular.png) */}
-                {projectIcons[tech.toLowerCase()] && (
-                  <img
-                    src={projectIcons[tech.toLowerCase()]}
-                    alt={`${tech} icon`}
-                    className="w-5 h-5 object-contain"
-                  />
-                )}
-                {tech}
-              </span>
+              <TechBadge key={tech} label={tech} iconSrc={projectIcons[tech.toLowerCase()]} />
             ))}
           </div>
 

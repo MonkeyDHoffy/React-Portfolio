@@ -65,16 +65,46 @@ const translations = {
   },
   gallery: {
     card1: {
-      title: { de: 'Barrierefreie Benutzeroberflächen', en: 'Accessible Interfaces' },
-      text:  { de: 'Semantische HTML‑Strukturen, ARIA‑Patterns und konsistente Tastaturnavigation. Fokus‑Management, Kontraste und responsives Design gemäß WCAG.', en: 'Semantic HTML, ARIA patterns, and consistent keyboard navigation. Focus management, contrast, and responsive design aligned with WCAG.' },
+      title:  { de: 'ChatGPT über mich', en: 'ChatGPT about me' },
+      text:   {
+        de: 'Strukturiert, präzise und lösungsorientiert. Jannik Hoff kombiniert saubere Architektur mit solider UX und sorgt für wartbaren Code.',
+        en: 'Structured, precise, and solution‑oriented. Jannik Hoff combines clean architecture with solid UX and delivers maintainable code.',
+      },
+      sender: { de: '— ChatGPT', en: '— ChatGPT' },
     },
     card2: {
-      title: { de: 'Performance & Architektur', en: 'Performance & Architecture' },
-      text:  { de: 'Klare Komponentenstrukturen, schlanke Bundles, gezieltes Code‑Splitting. Effizientes State‑Management, Caching und profilorientierte Optimierungen.', en: 'Clear component structure, lean bundles, targeted code splitting. Efficient state management, caching, and profiling‑driven optimizations.' },
+      title:  { de: 'GitHub Copilot über mich', en: 'GitHub Copilot about me' },
+      text:   {
+        de: 'Klarer Code, gute Tests und sinnvolle Komponenten. Jannik Hoff\'s Frontend‑Workflows sind effizient und professionell.',
+        en: 'Clear code, solid tests, and well‑structured components. Jannik Hoff’s frontend workflows are efficient and professional.',
+      },
+      sender: { de: '— GitHub Copilot', en: '— GitHub Copilot' },
     },
     card3: {
-      title: { de: 'Qualitätssicherung', en: 'Quality Assurance' },
-      text:  { de: 'Automatisierte Tests, Code‑Reviews und saubere Konventionen. Ziel: robuste, wartbare Anwendungen mit verlässlichen Deployments.', en: 'Automated tests, code reviews, and solid conventions. Goal: robust, maintainable apps with reliable deployments.' },
+      title:  { de: 'VS Code über mich', en: 'VS Code about me' },
+      text:   {
+        de: 'Produktiv, fokussiert und schnell. Er nutzt das Tooling sinnvoll (Terminal, Tasks, Debugging) und hält das Projekt sauber.',
+        en: 'Productive, focused, and fast. He uses the tooling effectively (terminal, tasks, debugging) and keeps the project clean.',
+      },
+      sender: { de: '— Visual Studio Code', en: '— Visual Studio Code' },
+    },
+    // NEW: 4th review card
+    card4: {
+      title:  { de: 'Microsoft Copilot über mich', en: 'Microsoft Copilot about me' },
+      text:   {
+        de: 'Gut strukturiert, performant und zugänglich. Jannik Hoff schreibt klaren, wartbaren Code und folgt Frontend‑Best Practices.',
+        en: 'Well‑structured, performant, and accessible. Jannik Hoff writes clear, maintainable code and follows frontend best practices.',
+      },
+      sender: { de: '— Microsoft Copilot', en: '— Microsoft Copilot' },
+    },
+    // NEW: 5th review card
+    card5: {
+      title:  { de: 'Mein PC über mich', en: 'My PC about me' },
+      text:   {
+        de: 'Zuverlässig, performant und gut gepflegt. Jannik Hoff hält sein Entwicklungs‑Setup schlank und sorgt für reibungslose Workflows.',
+        en: 'Reliable, performant, and well maintained. Jannik Hoff keeps his development setup lean and ensures smooth workflows.',
+      },
+      sender: { de: '— Mein PC', en: '— My PC' },
     },
   },
   contact: {

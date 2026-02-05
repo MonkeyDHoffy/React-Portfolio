@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from '../layout/PageContainer';
+import FormField from '../ui/FormField';
 
 const Contact = () => {
   const { t } = useLang();
@@ -40,40 +41,26 @@ const Contact = () => {
           <form className="space-y-8">
             
             {/* Name */}
-            <div className="">
-              <label className="font-firacode block text-secondary text-sm mb-2">
-                {t('contact.form.name_label')}
-              </label>
-              <input
-                type="text"
-                placeholder={t('contact.form.name_ph')}
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors"
-              />
-            </div>
+            <FormField
+              label={t('contact.form.name_label')}
+              type="text"
+              placeholder={t('contact.form.name_ph')}
+            />
 
             {/* Email */}
-            <div className="">
-              <label className="font-firacode block text-secondary text-sm mb-2">
-                {t('contact.form.email_label')}
-              </label>
-              <input
-                type="email"
-                placeholder={t('contact.form.email_ph')}
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors"
-              />
-            </div>
+            <FormField
+              label={t('contact.form.email_label')}
+              type="email"
+              placeholder={t('contact.form.email_ph')}
+            />
 
             {/* Message */}
-            <div>
-              <label className="font-firacode block text-secondary text-sm mb-2">
-                {t('contact.form.message_label')}
-              </label>
-              <textarea
-                rows={3}
-                placeholder={t('contact.form.message_ph')}
-                className="font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors resize-none"
-              />
-            </div>
+            <FormField
+              label={t('contact.form.message_label')}
+              textarea
+              rows={3}
+              placeholder={t('contact.form.message_ph')}
+            />
 
             {/* Privacy */}
             <div className="flex items-start gap-3 text-sm text-gray-400">

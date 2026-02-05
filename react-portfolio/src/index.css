@@ -12,9 +12,10 @@
   );
   /* Centralized card size used across About/Skills/Contact */
   --card-size: 568px;
+  /* Auswahlfarben (Textmarkierung) an dein Design anpassen */
+  --selection-bg: rgba(45, 212, 191, 0.25); /* sekundärfarbe leicht transparent */
+  --selection-text: #eafff8;                 /* heller Text auf Auswahl */
 }
-
-
 
 /* Custom global styles can be added below this line */
 
@@ -216,5 +217,22 @@ section[id] {
 [data-debug="true"] .debug-component {
   outline: 1px dashed #3b82f6;
   outline-offset: -1px;
+}
+
+/* Auswahlfarben (Textmarkierung) an dein Design anpassen */
+:root {
+  /* Passe diese beiden Werte an dein Design an */
+  --selection-bg: #3DCFB6; /* sekundärfarbe leicht transparent */
+  --selection-text: #eafff8;                 /* heller Text auf Auswahl */
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+::-moz-selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 

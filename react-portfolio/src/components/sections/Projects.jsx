@@ -7,6 +7,7 @@ import joinImg from '../../assets/projects/join.png';
 import polloImg from '../../assets/projects/pollo.png';
 import bubbleImg from '../../assets/projects/bubble.png';
 import ProjectSlide from './projectspopup';
+import ProjectListItem from '../ui/ProjectListItem';
 import useEscape from '../../hooks/useEscape';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
@@ -96,61 +97,30 @@ const Projects = () => {
           
           {/* Project List */}
           <div className="">
-
-            {/* Project Item */}
-            <div className="relative group">
-              <div 
-                className="project1 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
-                onClick={() => openProject('join')}
-              >
-                <h3 className="text-xl font-semibold tracking-wide">
-                  Join
-                </h3>
-                <span className="text-sm text-primary mt-2 md:mt-0">
-                  Angular <span className="text-secondary">|</span> TypeScript <span className="text-secondary">|</span> HTML <span className="text-secondary">|</span> CSS <span className="text-secondary">|</span> Firebase
-                </span>
-              </div>
-              <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={joinImg} alt="Join preview" />
-              </div>
-            </div>
-
-            {/* Project Item */}
-            <div className="relative group">
-              <div 
-                className="project2 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
-                onClick={() => openProject('pollo')}
-              >
-                <h3 className="text-xl font-semibold tracking-wide">
-                  El Pollo Loco
-                </h3>
-                <span className="text-sm text-primary mt-2 md:mt-0">
-                  HTML <span className="text-secondary">|</span> CSS <span className="text-secondary">|</span> JavaScript
-                </span>
-              </div>
-              <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={polloImg} alt="El Pollo Loco preview" />
-              </div>
-            </div>
-
-            {/* Project Item */}
-            <div className="relative group">
-              <div 
-                className="project3 flex flex-col md:flex-row gap-2 md:gap-0 font-firacode items-start md:items-center justify-between px-8 py-10 border-b border-secondary hover:bg-background-greencontainer cursor-pointer transition-colors duration-300"
-                onClick={() => openProject('bubble')}
-              >
-                <h3 className="text-xl font-semibold tracking-wide">
-                  DA Bubble
-                </h3>
-                <span className="text-sm text-primary mt-2 md:mt-0">
-                  Angular <span className="text-secondary">|</span> Firebase <span className="text-secondary">|</span> TypeScript
-                </span>
-              </div>
-              <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Contactpopup img={bubbleImg} alt="DA Bubble preview" />
-              </div>
-            </div>
-
+            <ProjectListItem
+              className="project1"
+              title="Join"
+              stackSegments={["Angular", "TypeScript", "HTML", "CSS", "Firebase"]}
+              previewImg={joinImg}
+              previewAlt="Join preview"
+              onClick={() => openProject('join')}
+            />
+            <ProjectListItem
+              className="project2"
+              title="El Pollo Loco"
+              stackSegments={["HTML", "CSS", "JavaScript"]}
+              previewImg={polloImg}
+              previewAlt="El Pollo Loco preview"
+              onClick={() => openProject('pollo')}
+            />
+            <ProjectListItem
+              className="project3"
+              title="DA Bubble"
+              stackSegments={["Angular", "Firebase", "TypeScript"]}
+              previewImg={bubbleImg}
+              previewAlt="DA Bubble preview"
+              onClick={() => openProject('bubble')}
+            />
           </div>
         </div>
 
