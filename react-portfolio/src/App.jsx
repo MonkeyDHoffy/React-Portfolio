@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <LanguageProvider defaultLang="de">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToHash />
         <Layout>
           <div className="flex flex-col min-h-screen">
