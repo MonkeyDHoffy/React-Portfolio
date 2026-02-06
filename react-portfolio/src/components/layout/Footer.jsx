@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageContainer from './PageContainer';
 import logoImg from '../../assets/headerpics/JHOFF.png';
 
@@ -12,7 +13,9 @@ const Footer = () => {
           <div className="flex justify-start flex-col gap-4">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <img className="w-[123px] h-[48px]" src={logoImg} alt="JHOFF logo" />
+              <Link to="/">
+                <img className="h-12 w-auto" src={logoImg} alt="JHOFF logo" />
+              </Link>
             </div>
 
             {/* Meta Info */}
@@ -33,7 +36,7 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-3">
             <a className="hover:text-secondary" href="https://github.com/MonkeyDHoffy" target="_blank" rel="noopener noreferrer">Github</a>
             <a className="hover:text-secondary" href="mailto:your.email@example.com">Email</a>
-            <a className="hover:text-secondary" href="/legal-notice">Legal Notice</a>
+            <Link className="hover:text-secondary" to="/legal-notice">Legal Notice</Link>
             {/* Add links here */}
           </div>
         </div>

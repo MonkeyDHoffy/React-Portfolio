@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import logoImg from '../../assets/headerpics/JHOFF.png';
 import mobileLogo from '../../assets/headerpics/jhicon.png';
@@ -30,9 +31,9 @@ const Header = () => {
       <div className="md:hidden">
         <PageContainer className="flex h-[64px] items-center justify-between">
           {/* Logo left */}
-          <a href="#top" className="inline-flex items-center">
+          <Link to="/" className="inline-flex items-center">
             <img src={mobileLogo} alt="Logo" className="h-8 w-auto" />
-          </a>
+          </Link>
           {/* Hamburger right */}
           <button
             type="button"
@@ -77,7 +78,9 @@ const Header = () => {
             <NavLinks t={t} />
           </div>
           <div className="Logo">
-            <img src={logoImg} alt="Logo" className="h-12 w-auto" />
+            <Link to="/">
+              <img src={logoImg} alt="Logo" className="h-12 w-auto" />
+            </Link>
           </div>
         </PageContainer>
       </div>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 // Layout-Komponente importieren - umschließt die gesamte App
 import Layout from './components/layout/Layout';
 import Header from './components/layout/Header';
@@ -13,27 +14,57 @@ import GlowBackground from './components/layout/GlowBackground';
 import { LanguageProvider } from './context/LanguageContext';
 import Banner from './components/sections/banner';
 import Gallery from './components/sections/gallery';
+import LegalNotice from './components/sections/LegalNotice';
 
 const App = () => {
+  // Scroll to hash targets on navigation
+  const ScrollToHash = () => {
+    const { hash, pathname } = useLocation();
+    useEffect(() => {
+      if (hash) {
+        const id = hash.replace('#', '');
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else if (pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, [hash, pathname]);
+    return null;
+  };
+
   return (
     <LanguageProvider defaultLang="de">
-      <Layout>
-        <div className="flex flex-col min-h-screen">
-          
-          <Hero />
-  
-          
-          <GlowBackground>
-            <About />
-            <Skills />
-            <Projects />
-          </GlowBackground>
-<Gallery />
-          <Contact />
-      
-          <Footer />
-        </div>
-      </Layout>
+      <BrowserRouter>
+        <ScrollToHash />
+        <Layout>
+          <div className="flex flex-col min-h-screen">
+           
+
+            <main className="flex-1">
+              <Routes>
+                <Route
+                  path="/"
+                  element={(
+                    <>
+                      <Hero />
+                      <GlowBackground>
+                        <About />
+                        <Skills />
+                        <Projects />
+                      </GlowBackground>
+                      <Gallery />
+                      <Contact />
+                    </>
+                  )}
+                />
+                <Route path="/legal-notice" element={<LegalNotice />} />
+              </Routes>
+            </main>
+
+            <Footer />
+          </div>
+        </Layout>
+      </BrowserRouter>
     </LanguageProvider>
   );
 };
