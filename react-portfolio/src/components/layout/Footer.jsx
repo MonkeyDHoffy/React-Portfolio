@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex justify-start flex-col gap-4">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <Link to="/">
+              <Link to="/" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <img className="h-12 w-auto" src={logoImg} alt="JHOFF logo" />
               </Link>
             </div>

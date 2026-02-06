@@ -81,7 +81,7 @@ const Projects = () => {
         <div className="flex justify-start gap-8">
         
         {/* Left Card */}
-        <div className="w-full max-w-[880px] h-auto lg:h-[var(--card-size)]">
+        <div className="w-full max-w-[831px] h-auto lg:h-[var(--card-size)]">
           <p className="font-karla text-sm text-secondary mb-2">{t('projects.label')}</p>
 
           <h2 className="font-firacode text-5xl font-bold text-secondary mb-4">
