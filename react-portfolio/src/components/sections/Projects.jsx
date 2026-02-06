@@ -26,44 +26,41 @@ const Projects = () => {
   const projectsMap = {
     join: {
       index: '01',
-      title: 'Join',
+      title: 'projectDetails.p1.title',
       imageAlt: 'Join project screenshot',
-      question: 'What is this project about?',
-      description:
-        'A task management app inspired by Kanban. Create boards, assign tasks, and collaborate in real time.',
+      question: 'projectDetails.p1.question',
+      description: 'projectDetails.p1.description',
       techStack: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
       imageSrc: joinImg,
       primaryActions: [
-        { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
     pollo: {
       index: '02',
-      title: 'El Pollo Loco',
+      title: 'projectDetails.p2.title',
       imageAlt: 'El Pollo Loco game screenshot',
-      question: 'What is this project about?',
-      description:
-        'A classic 2D browser game built with vanilla web tech. Run, jump, and collect coins!',
+      question: 'projectDetails.p2.question',
+      description: 'projectDetails.p2.description',
       techStack: ['HTML', 'CSS', 'JavaScript'],
       imageSrc: polloImg,
       primaryActions: [
-        { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
     bubble: {
       index: '03',
-      title: 'DA Bubble',
+      title: 'projectDetails.p3.title',
       imageAlt: 'DA Bubble chat app screenshot',
-      question: 'What is this project about?',
-      description:
-        'A chat application with channels and mentions. Powered by Angular and Firebase for real-time updates.',
+      question: 'projectDetails.p3.question',
+      description: 'projectDetails.p3.description',
       techStack: ['Angular', 'Firebase', 'TypeScript'],
       imageSrc: bubbleImg,
       primaryActions: [
-        { label: 'Live Demo', href: '#', variant: 'primary' },
-        { label: 'GitHub', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
       ],
     },
   };
@@ -138,7 +135,7 @@ const Projects = () => {
                   {...projectsMap[active]}
                   onClose={closeProject}
                   onNextClick={goNext}
-                  nextLabel={t ? t('Next project →') || 'Next project →' : 'Next project →'}
+                  nextLabel={t('projects.nextLabel')}
                 />
               </div>
             </div>

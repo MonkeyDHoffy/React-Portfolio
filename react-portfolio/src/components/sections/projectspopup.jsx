@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLang } from '../../context/LanguageContext';
 import TechBadge from "../ui/TechBadge";
 import closeSmall from "../../assets/projects/close_small.png";
 import closeHover from "../../assets/projects/close.png";
@@ -39,6 +40,13 @@ export const ProjectSlide = ({
   onNextClick,
   onClose,
 }) => {
+  const { t } = useLang();
+
+  const localize = (val) => {
+    if (typeof val !== 'string') return val;
+    const translated = t(val);
+    return translated === val ? val : translated;
+  };
   const [isCloseHover, setIsCloseHover] = useState(false);
   return (
     <div
@@ -72,12 +80,12 @@ export const ProjectSlide = ({
         <div className="md:w-1/2 flex flex-col justify-between gap-8 text-white">
           <div>
             <p className="text-5xl md:text-6xl font-karla font-bold tracking-tight text-secondary ">{index}</p>
-            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary font-karla">{title}</h1>
+            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-text-primary font-karla">{localize(title)}</h1>
           </div>
 
           <div className="space-y-4">
-            <p className="font-firacode text-secondary text-base md:text-lg">{question}</p>
-            <p className="font-karla text-primary leading-relaxed">{description}</p>
+            <p className="font-firacode text-secondary text-base md:text-lg">{localize(question)}</p>
+            <p className="font-karla text-primary leading-relaxed">{localize(description)}</p>
           </div>
 
           {/* Tech-Stack mit Icon links vom Namen (falls vorhanden) */}
@@ -107,7 +115,7 @@ export const ProjectSlide = ({
                       target={action.href ? "_blank" : undefined}
                       rel={action.href ? "noreferrer" : undefined}
                     >
-                      {action.label}
+                      {localize(action.label)}
                     </ButtonTag>
                   );
                 })}

@@ -62,31 +62,59 @@ const translations = {
       de: 'Hier findest du eine Auswahl meiner Arbeiten – interagiere mit den Projekten, um meine Skills im Einsatz zu sehen.',
       en: 'Explore a selection of my work — interact with projects to see my skills in action.',
     },
+    liveDemo: { de: 'Live Demo', en: 'Live Demo' },
+    github: { de: 'GitHub', en: 'GitHub' },
+    nextLabel: { de: 'Nächstes Projekt →', en: 'Next project →' },
+  },
+  projectDetails: {
+    p1: {
+      title: { de: 'Join', en: 'Join' },
+      question: { de: 'Worum geht es in diesem Projekt?', en: 'What is this project about?' },
+      description: {
+        de: 'Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop und weise Benutzer sowie Kategorien zu.',
+        en: 'Task manager inspired by the Kanban system. Create and organize tasks using drag-and-drop functions, assign users and categories.',
+      },
+    },
+    p2: {
+      title: { de: 'El Pollo Loco', en: 'El Pollo Loco' },
+      question: { de: 'Worum geht es in diesem Projekt?', en: 'What is this project about?' },
+      description: {
+        de: 'Jump-, Run- und Throw-Spiel auf objektorientierter Basis. Hilf Pepe, Münzen und Tabasco zu finden, um gegen die verrückte Henne zu kämpfen.',
+        en: 'Jump, run and throw game based on an object-oriented approach. Help Pepe to find coins and Tabasco to fight the crazy hen.',
+      },
+    },
+    p3: {
+      title: { de: 'DA Bubble', en: 'DA Bubble' },
+      question: { de: 'Worum geht es in diesem Projekt?', en: 'What is this project about?' },
+      description: {
+        de: 'Ist eine Messenger-App.',
+        en: 'Is a messenger app.',
+      },
+    },
   },
   gallery: {
     card1: {
+    text:   {
+        de: 'Klarer Code, gute Tests und sinnvolle Komponenten. Jannik Hoff\'s Frontend‑Workflows sind effizient und professionell.',
+        en: 'Clear code, solid tests, and well‑structured components. Jannik Hoff’s frontend workflows are efficient and professional.',
+      },
+      sender: { de: 'GitHub Copilot', en: 'GitHub Copilot' },
+    },
+    card2: {
+     title:  { de: '', en: '' },
+      text:   {
+        de: 'Zuverlässig, performant und gut gepflegt. Jannik Hoff hält sein Entwicklungs‑Setup schlank und sorgt für reibungslose Workflows.',
+        en: 'Reliable, performant, and well maintained. Jannik Hoff keeps his development setup lean and ensures smooth workflows.',
+      },
+      sender: { de: 'Alexander Schulz', en: 'Alexander Schulz' },
+    },
+   card3: {
       title:  { de: '', en: '' },
       text:   {
         de: 'Strukturiert, präzise und lösungsorientiert. Jannik Hoff kombiniert saubere Architektur mit solider UX und sorgt für wartbaren Code.',
         en: 'Structured, precise, and solution‑oriented. Jannik Hoff combines clean architecture with solid UX and delivers maintainable code.',
       },
       sender: { de: 'ChatGPT', en: 'ChatGPT' },
-    },
-    card2: {
-      title:  { de: '', en: '' },
-      text:   {
-        de: 'Klarer Code, gute Tests und sinnvolle Komponenten. Jannik Hoff\'s Frontend‑Workflows sind effizient und professionell.',
-        en: 'Clear code, solid tests, and well‑structured components. Jannik Hoff’s frontend workflows are efficient and professional.',
-      },
-      sender: { de: 'GitHub Copilot', en: 'GitHub Copilot' },
-    },
-    card3: {
-      title:  { de: '', en: '' },
-      text:   {
-        de: 'Produktiv, fokussiert und schnell. Er nutzt das Tooling sinnvoll (Terminal, Tasks, Debugging) und hält das Projekt sauber.',
-        en: 'Productive, focused, and fast. He uses the tooling effectively (terminal, tasks, debugging) and keeps the project clean.',
-      },
-      sender: { de: 'Visual Studio Code', en: 'Visual Studio Code' },
     },
     // NEW: 4th review card
     card4: {
@@ -95,16 +123,16 @@ const translations = {
         de: 'Gut strukturiert, performant und zugänglich. Jannik Hoff schreibt klaren, wartbaren Code und folgt Frontend‑Best Practices.',
         en: 'Well‑structured, performant, and accessible. Jannik Hoff writes clear, maintainable code and follows frontend best practices.',
       },
-      sender: { de: 'Microsoft Copilot', en: 'Microsoft Copilot' },
+      sender: { de: 'Nicolas Tran', en: 'Nicolas Tran' },
     },
     // NEW: 5th review card
     card5: {
-      title:  { de: '', en: '' },
+        title:  { de: '', en: '' },
       text:   {
-        de: 'Zuverlässig, performant und gut gepflegt. Jannik Hoff hält sein Entwicklungs‑Setup schlank und sorgt für reibungslose Workflows.',
-        en: 'Reliable, performant, and well maintained. Jannik Hoff keeps his development setup lean and ensures smooth workflows.',
+        de: 'Produktiv, fokussiert und schnell. Er nutzt das Tooling sinnvoll (Terminal, Tasks, Debugging) und hält das Projekt sauber.',
+        en: 'Productive, focused, and fast. He uses the tooling effectively (terminal, tasks, debugging) and keeps the project clean.',
       },
-      sender: { de: 'Mein PC', en: 'My PC' },
+      sender: { de: 'Visual Studio Code', en: 'Visual Studio Code' },
     },
   },
   contact: {

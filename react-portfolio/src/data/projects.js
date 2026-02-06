@@ -1,24 +1,28 @@
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A brief description of Project One.",
+    // Use translation keys that exist in LanguageContext -> projectDetails.p1
+    title: "projectDetails.p1.title",
+    question: "projectDetails.p1.question",
+    description: "projectDetails.p1.description",
     link: "https://link-to-project-one.com",
-    image: "path/to/image1.jpg", // TODO: Add the correct image path
+    image: "path/to/image1.jpg",
   },
   {
     id: 2,
-    title: "Project Two",
-    description: "A brief description of Project Two.",
+    title: "projectDetails.p2.title",
+    question: "projectDetails.p2.question",
+    description: "projectDetails.p2.description",
     link: "https://link-to-project-two.com",
-    image: "path/to/image2.jpg", // TODO: Add the correct image path
+    image: "path/to/image2.jpg",
   },
   {
     id: 3,
-    title: "Project Three",
-    description: "A brief description of Project Three.",
+    title: "projectDetails.p3.title",
+    question: "projectDetails.p3.question",
+    description: "projectDetails.p3.description",
     link: "https://link-to-project-three.com",
-    image: "path/to/image3.jpg", // TODO: Add the correct image path
+    image: "path/to/image3.jpg",
   },
   // TODO: Add more projects as needed
 ];
