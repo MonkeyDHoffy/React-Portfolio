@@ -24,11 +24,11 @@ const Contact = () => {
             {t('contact.question')}
           </p>
 
-          <p className="text-gray-400 mb-6 leading-relaxed">
+          <p className="opacity-70 hover:opacity-100 opacity-70 group-hover:opacity-100 transition-opacity duration-300 mb-6 leading-relaxed">
             {t('contact.blurb')}
           </p>
 
-          <p className="text-gray-400">
+          <p className="">
             {t('contact.needdev')}{" "}
             <span className="text-secondary font-medium">
               {t('contact.needdev_cta')}

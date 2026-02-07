@@ -85,7 +85,7 @@ const Projects = () => {
             {t('projects.title')}
           </h2>
 
-          <p className="font-karla text-gray-400 max-w-xl mb-10">
+          <p className="font-karla opacity-70 hover:opacity-100 transition-opacity duration-300 max-w-xl mb-10">
             {t('projects.intro')}
           </p>
 

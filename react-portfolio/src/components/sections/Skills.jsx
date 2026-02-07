@@ -31,11 +31,11 @@ const Skills = () => {
               <p className="mb-5 font-karla text-secondary">{t('skills.label')}</p>
               <div className="relative w-full lg:w-[var(--card-size)] max-w-[var(--card-size)] h-auto lg:h-[var(--card-size)] mx-auto lg:mx-0">
                 <RoundedCard className="skill-description gap-8 p-10 flex flex-col w-full max-w-[var(--card-size)] h-auto lg:h-full lg:min-h-[var(--card-size)] overflow-hidden">
-                  <h2 className="font-firacode font-bold text-[36px] sm:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">
+                  <h2 className="font-firacode font-bold text-[36px] sm:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary ">
                     {t('skills.title')}
                   </h2>
 
-                  <p className="text-neutral-300 leading-relaxed mb-6">
+                  <p className="leading-relaxed mb-6  opacity-70 hover:opacity-100 transition-opacity duration-300">
                     {t('skills.intro')}
                   </p>
 
@@ -43,7 +43,7 @@ const Skills = () => {
                     {t('skills.prompt')}
                   </p>
 
-                  <p className="text-neutral-400 mb-8 hover:text-primary transition-colors duration-1000">
+                  <p className="opacity-70 mb-8 hover:opacity-100 transition-opacity duration-1000">
                     {t('skills.outro')}
                   </p>
 

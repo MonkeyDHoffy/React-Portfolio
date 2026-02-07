@@ -105,8 +105,8 @@ section[id] {
 
 .cursor-spotlight {
   pointer-events: none;            /* keine Blockade für Maus-Events */
-  position: absolute;
-  inset: 0;                        /* füllt den Layout-Container */
+  position: fixed;
+  inset: 0;                        /* füllt die Viewport-Fläche */
   transition: --cursor-size 240ms ease;
   background: radial-gradient(
     var(--cursor-size, 200px) circle at var(--x, -100px) var(--y, -100px),

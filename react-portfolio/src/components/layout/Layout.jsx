@@ -12,12 +12,10 @@ function Layout({ children }) {
   const layoutRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    const rect = layoutRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    layoutRef.current.style.setProperty('--x', `${x}px`);
-    layoutRef.current.style.setProperty('--y', `${y}px`); // TODO: Touch-Unterstützung ergänzen
+    if (!layoutRef.current) return;
+    const { clientX, clientY } = e;
+    layoutRef.current.style.setProperty('--x', `${clientX}px`);
+    layoutRef.current.style.setProperty('--y', `${clientY}px`); // TODO: Touch-Unterstützung ergänzen
     const isPointer = (() => {
       let node = e.target;
       while (node && node !== layoutRef.current) {
@@ -38,7 +36,7 @@ function Layout({ children }) {
       className="bg-background-main text-text-primary min-h-screen relative"
     >
       {/* Overlay: liegt unter dem Inhalt */}
-      <div className="cursor-spotlight z-0" />
+      <div className="cursor-spotlight" />
 
       {/* Inhalt: über dem Overlay */}
       <div className="relative z-10">
