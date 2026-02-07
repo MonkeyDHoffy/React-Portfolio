@@ -64,7 +64,7 @@ const translations = {
     },
     liveDemo: { de: 'Live Demo', en: 'Live Demo' },
     github: { de: 'GitHub', en: 'GitHub' },
-    nextLabel: { de: 'Nächstes Projekt →', en: 'Next project →' },
+    nextLabel: { de: 'Nächstes Projekt', en: 'Next project' },
   },
   projectDetails: {
     p1: {

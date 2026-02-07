@@ -3,6 +3,8 @@ import { useLang } from '../../context/LanguageContext';
 import TechBadge from "../ui/TechBadge";
 import closeSmall from "../../assets/projects/close_small.png";
 import closeHover from "../../assets/projects/close.png";
+import arrowForward from "../../assets/projects/arrow_forward.png";
+import arrowOutward from "../../assets/projects/arrow_outward.png";
 /**
  * Dynamisches Icon-Mapping (Vite):
  * - import.meta.glob lädt alle Bilddateien im Ordner assets/projects.
@@ -70,7 +72,8 @@ export const ProjectSlide = ({
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-10 lg:px-12 py-8 md:py-10">
         {/* Image – on mobile top, on desktop right */}
-        <div className="order-first md:order-last md:w-1/2">
+        <div className="order-first md:order-last md:w-1/2 md:flex md:flex-col md:justify-start">
+          <div className="hidden md:block h-8" aria-hidden="true" />
           <div className="rounded-2xl  overflow-hidden">
             <img src={imageSrc} alt={imageAlt} className="w-full h-full object-cover" />
           </div>
@@ -94,42 +97,45 @@ export const ProjectSlide = ({
               <TechBadge key={tech} label={tech} iconSrc={projectIcons[tech.toLowerCase()]} />
             ))}
           </div>
+        </div>
+      </div>
+      <div className="px-6 md:px-10 lg:px-12 pb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 w-full md:justify-between">
+          {primaryActions.length > 0 && (
+            <div className="flex flex-wrap gap-4 flex-1 w-full">
+              {primaryActions.map((action) => {
+                const base =
+                  "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary font-karla";
+                const variantClasses =
+                  action.variant === "secondary"
+                    ? "border border-white/30 bg-transparent hover:text-secondary hover:border-secondary transition-colors duration-1000 text-white font-karla"
+                    : "bg-transparent border border-white/30 hover:text-secondary hover:border-secondary text-white transition-colors duration-1000 font-karla";
+                const ButtonTag = action.href ? "a" : "button";
+                return (
+                  <ButtonTag
+                    key={action.label}
+                    href={action.href}
+                    onClick={action.onClick}
+                    className={`${base} ${variantClasses} gap-2`}
+                    target={action.href ? "_blank" : undefined}
+                    rel={action.href ? "noreferrer" : undefined}
+                  >
+                    <span>{localize(action.label)}</span>
+                    <img src={arrowOutward} alt="Open" className="w-4 h-4" />
+                  </ButtonTag>
+                );
+              })}
+            </div>
+          )}
 
-          <div className="mt-2 flex flex-col gap-6 md:gap-4">
-            {primaryActions.length > 0 && (
-              <div className="flex flex-wrap gap-4">
-                {primaryActions.map((action) => {
-                  const base =
-                    "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary font-karla";
-                  const variantClasses =
-                    action.variant === "secondary"
-                      ? "border border-white/30 bg-transparent hover:text-secondary hover:border-secondary transition-colors duration-1000 text-white font-karla"
-                      : "bg-transparent border border-white/30 hover:text-secondary hover:border-secondary text-white transition-colors duration-1000 font-karla";
-                  const ButtonTag = action.href ? "a" : "button";
-                  return (
-                    <ButtonTag
-                      key={action.label}
-                      href={action.href}
-                      onClick={action.onClick}
-                      className={`${base} ${variantClasses}`}
-                      target={action.href ? "_blank" : undefined}
-                      rel={action.href ? "noreferrer" : undefined}
-                    >
-                      {localize(action.label)}
-                    </ButtonTag>
-                  );
-                })}
-              </div>
-            )}
-
-            <button
-              type="button"
-              onClick={onNextClick}
-              className="self-start md:self-end text-sm font-medium text-secondary hover:text-white transition font-firacode"
-            >
-              {nextLabel}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={onNextClick}
+            className="inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-white transition font-firacode self-end md:self-auto md:ml-auto"
+          >
+            <span>{nextLabel}</span>
+            <img src={arrowForward} alt="Next" className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </div>
