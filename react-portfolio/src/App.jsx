@@ -17,6 +17,8 @@ import Gallery from './components/sections/gallery';
 import LegalNotice from './components/sections/LegalNotice';
 
 const App = () => {
+  const rawBase = import.meta.env.BASE_URL ?? '/';
+  const normalizedBase = rawBase === '/' ? undefined : rawBase.replace(/\/$/, '');
   // Scroll to hash targets on navigation
   const ScrollToHash = () => {
     const { hash, pathname } = useLocation();
@@ -34,7 +36,7 @@ const App = () => {
 
   return (
     <LanguageProvider defaultLang="de">
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={normalizedBase}>
         <ScrollToHash />
         <Layout>
           <div className="flex flex-col min-h-screen">

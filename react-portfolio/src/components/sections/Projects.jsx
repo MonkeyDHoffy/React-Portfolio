@@ -34,7 +34,7 @@ const Projects = () => {
       imageSrc: joinImg,
       primaryActions: [
         { label: 'projects.liveDemo', href: '#', variant: 'primary' },
-        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/Join-a-project-management-tool', variant: 'secondary' },
       ],
     },
     pollo: {
@@ -47,7 +47,7 @@ const Projects = () => {
       imageSrc: polloImg,
       primaryActions: [
         { label: 'projects.liveDemo', href: '#', variant: 'primary' },
-        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/El-Pollo-Loco', variant: 'secondary' },
       ],
     },
     bubble: {
@@ -56,11 +56,11 @@ const Projects = () => {
       imageAlt: 'DA Bubble chat app screenshot',
       question: 'projectDetails.p3.question',
       description: 'projectDetails.p3.description',
-      techStack: ['Angular', 'Firebase', 'TypeScript'],
+      techStack: ['JavaScript', 'HTML', 'CSS'],
       imageSrc: bubbleImg,
       primaryActions: [
         { label: 'projects.liveDemo', href: '#', variant: 'primary' },
-        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy', variant: 'secondary' },
+        { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/Pok-dex', variant: 'secondary' },
       ],
     },
   };
@@ -112,10 +112,10 @@ const Projects = () => {
             />
             <ProjectListItem
               className="project3"
-              title="DA Bubble"
-              stackSegments={["Angular", "Firebase", "TypeScript"]}
+              title="Pokédex"
+              stackSegments={["Rest API", "JavaScript", "HTML", "CSS"]}
               previewImg={bubbleImg}
-              previewAlt="DA Bubble preview"
+              previewAlt="Pokédex preview"
               onClick={() => openProject('bubble')}
             />
           </div>

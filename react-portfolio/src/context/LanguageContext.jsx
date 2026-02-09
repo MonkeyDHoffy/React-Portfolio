@@ -84,16 +84,17 @@ const translations = {
       },
     },
     p3: {
-      title: { de: 'DA Bubble', en: 'DA Bubble' },
+      title: { de: 'Pokédex', en: 'Pokedex' },
       question: { de: 'Worum geht es in diesem Projekt?', en: 'What is this project about?' },
       description: {
-        de: 'Ist eine Messenger-App.',
-        en: 'Is a messenger app.',
+        de: 'Single-Page-Anwendung mit React, React Router und Tailwind, die per PokéAPI dynamische Daten lädt, zwischenspeichert und gefiltert darstellt. Fokus auf performantes Fetching, zustandsbasierte UI-Updates und mobile-responsive Komponenten.',
+        en: 'Single-page app built with React, React Router, and Tailwind that consumes the PokéAPI, caches responses, and renders filterable data views. Emphasis on performant fetching, state-driven UI updates, and mobile-responsive components.',
       },
     },
   },
   gallery: {
     card1: {
+      title:  { de: '', en: '' },
     text:   {
         de: 'Klarer Code, gute Tests und sinnvolle Komponenten. Jannik Hoff\'s Frontend‑Workflows sind effizient und professionell.',
         en: 'Clear code, solid tests, and well‑structured components. Jannik Hoff’s frontend workflows are efficient and professional.',
@@ -120,8 +121,8 @@ const translations = {
     card4: {
       title:  { de: '', en: '' },
       text:   {
-        de: 'Gut strukturiert, performant und zugänglich. Jannik Hoff schreibt klaren, wartbaren Code und folgt Frontend‑Best Practices.',
-        en: 'Well‑structured, performant, and accessible. Jannik Hoff writes clear, maintainable code and follows frontend best practices.',
+        de: 'Jannik Hoff kombiniert eine steile Lernkurve mit einer beneidenswerten Zielstrebigkeit. Im Web Development wartet er nicht auf Lösungen, er erarbeitet sie sich proaktiv selbst. Ein Entwickler mit dem richtigen Mindset, der sich schnell in neue Technologien einarbeitet und Ergebnisse liefert.',
+        en: 'Jannik Hoff combines a steep learning curve with admirable determination. In web development he never waits for solutions—he proactively creates them. A developer with the right mindset who ramps up on new technologies quickly and delivers results.',
       },
       sender: { de: 'Nicolas Tran', en: 'Nicolas Tran' },
     },
