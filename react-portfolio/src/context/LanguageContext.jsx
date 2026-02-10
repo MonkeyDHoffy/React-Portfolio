@@ -149,16 +149,40 @@ const translations = {
     form: {
       name_label:     { de: 'Wie heißt du?', en: "What's your name?" },
       name_ph:        { de: 'Dein Name', en: 'Your name' },
+      name_helper:    {
+        de: 'Wie darf ich dich oder dein Team ansprechen?',
+        en: 'Let me know how I should address you or your team.',
+      },
       email_label:    { de: 'Wie lautet deine E‑Mail?', en: "What's your email?" },
       email_ph:       { de: 'deine@email.de', en: 'youremail@email.com' },
+      email_helper:   {
+        de: 'Ich antworte dir direkt – bitte prüfe die Schreibweise.',
+        en: 'I will reply straight away — double-check the spelling.',
+      },
       message_label:  { de: 'Wobei kann ich helfen?', en: 'How can I help you?' },
       message_ph:     { de: 'Hallo Jannik, ich interessiere mich für…', en: 'Hello Jannik, I’m interested in…' },
+      message_helper: {
+        de: 'Projekt, Ziele oder Timeline? Ein paar Stichpunkte helfen mir bei der Vorbereitung.',
+        en: 'A few notes on scope, goals, or timeline help me prepare.',
+      },
       privacy_text:   {
         de: 'Ich habe die Datenschutzrichtlinie gelesen und stimme der Verarbeitung meiner Daten zu.',
         en: 'I have read the privacy policy and agree to the processing of my data as outlined.',
       },
       privacy_link:   { de: 'Datenschutzrichtlinie', en: 'privacy policy' },
       submit:         { de: 'Sag Hallo :)', en: 'Say Hello :)' },
+      sending:        { de: 'Sende...', en: 'Sending...' },
+      success:        {
+        de: 'Danke für deine Nachricht! Ich melde mich innerhalb von 24 Stunden mit einer Antwort.',
+        en: 'Thanks for your message! I will get back to you within 24 hours.',
+      },
+      error:          {
+        de: 'Da ist etwas schiefgelaufen. Versuch es gleich noch einmal oder kontaktiere mich direkt per E-Mail.',
+        en: 'Something went wrong. Please try again shortly or reach out via email directly.',
+      },
+      status_success: { de: 'Nachricht gesendet', en: 'Message sent' },
+      status_error:   { de: 'Versand fehlgeschlagen', en: 'Delivery failed' },
+      dismiss:        { de: 'Hinweis schließen', en: 'Dismiss notification' },
     },
   },
 };
