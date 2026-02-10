@@ -1,102 +1,120 @@
 import { useEffect, useRef } from 'react';
 
-// Diese Komponente umschließt alle anderen Komponenten
-// Sie stellt sicher, dass alles den gleichen Hintergrund hat
+// Diese Komponente umschließt alle anderen Komponenten und steuert den Spotlight-Cursor
 function Layout({ children }) {
   const DEBUG_LAYOUT = false;
-  // Pseudocode:
-  // - Ref auf den Layout-Container
-  // - onMouseMove: relative Cursorposition berechnen
-  // - CSS-Variablen --x / --y setzen (für das Overlay)
-
   const layoutRef = useRef(null);
-  const touchFadeTimeout = useRef(null);
+  const activeTouchId = useRef(null);
 
   const setCursorVisibility = (visible) => {
     if (!layoutRef.current) return;
     layoutRef.current.style.setProperty('--cursor-opacity', visible ? '1' : '0');
   };
 
-  const scheduleTouchFade = () => {
-    if (touchFadeTimeout.current) {
-      clearTimeout(touchFadeTimeout.current);
-    }
-    touchFadeTimeout.current = setTimeout(() => {
-      setCursorVisibility(false);
-    }, 320);
-  };
-
-  const updateCursorPosition = (e) => {
+  const updateCursorPosition = (x, y) => {
     if (!layoutRef.current) return;
-    const { clientX, clientY, pointerType = 'mouse' } = e;
-    layoutRef.current.style.setProperty('--x', `${clientX}px`);
-    layoutRef.current.style.setProperty('--y', `${clientY}px`);
-
-    const isPointer = (() => {
-      let node = e.target;
-      while (node && node !== layoutRef.current) {
-        const cursor = window.getComputedStyle(node).cursor;
-        if (cursor === 'pointer') return true;
-        node = node.parentElement;
-      }
-      return false;
-    })();
-    layoutRef.current.style.setProperty('--cursor-size', isPointer ? '320px' : '200px');
-
-    if (pointerType === 'touch') {
-      setCursorVisibility(true);
-      scheduleTouchFade();
-    } else {
-      setCursorVisibility(true);
-      if (touchFadeTimeout.current) {
-        clearTimeout(touchFadeTimeout.current);
-      }
-    }
+    layoutRef.current.style.setProperty('--x', `${x}px`);
+    layoutRef.current.style.setProperty('--y', `${y}px`);
   };
 
-  const handlePointerMove = (e) => updateCursorPosition(e);
-  const handlePointerDown = (e) => updateCursorPosition(e);
-  const handlePointerLeave = (e) => {
-    if (e.pointerType === 'touch') {
-      scheduleTouchFade();
-    } else {
-      setCursorVisibility(false);
-    }
+  const handlePointerMove = (event) => {
+    if (event.pointerType === 'touch') return;
+    updateCursorPosition(event.clientX, event.clientY);
+    setCursorVisibility(true);
   };
-  const handlePointerUp = (e) => {
-    if (e.pointerType === 'touch') {
-      scheduleTouchFade();
-    }
+
+  const handlePointerLeave = (event) => {
+    if (event.pointerType === 'touch') return;
+    setCursorVisibility(false);
+  };
+
+  const handlePointerDown = (event) => {
+    if (event.pointerType === 'touch') return;
+    updateCursorPosition(event.clientX, event.clientY);
+    setCursorVisibility(true);
+  };
+
+  const handlePointerUp = (event) => {
+    if (event.pointerType === 'touch') return;
+    setCursorVisibility(false);
   };
 
   useEffect(() => {
-    if (!layoutRef.current) return undefined;
-    const prefersFinePointer = typeof window !== 'undefined'
+    const layoutEl = layoutRef.current;
+    if (!layoutEl) return undefined;
+
+    const prefersFinePointer = window.matchMedia
       ? window.matchMedia('(pointer: fine)').matches
       : true;
-    layoutRef.current.style.setProperty('--cursor-opacity', prefersFinePointer ? '1' : '0');
+
+    layoutEl.style.setProperty('--cursor-opacity', prefersFinePointer ? '1' : '0');
+
+    const updateCursorFromTouch = (touch) => {
+      if (!touch) return;
+      updateCursorPosition(touch.clientX, touch.clientY);
+      setCursorVisibility(true);
+    };
+
+    const getTrackedTouch = (touchList) => {
+      if (!touchList || touchList.length === 0) return null;
+      if (activeTouchId.current == null) return touchList[0];
+
+      for (let i = 0; i < touchList.length; i += 1) {
+        const touch = touchList[i];
+        if (touch.identifier === activeTouchId.current) return touch;
+      }
+      return touchList[0];
+    };
+
+    const handleTouchStart = (event) => {
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      activeTouchId.current = touch.identifier;
+      updateCursorFromTouch(touch);
+    };
+
+    const handleTouchMove = (event) => {
+      const trackedTouch = getTrackedTouch(event.touches);
+      if (!trackedTouch) return;
+      updateCursorFromTouch(trackedTouch);
+    };
+
+    const handleTouchEnd = (event) => {
+      const touches = event.changedTouches;
+      for (let i = 0; i < touches.length; i += 1) {
+        if (touches[i].identifier === activeTouchId.current) {
+          activeTouchId.current = null;
+          setCursorVisibility(false);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('touchcancel', handleTouchEnd, { passive: true });
 
     return () => {
-      if (touchFadeTimeout.current) {
-        clearTimeout(touchFadeTimeout.current);
-      }
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('touchcancel', handleTouchEnd);
     };
   }, []);
 
   return (
     <div
       ref={layoutRef}
-      onPointerMove={handlePointerMove}
-      onPointerDown={handlePointerDown}
-      onPointerLeave={handlePointerLeave}
-      onPointerUp={handlePointerUp}
       data-debug={DEBUG_LAYOUT ? 'true' : 'false'}
       className="bg-background-main text-text-primary min-h-screen relative"
+      onPointerMove={handlePointerMove}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerLeave}
+      onPointerCancel={handlePointerLeave}
     >
-      {/* Overlay: liegt unter dem Inhalt */}
       <div className="cursor-spotlight" />
-
-      {/* Inhalt: über dem Overlay */}
       <div className="relative z-10">
         {children}
       </div>

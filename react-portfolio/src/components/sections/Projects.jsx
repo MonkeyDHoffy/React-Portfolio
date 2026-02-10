@@ -125,10 +125,14 @@ const Projects = () => {
         {active && createPortal(
           (
             <div
-              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
+              className="fixed inset-0 z-[100] flex justify-center items-start sm:items-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 md:p-10 overflow-y-auto"
               onClick={closeProject}
               role="dialog"
               aria-modal="true"
+              style={{
+                paddingTop: 'max(1rem, env(safe-area-inset-top, 0px))',
+                paddingBottom: 'max(1rem, env(safe-area-inset-bottom, 0px))',
+              }}
             >
               <div className="max-w-[1100px] w-full" onClick={(e) => e.stopPropagation()}>
                 <ProjectSlide

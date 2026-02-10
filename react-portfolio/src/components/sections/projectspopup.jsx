@@ -73,7 +73,7 @@ export const ProjectSlide = ({
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-10 lg:px-12 py-8 md:py-10">
         {/* Image – on mobile top, on desktop right */}
         <div className="order-first md:order-last md:w-1/2 md:flex md:flex-col md:justify-start">
-          <div className="hidden md:block h-8" aria-hidden="true" />
+          <div className="h-8 md:h-10" aria-hidden="true" />
           <div className="rounded-2xl  overflow-hidden">
             <img src={imageSrc} alt={imageAlt} className="w-full h-full object-cover" />
           </div>
