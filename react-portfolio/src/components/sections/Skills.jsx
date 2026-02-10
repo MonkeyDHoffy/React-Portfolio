@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from '../layout/PageContainer';
 import RoundedCard from '../ui/RoundedCard';
@@ -21,6 +22,7 @@ import SkillItem from '../ui/SkillItem';
  */
 let Skills = () => {
   const { t } = useLang();
+  const navigate = useNavigate();
   return (
     <section 
       id="skills"
@@ -49,7 +51,11 @@ let Skills = () => {
                     {t('skills.outro')}
                   </p>
 
-                  <button className="mt-auto px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-auto min-w-[140px] md:w-[150px] text-center">
+                  <button
+                    className="mt-auto px-6 py-3 border text-primary rounded-full hover:text-secondary hover:border-secondary transition-all duration-1000 w-auto min-w-[140px] md:w-[150px] text-center"
+                    onClick={() => navigate('/#contact')}
+                    aria-label={t('skills.cta')}
+                  >
                     {t('skills.cta')}
                   </button>
                 </RoundedCard>

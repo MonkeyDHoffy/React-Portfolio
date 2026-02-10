@@ -36,7 +36,7 @@ let Projects = () => {
       techStack: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
       imageSrc: joinImg,
       primaryActions: [
-        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.liveDemo', href: 'https://join.hoffja.de', variant: 'primary' },
         { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/Join-a-project-management-tool', variant: 'secondary' },
       ],
     },
@@ -49,7 +49,7 @@ let Projects = () => {
       techStack: ['HTML', 'CSS', 'JavaScript'],
       imageSrc: polloImg,
       primaryActions: [
-        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.liveDemo', href: 'https://pollo.hoffja.de', variant: 'primary' },
         { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/El-Pollo-Loco', variant: 'secondary' },
       ],
     },
@@ -62,7 +62,7 @@ let Projects = () => {
       techStack: ['JavaScript', 'HTML', 'CSS'],
       imageSrc: bubbleImg,
       primaryActions: [
-        { label: 'projects.liveDemo', href: '#', variant: 'primary' },
+        { label: 'projects.liveDemo', href: 'https://pokedex.hoffja.de', variant: 'primary' },
         { label: 'projects.github', href: 'https://github.com/MonkeyDHoffy/Pok-dex', variant: 'secondary' },
       ],
     },

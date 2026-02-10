@@ -72,7 +72,14 @@ let Gallery = () => {
 										/>
 									)}
 									<h3 className="font-firacode text-lg md:text-xl text-white mb-2">{card.title}</h3>
-									<p className="text-primary font-karla">{card.text}</p>
+									{(() => {
+										const text = card.text || '';
+										const len = text.length;
+										const sizeClass = len > 220 ? 'text-sm md:text-base leading-snug' : 'text-base md:text-lg';
+										return (
+											<p className={`text-primary font-karla break-words ${sizeClass}`}>{text}</p>
+										);
+									})()}
 									<div className="absolute left-6 md:left-8 right-6 md:right-8 bottom-6 md:bottom-8 flex items-center">
 										<div className="flex-1 h-px bg-white" />
 										<div className="ml-3 text-primary whitespace-nowrap font-karla">{card.sender}</div>
