@@ -185,6 +185,63 @@ const translations = {
       dismiss:        { de: 'Hinweis schließen', en: 'Dismiss notification' },
     },
   },
+  legalNotice: {
+    title:        { de: 'Rechtliche Hinweise', en: 'Legal Notice' },
+    imprintTitle: { de: 'Impressum', en: 'Imprint' },
+    imprint: {
+      name:      { de: 'Jannik Hoff', en: 'Jannik Hoff' },
+      street:    { de: 'Im Vogelsang 9', en: 'Im Vogelsang 9' },
+      city:      { de: '66740 Saarlouis', en: '66740 Saarlouis' },
+      country:   { de: 'Deutschland', en: 'Germany' },
+      emailLabel:{ de: 'E-Mail', en: 'Email' },
+      phoneLabel:{ de: 'Telefon', en: 'Phone' },
+    },
+    sections: {
+      acceptance: {
+        title: { de: 'Akzeptanz der Bedingungen', en: 'Acceptance of Terms' },
+        body: {
+          de: 'Mit dem Zugriff auf dieses Portfolio erklärst du dich mit den hier beschriebenen Bedingungen einverstanden. Die Hinweise können jederzeit ohne Vorankündigung aktualisiert werden.',
+          en: 'By accessing and using this portfolio website, you acknowledge and agree to the terms outlined in this Legal Notice. These terms may be updated or modified at any time without prior notice.',
+        },
+      },
+      scope: {
+        title: { de: 'Geltungsbereich und Zweck', en: 'Scope and Purpose of the Website' },
+        body: {
+          de: 'Die Website ist ein nichtkommerzielles Portfolio, das Projekte, Fähigkeiten und Arbeitsproben zeigt. Es werden keine kostenpflichtigen Dienstleistungen direkt über die Seite angeboten.',
+          en: 'This website is a private, non-commercial portfolio that showcases personal projects, skills, and development work. No commercial services or paid offerings are provided.',
+        },
+      },
+      ownership: {
+        title: { de: 'Urheberrecht und Eigentum', en: 'Ownership and Intellectual Property' },
+        body: {
+          de: 'Alle Inhalte wie Texte, Code, Designs und Grafiken unterliegen dem Urheberrecht von Jannik Hoff, sofern nicht anders angegeben. Eine Nutzung außerhalb der gesetzlichen Schranken ist untersagt.',
+          en: 'All content on this website, including text, code, design, and graphics, is the intellectual property of the website owner unless otherwise stated. Unauthorized use, reproduction, or distribution is prohibited.',
+        },
+      },
+      usage: {
+        title: { de: 'Zulässige Nutzung', en: 'Use of the Website' },
+        body: {
+          de: 'Die Nutzung der Website ist nur zu rechtmäßigen Zwecken gestattet. Manipulationen, Angriffe auf die Infrastruktur oder missbräuchliche Nutzung des Kontaktformulars sind untersagt.',
+          en: 'This website may only be used for lawful purposes. Any misuse, including attempts to disrupt functionality, gain unauthorized access, or abuse contact services, is strictly prohibited.',
+        },
+      },
+      external: {
+        title: { de: 'Eingesetzte Dienste', en: 'External Services' },
+        body: {
+          de: 'Für Typografie werden Google Fonts verwendet; das Kontaktformular sendet Anfragen an einen FastAPI-Dienst. Es werden keine Tracking- oder Marketing-Cookies eingesetzt.',
+          en: 'This website uses Google Fonts for typography and a FastAPI-based backend service to process contact form submissions. No tracking or analytics services are used for marketing or profiling.',
+        },
+      },
+      disclaimer: {
+        title: { de: 'Haftungsausschluss', en: 'Disclaimer and Limitation of Liability' },
+        body: {
+          de: 'Alle Inhalte werden ohne Gewähr bereitgestellt. Es wird keine Haftung für Aktualität, Vollständigkeit oder Schäden übernommen, die aus der Nutzung oder Nichtverfügbarkeit der Website entstehen.',
+          en: 'All content is provided "as is" without warranties of any kind. The website owner assumes no liability for the accuracy, completeness, or reliability of the information, nor for damages resulting from the use or inability to use this website.',
+        },
+      },
+    },
+    lastUpdated: { de: 'Zuletzt aktualisiert:', en: 'Last updated:' },
+  },
 };
 
 export function LanguageProvider({ children, defaultLang = 'de' }) {

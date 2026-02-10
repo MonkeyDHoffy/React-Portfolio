@@ -15,6 +15,7 @@
   /* Auswahlfarben (Textmarkierung) an dein Design anpassen */
   --selection-bg: rgba(45, 212, 191, 0.25); /* sekundärfarbe leicht transparent */
   --selection-text: #eafff8;                 /* heller Text auf Auswahl */
+  --cursor-opacity: 1;
 }
 
 /* Custom global styles can be added below this line */
@@ -107,12 +108,13 @@ section[id] {
   pointer-events: none;            /* keine Blockade für Maus-Events */
   position: fixed;
   inset: 0;                        /* füllt die Viewport-Fläche */
-  transition: --cursor-size 240ms ease;
   background: radial-gradient(
     var(--cursor-size, 200px) circle at var(--x, -100px) var(--y, -100px),
     #3DCFB680 0%,
     transparent 60%
   );
+  opacity: var(--cursor-opacity, 1);
+  transition: --cursor-size 240ms ease, opacity 200ms ease;
   /* TODO: Radius (200px) und Übergang (60%) feinjustieren */
 }
 
