@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ title: string }} props
  * @returns {JSX.Element}
  */
-const SectionTitle = ({ title }) => {
+let SectionTitle = ({ title }) => {
   return (
     <h2 className="text-3xl font-semibold mb-6 text-center">
       {title}

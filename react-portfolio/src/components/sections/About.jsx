@@ -12,9 +12,9 @@ import RoundedCard from '../ui/RoundedCard';
  * About highlights the personal introduction card with animated portrait.
  * @returns {JSX.Element}
  */
-const About = () => {
-  const { t } = useLang();
-  const imgRef = useRef(null);
+let About = () => {
+  let { t } = useLang();
+  let imgRef = useRef(null);
 
   useEffect(() => {
     const el = imgRef.current;
@@ -22,22 +22,28 @@ const About = () => {
 
     let observer = null;
 
-    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
-    const enable = () => {
+    let buildThresholds = () => Array.from({ length: 101 }, (_, i) => i / 100);
+
+    let updateRevealProgress = (element, ratio) => {
+      element.style.setProperty('--reveal-progress', String(ratio));
+    };
+
+    let createRevealObserver = (element, thresholds) => new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        updateRevealProgress(element, entry.intersectionRatio);
+      },
+      { root: null, threshold: thresholds }
+    );
+
+    let enableRevealEffect = () => {
       if (observer) return;
       el.classList.add('js-reveal');
-      observer = new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0];
-          const ratio = entry.intersectionRatio;
-          el.style.setProperty('--reveal-progress', String(ratio));
-        },
-        { root: null, threshold: thresholds }
-      );
+      observer = createRevealObserver(el, buildThresholds());
       observer.observe(el);
     };
 
-    const disable = () => {
+    let disableRevealEffect = () => {
       if (observer) {
         observer.disconnect();
         observer = null;
@@ -46,17 +52,22 @@ const About = () => {
       el.style.removeProperty('--reveal-progress');
     };
 
-    const mq = window.matchMedia('(max-width: 1024px)');
-    const apply = () => {
-      if (mq.matches) disable(); else enable();
+    let mq = window.matchMedia('(max-width: 1024px)');
+
+    let applyResponsiveReveal = () => {
+      if (mq.matches) {
+        disableRevealEffect();
+      } else {
+        enableRevealEffect();
+      }
     };
-    apply();
-    const onChange = () => apply();
-    mq.addEventListener('change', onChange);
+
+    applyResponsiveReveal();
+    mq.addEventListener('change', applyResponsiveReveal);
 
     return () => {
-      mq.removeEventListener('change', onChange);
-      disable();
+      mq.removeEventListener('change', applyResponsiveReveal);
+      disableRevealEffect();
     };
   }, []);
   

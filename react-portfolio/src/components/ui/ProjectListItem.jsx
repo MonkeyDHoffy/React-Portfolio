@@ -13,7 +13,7 @@ import Contactpopup from '../sections/Contactpopup';
  * }} props
  * @returns {JSX.Element}
  */
-const ProjectListItem = ({
+let ProjectListItem = ({
   className,
   title,
   stackSegments = [],

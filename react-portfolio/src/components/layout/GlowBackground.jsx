@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ children: React.ReactNode }} props
  * @returns {JSX.Element}
  */
-const GlowBackground = ({ children }) => {
+let GlowBackground = ({ children }) => {
   return (
     <div 
       className="relative"

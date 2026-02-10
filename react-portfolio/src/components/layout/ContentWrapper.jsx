@@ -6,7 +6,7 @@ import PageContainer from './PageContainer';
  * @param {{ children: React.ReactNode, className?: string }} props
  * @returns {JSX.Element}
  */
-const ContentWrapper = ({ children, className = '' }) => {
+let ContentWrapper = ({ children, className = '' }) => {
   return (
     <PageContainer className={className}>
       {children}

@@ -16,18 +16,18 @@ import useBodyScrollLock from '../../hooks/useBodyScrollLock';
  * Header renders the responsive navigation bar with logo, links, and language toggle.
  * @returns {JSX.Element}
  */
-const Header = () => {
-  const { t } = useLang();
-  const [open, setOpen] = useState(false);
-  const menuRef = useRef(null);
+let Header = () => {
+  let { t } = useLang();
+  let [open, setOpen] = useState(false);
+  let menuRef = useRef(null);
 
   useEscape(() => setOpen(false), open);
 
   useClickOutside(menuRef, open, () => setOpen(false));
   useBodyScrollLock(open);
 
-  const closeMenu = () => setOpen(false);
-  const toggleMenu = () => setOpen((v) => !v);
+  let closeMenu = () => setOpen(false);
+  let toggleMenu = () => setOpen((v) => !v);
   return (
     <header className="header-gradient text-text-primary h-[64px] md:h-[98px]">
       <div className="md:hidden">

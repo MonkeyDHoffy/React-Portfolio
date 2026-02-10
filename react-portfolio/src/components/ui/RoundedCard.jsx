@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ children: React.ReactNode, className?: string, style?: React.CSSProperties }} props
  * @returns {JSX.Element}
  */
-const RoundedCard = ({ children, className = '', style }) => {
+let RoundedCard = ({ children, className = '', style }) => {
   return (
     <div
       className={("rounded-[30px] border border-secondary bg-background-greencontainer " + className).trim()}

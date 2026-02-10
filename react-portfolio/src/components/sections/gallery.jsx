@@ -9,34 +9,34 @@ import { useLang } from '../../context/LanguageContext';
  * Gallery cycles through testimonial cards with keyboard and click controls.
  * @returns {JSX.Element}
  */
-const Gallery = () => {
-    const { t } = useLang();
-    const cards = [
+let Gallery = () => {
+	let { t } = useLang();
+	let cards = [
     	{ title: t('gallery.card1.title'), text: t('gallery.card1.text'), sender: t('gallery.card1.sender') },
     	{ title: t('gallery.card2.title'), text: t('gallery.card2.text'), sender: t('gallery.card2.sender') },
     	{ title: t('gallery.card3.title'), text: t('gallery.card3.text'), sender: t('gallery.card3.sender') },
     	{ title: t('gallery.card4.title'), text: t('gallery.card4.text'), sender: t('gallery.card4.sender') },
     	{ title: t('gallery.card5.title'), text: t('gallery.card5.text'), sender: t('gallery.card5.sender') },
     ];
-	const [activeIndex, setActiveIndex] = useState(2);
-	const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+	let [activeIndex, setActiveIndex] = useState(2);
+	let [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
 	useEffect(() => {
 		const onResize = () => setVw(window.innerWidth);
 		window.addEventListener('resize', onResize);
 		return () => window.removeEventListener('resize', onResize);
 	}, []);
-	const total = cards.length;
+	let total = cards.length;
 
-	const cardWidth = Math.min(568, Math.floor(vw * 0.9));
-	const cardHeight = 240;
-	const cardGap = Math.min(48, Math.floor(vw * 0.05));
-	const trackOffset = (cardWidth + cardGap) * activeIndex;
-	const cardTopOffset = 36;
+	let cardWidth = Math.min(568, Math.floor(vw * 0.9));
+	let cardHeight = 240;
+	let cardGap = Math.min(48, Math.floor(vw * 0.05));
+	let trackOffset = (cardWidth + cardGap) * activeIndex;
+	let cardTopOffset = 36;
 
-	const goPrev = () => setActiveIndex((i) => (i - 1 + total) % total);
-	const goNext = () => setActiveIndex((i) => (i + 1) % total);
-	const goTo = (index) => setActiveIndex(index);
+	let goPrev = () => setActiveIndex((i) => (i - 1 + total) % total);
+	let goNext = () => setActiveIndex((i) => (i + 1) % total);
+	let goTo = (index) => setActiveIndex(index);
 
 	return (
 		<section className="w-full h-full pb-8 debug-component">

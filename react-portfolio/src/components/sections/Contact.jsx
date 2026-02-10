@@ -4,14 +4,48 @@ import PageContainer from '../layout/PageContainer';
 import FormField from '../ui/FormField';
 import './contact.css';
 
-const TOAST_DURATION = 4600;
+let TOAST_DURATION = 4600;
+
+const createEmptyFormState = () => ({
+  name: '',
+  email: '',
+  message: '',
+  company: '',
+});
+
+const buildPayload = (formData) => ({
+  name: formData.name.trim(),
+  email: formData.email.trim(),
+  message: formData.message.trim(),
+  company: '',
+});
+
+const isHoneypotTriggered = (companyValue) => companyValue.trim().length > 0;
+
+const hasAllRequiredFields = (payload) => Boolean(payload.name && payload.email && payload.message);
+
+const submitContactRequest = async (payload) => {
+  const response = await fetch('https://api.hoffja.de/api/send-mail', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error('Request failed');
+  }
+
+  return response;
+};
 
 /**
  * ToastMessage renders the animated notification shown after submitting the form.
  * @param {{ type: 'success'|'error', title: string, message: string, closeLabel: string, onDismiss: () => void }} props
  * @returns {JSX.Element}
  */
-const ToastMessage = ({ type, title, message, closeLabel, onDismiss }) => (
+let ToastMessage = ({ type, title, message, closeLabel, onDismiss }) => (
   <div
     className={`contact-toast contact-toast--${type}`}
     role={type === 'success' ? 'status' : 'alert'}
@@ -35,18 +69,12 @@ const ToastMessage = ({ type, title, message, closeLabel, onDismiss }) => (
  * Contact renders the multilingual contact form and orchestrates API submission.
  * @returns {JSX.Element}
  */
-const Contact = () => {
-  const { t } = useLang();
+let Contact = () => {
+  let { t } = useLang();
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    company: '',
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [notification, setNotification] = useState(null);
+  let [formData, setFormData] = useState(createEmptyFormState);
+  let [isSubmitting, setIsSubmitting] = useState(false);
+  let [notification, setNotification] = useState(null);
 
   useEffect(() => {
     if (!notification) return undefined;
@@ -54,7 +82,6 @@ const Contact = () => {
     const timeout = setTimeout(() => setNotification(null), TOAST_DURATION);
     return () => clearTimeout(timeout);
   }, [notification]);
-
   const showNotification = (type, message) => {
     setNotification({
       id: Date.now(),
@@ -68,54 +95,44 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const notifyValidationError = () => {
+    showNotification('error', t('contact.form.error'));
+  };
+
+  const handleSubmissionSuccess = () => {
+    showNotification('success', t('contact.form.success'));
+    setFormData(createEmptyFormState());
+  };
+
+  const handleSubmissionError = (error) => {
+    console.error('Contact form submission failed', error);
+    showNotification('error', t('contact.form.error'));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsSubmitting(true);
     setNotification(null);
 
-    const honeypotValue = formData.company.trim();
-    if (honeypotValue) {
+    if (isHoneypotTriggered(formData.company)) {
       setIsSubmitting(false);
       return;
     }
 
-    const payload = {
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      message: formData.message.trim(),
-      company: '',
-    };
+    const payload = buildPayload(formData);
 
-    if (!payload.name || !payload.email || !payload.message) {
-      showNotification('error', t('contact.form.error'));
+    if (!hasAllRequiredFields(payload)) {
+      notifyValidationError();
       setIsSubmitting(false);
       return;
     }
 
     try {
-      const res = await fetch('https://api.hoffja.de/api/send-mail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        throw new Error('Request failed');
-      }
-
-      showNotification('success', t('contact.form.success'));
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-        company: '',
-      });
+      await submitContactRequest(payload);
+      handleSubmissionSuccess();
     } catch (err) {
-      console.error('Contact form submission failed', err);
-      showNotification('error', t('contact.form.error'));
+      handleSubmissionError(err);
     } finally {
       setIsSubmitting(false);
     }

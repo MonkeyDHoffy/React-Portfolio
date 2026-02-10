@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ icon: string, label: string, className?: string }} props
  * @returns {JSX.Element}
  */
-const SkillItem = ({ icon, label, className = '' }) => {
+let SkillItem = ({ icon, label, className = '' }) => {
   return (
     <div className={("skill-item flex flex-col items-center text-center hover:scale-110 transition-transform " + className).trim()}>
       <img src={icon} className="w-12 h-12 mb-2" alt={label} />

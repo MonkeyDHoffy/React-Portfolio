@@ -19,7 +19,7 @@ import SkillItem from '../ui/SkillItem';
  * Skills showcases the capability card and grid of individual skills.
  * @returns {JSX.Element}
  */
-const Skills = () => {
+let Skills = () => {
   const { t } = useLang();
   return (
     <section 

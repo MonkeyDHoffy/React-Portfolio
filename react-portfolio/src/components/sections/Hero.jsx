@@ -15,8 +15,8 @@ import IconWithHover from '../ui/IconWithHover';
  * Hero assembles the opening screen with navigation, marquee banner, and CTA buttons.
  * @returns {JSX.Element}
  */
-const Hero = () => {
-  const { t } = useLang();
+let Hero = () => {
+  let { t } = useLang();
   return (
     <section className="hero-gradient relative flex flex-col items-center justify-start md:justify-center h-screen text-text-primary overflow-hidden debug-component">
       <div className="cursor-spotlight absolute inset-0 z-0" />

@@ -9,11 +9,11 @@ import arrowOutward from "../../assets/projects/arrow_outward.png";
  * Loads all project icon assets so tech stack entries can reference them by name.
  * @type {Record<string, unknown>}
  */
-const projectIconModules = import.meta.glob(
+let projectIconModules = import.meta.glob(
   "../../assets/projects/*.{png,svg,jpg,jpeg}",
   { eager: true }
 );
-const projectIcons = Object.fromEntries(
+let projectIcons = Object.fromEntries(
   Object.entries(projectIconModules).map(([path, mod]) => {
     const file = path.split("/").pop();
     const name = file ? file.replace(/\.[^.]+$/, "").toLowerCase() : "";
@@ -38,7 +38,7 @@ const projectIcons = Object.fromEntries(
  * }} props
  * @returns {JSX.Element}
  */
-export const ProjectSlide = ({
+export let ProjectSlide = ({
   index,
   title,
   question,
@@ -51,14 +51,14 @@ export const ProjectSlide = ({
   onNextClick,
   onClose,
 }) => {
-  const { t } = useLang();
+  let { t } = useLang();
 
-  const localize = (val) => {
+  let localize = (val) => {
     if (typeof val !== 'string') return val;
     const translated = t(val);
     return translated === val ? val : translated;
   };
-  const [isCloseHover, setIsCloseHover] = useState(false);
+  let [isCloseHover, setIsCloseHover] = useState(false);
   return (
     <div
       className="relative w-[min(92vw,1100px)] rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl my-8 font-karla green-card-gradient"
@@ -109,13 +109,13 @@ export const ProjectSlide = ({
           {primaryActions.length > 0 && (
             <div className="flex flex-wrap gap-4 flex-1 w-full">
               {primaryActions.map((action) => {
-                const base =
+                let base =
                   "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary font-karla";
-                const variantClasses =
+                let variantClasses =
                   action.variant === "secondary"
                     ? "border border-white/30 bg-transparent hover:text-secondary hover:border-secondary transition-colors duration-1000 text-white font-karla"
                     : "bg-transparent border border-white/30 hover:text-secondary hover:border-secondary text-white transition-colors duration-1000 font-karla";
-                const ButtonTag = action.href ? "a" : "button";
+                let ButtonTag = action.href ? "a" : "button";
                 return (
                   <ButtonTag
                     key={action.label}

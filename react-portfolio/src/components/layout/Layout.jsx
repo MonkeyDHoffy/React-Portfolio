@@ -6,60 +6,60 @@ import { useEffect, useRef } from 'react';
  * @returns {JSX.Element}
  */
 function Layout({ children }) {
-  const DEBUG_LAYOUT = false;
-  const layoutRef = useRef(null);
-  const activeTouchId = useRef(null);
+  let DEBUG_LAYOUT = false;
+  let layoutRef = useRef(null);
+  let activeTouchId = useRef(null);
 
-  const setCursorVisibility = (visible) => {
+  let setCursorVisibility = (visible) => {
     if (!layoutRef.current) return;
     layoutRef.current.style.setProperty('--cursor-opacity', visible ? '1' : '0');
   };
 
-  const updateCursorPosition = (x, y) => {
+  let updateCursorPosition = (x, y) => {
     if (!layoutRef.current) return;
     layoutRef.current.style.setProperty('--x', `${x}px`);
     layoutRef.current.style.setProperty('--y', `${y}px`);
   };
 
-  const handlePointerMove = (event) => {
+  let handlePointerMove = (event) => {
     if (event.pointerType === 'touch') return;
     updateCursorPosition(event.clientX, event.clientY);
     setCursorVisibility(true);
   };
 
-  const handlePointerLeave = (event) => {
+  let handlePointerLeave = (event) => {
     if (event.pointerType === 'touch') return;
     setCursorVisibility(false);
   };
 
-  const handlePointerDown = (event) => {
+  let handlePointerDown = (event) => {
     if (event.pointerType === 'touch') return;
     updateCursorPosition(event.clientX, event.clientY);
     setCursorVisibility(true);
   };
 
-  const handlePointerUp = (event) => {
+  let handlePointerUp = (event) => {
     if (event.pointerType === 'touch') return;
     setCursorVisibility(false);
   };
 
   useEffect(() => {
-    const layoutEl = layoutRef.current;
+    let layoutEl = layoutRef.current;
     if (!layoutEl) return undefined;
 
-    const prefersFinePointer = window.matchMedia
+    let prefersFinePointer = window.matchMedia
       ? window.matchMedia('(pointer: fine)').matches
       : true;
 
     layoutEl.style.setProperty('--cursor-opacity', prefersFinePointer ? '1' : '0');
 
-    const updateCursorFromTouch = (touch) => {
+    let updateCursorFromTouch = (touch) => {
       if (!touch) return;
       updateCursorPosition(touch.clientX, touch.clientY);
       setCursorVisibility(true);
     };
 
-    const getTrackedTouch = (touchList) => {
+    let getTrackedTouch = (touchList) => {
       if (!touchList || touchList.length === 0) return null;
       if (activeTouchId.current == null) return touchList[0];
 
@@ -70,20 +70,20 @@ function Layout({ children }) {
       return touchList[0];
     };
 
-    const handleTouchStart = (event) => {
+    let handleTouchStart = (event) => {
       const touch = event.changedTouches[0];
       if (!touch) return;
       activeTouchId.current = touch.identifier;
       updateCursorFromTouch(touch);
     };
 
-    const handleTouchMove = (event) => {
+    let handleTouchMove = (event) => {
       const trackedTouch = getTrackedTouch(event.touches);
       if (!trackedTouch) return;
       updateCursorFromTouch(trackedTouch);
     };
 
-    const handleTouchEnd = (event) => {
+    let handleTouchEnd = (event) => {
       const touches = event.changedTouches;
       for (let i = 0; i < touches.length; i += 1) {
         if (touches[i].identifier === activeTouchId.current) {

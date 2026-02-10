@@ -5,14 +5,14 @@ import React, { useState } from 'react';
  * @param {{ baseSrc: string, hoverSrc: string, alt: string, className?: string }} props
  * @returns {JSX.Element}
  */
-const IconWithHover = ({ baseSrc, hoverSrc, alt, className = '' }) => {
-  const [isHovered, setIsHovered] = useState(false);
+let IconWithHover = ({ baseSrc, hoverSrc, alt, className = '' }) => {
+  let [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
+  let handleMouseEnter = () => setIsHovered(true);
+  let handleMouseLeave = () => setIsHovered(false);
 
-  const containerStyle = { position: 'relative', pointerEvents: 'auto' };
-  const currentSrc = isHovered ? hoverSrc : baseSrc;
+  let containerStyle = { position: 'relative', pointerEvents: 'auto' };
+  let currentSrc = isHovered ? hoverSrc : baseSrc;
 
   return (
     <div

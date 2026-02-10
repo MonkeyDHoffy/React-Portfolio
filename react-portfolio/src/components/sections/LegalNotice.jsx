@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import Header from '../layout/Header';
 import { useLang } from '../../context/LanguageContext';
 
-const infoSectionKeys = [
+let infoSectionKeys = [
 	'acceptance',
 	'scope',
 	'ownership',
@@ -15,10 +15,10 @@ const infoSectionKeys = [
  * LegalNotice renders the translated imprint and policy copy with spotlight background.
  * @returns {JSX.Element}
  */
-const LegalNotice = () => {
-	const { t } = useLang();
+let LegalNotice = () => {
+	let { t } = useLang();
 
-	const lastUpdated = useMemo(() => {
+	let lastUpdated = useMemo(() => {
 		return new Intl.DateTimeFormat('en-GB', {
 			day: '2-digit',
 			month: '2-digit',

@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ children: React.ReactNode, className?: string, as?: keyof JSX.IntrinsicElements|React.ComponentType }} props
  * @returns {JSX.Element}
  */
-const PageContainer = ({ children, className = '', as: Component = 'div' }) => {
+let PageContainer = ({ children, className = '', as: Component = 'div' }) => {
   return (
     <Component className={`page-container w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 ${className}`.trim()}>
       {children}

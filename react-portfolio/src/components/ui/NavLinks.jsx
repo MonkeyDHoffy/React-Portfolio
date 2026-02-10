@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
  * @param {{ t: (key: string) => string, onClick?: () => void, variant?: 'inline'|'list' }} props
  * @returns {JSX.Element}
  */
-const NavLinks = ({ t, onClick, variant = 'inline' }) => {
-  const linkClass = "font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors";
-  const items = [
+let NavLinks = ({ t, onClick, variant = 'inline' }) => {
+  let linkClass = "font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors";
+  let items = [
     { to: '/#about', label: t('header.about') },
     { to: '/#skills', label: t('header.skills') },
     { to: '/#projects', label: t('header.projects') },

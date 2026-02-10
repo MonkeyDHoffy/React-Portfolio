@@ -6,7 +6,7 @@ import defaultImg from '../../assets/aboutme/thedeveloper.jpg';
  * @param {{ img?: string, alt?: string }} props
  * @returns {JSX.Element}
  */
-const Contactpopup = ({ img, alt = 'Project preview' }) => {
+let Contactpopup = ({ img, alt = 'Project preview' }) => {
     return (
       <div className="popup relative w-[296px] h-[192px] rounded-[30px] overflow-visible">
         <div className="diagonalShadowPopup translate-x-5 translate-y-2"></div>

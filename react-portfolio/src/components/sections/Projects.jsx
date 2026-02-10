@@ -15,18 +15,18 @@ import useBodyScrollLock from '../../hooks/useBodyScrollLock';
  * Projects lists highlight projects and opens detail slides in a modal portal.
  * @returns {JSX.Element}
  */
-const Projects = () => {
-  const { t } = useLang();
+let Projects = () => {
+  let { t } = useLang();
 
-  const [active, setActive] = useState(null);
+  let [active, setActive] = useState(null);
 
-  const openProject = (key) => setActive(key);
-  const closeProject = () => setActive(null);
+  let openProject = (key) => setActive(key);
+  let closeProject = () => setActive(null);
 
   useEscape(() => active && closeProject(), !!active);
   useBodyScrollLock(!!active, { preserveScroll: true });
 
-  const projectsMap = {
+  let projectsMap = {
     join: {
       index: '01',
       title: 'projectDetails.p1.title',
@@ -68,8 +68,8 @@ const Projects = () => {
     },
   };
 
-  const order = ['join', 'pollo', 'bubble'];
-  const goNext = () => {
+  let order = ['join', 'pollo', 'bubble'];
+  let goNext = () => {
     if (!active) return;
     const i = order.indexOf(active);
     const next = order[(i + 1) % order.length];

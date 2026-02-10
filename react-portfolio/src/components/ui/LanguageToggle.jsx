@@ -11,17 +11,17 @@ import germanHover from '../../assets/headerpics/germanHover.png';
  * @returns {JSX.Element}
  */
 export default function LanguageToggle({ size = 'default' }) {
-  const { lang, setLang } = useLang();
-  const [isHover, setIsHover] = useState(false);
+  let { lang, setLang } = useLang();
+  let [isHover, setIsHover] = useState(false);
 
-  const imgSrc = (() => {
+  let imgSrc = (() => {
     if (lang === 'en') return isHover ? englishHover : english;
     return isHover ? germanHover : german;
   })();
-  const toggleLang = () => setLang(prev => (prev === 'en' ? 'de' : 'en'));
+  let toggleLang = () => setLang(prev => (prev === 'en' ? 'de' : 'en'));
 
-  const BUTTON_BASE = 'inline-flex items-center justify-center rounded-[100px] bg-transparent overflow-hidden shrink-0 border-text-primary rotate-0 opacity-100';
-  const SIZE_CLASSES = { default: 'w-[84px] h-[28px]' };
+  let BUTTON_BASE = 'inline-flex items-center justify-center rounded-[100px] bg-transparent overflow-hidden shrink-0 border-text-primary rotate-0 opacity-100';
+  let SIZE_CLASSES = { default: 'w-[84px] h-[28px]' };
 
   return (
     <button

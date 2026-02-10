@@ -7,7 +7,7 @@ import logoImg from '../../assets/headerpics/JHOFF.png';
  * Footer renders the site footer with branding and quick links.
  * @returns {JSX.Element}
  */
-const Footer = () => {
+let Footer = () => {
   return (
     <footer className="w-full text-white debug-component">
       <PageContainer className="py-12">

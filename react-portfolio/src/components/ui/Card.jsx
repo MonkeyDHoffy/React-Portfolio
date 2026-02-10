@@ -5,7 +5,7 @@ import React from 'react';
  * @param {{ title: string, description: string, image?: string }} props
  * @returns {JSX.Element}
  */
-const Card = ({ title, description, image }) => {
+let Card = ({ title, description, image }) => {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       {image && <img src={image} alt={title} className="w-full h-48 object-cover" />}

@@ -5,17 +5,17 @@ import React from 'react';
  * @param {{ label: string, type?: string, textarea?: boolean, rows?: number }} props
  * @returns {JSX.Element}
  */
-const FormField = ({
+let FormField = ({
   label,
   type = 'text',
   textarea = false,
   rows,
   ...props
 }) => {
-  const labelClass =
+  let labelClass =
     'font-firacode block text-secondary text-sm mb-2';
 
-  const inputClass =
+  let inputClass =
     'font-karla w-full bg-transparent border-b border-secondary focus:border-secondary outline-none py-2 text-white placeholder-gray-500 hover:placeholder-white transition-colors';
 
   return (
