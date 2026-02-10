@@ -18,7 +18,7 @@ background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     0 0 0 1px rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(18px);
   animation: toastFloat var(--toast-duration) ease-in-out forwards;
-  z-index: 60;
+  z-index: 61;
   overflow: hidden;
 }
 
