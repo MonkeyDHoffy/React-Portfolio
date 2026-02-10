@@ -2,7 +2,9 @@ import React from 'react';
 import PageContainer from './PageContainer';
 
 /**
- * ContentWrapper (deprecated) - Use PageContainer instead.
+ * ContentWrapper provides a thin alias for PageContainer to preserve legacy layout usage.
+ * @param {{ children: React.ReactNode, className?: string }} props
+ * @returns {JSX.Element}
  */
 const ContentWrapper = ({ children, className = '' }) => {
   return (

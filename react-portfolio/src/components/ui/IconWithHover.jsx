@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 
 /**
- * IconWithHover
- * Displays an image that switches source on hover.
- *
- * Behavior: Identical output; only internal naming improved.
- * Props:
- * - baseSrc: default image source
- * - hoverSrc: image source shown when hovered
- * - alt: alt text for the image
- * - className: optional wrapper classes
+ * IconWithHover swaps between base and hover icons while preserving layout.
+ * @param {{ baseSrc: string, hoverSrc: string, alt: string, className?: string }} props
+ * @returns {JSX.Element}
  */
 const IconWithHover = ({ baseSrc, hoverSrc, alt, className = '' }) => {
   const [isHovered, setIsHovered] = useState(false);

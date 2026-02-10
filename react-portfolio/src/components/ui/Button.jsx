@@ -1,6 +1,10 @@
 import React from 'react';
 
-// This is a reusable Button component that can be styled and used throughout the application.
+/**
+ * Button renders a themed button used across the application.
+ * @param {{ text: string, onClick?: () => void }} props
+ * @returns {JSX.Element}
+ */
 const Button = ({ text, onClick }) => {
   return (
     <button

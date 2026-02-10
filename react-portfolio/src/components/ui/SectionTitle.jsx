@@ -1,6 +1,10 @@
 import React from 'react';
 
-// This component renders a section title with consistent styling
+/**
+ * SectionTitle applies consistent typography to section headings.
+ * @param {{ title: string }} props
+ * @returns {JSX.Element}
+ */
 const SectionTitle = ({ title }) => {
   return (
     <h2 className="text-3xl font-semibold mb-6 text-center">

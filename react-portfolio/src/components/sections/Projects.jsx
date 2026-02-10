@@ -11,15 +11,18 @@ import ProjectListItem from '../ui/ProjectListItem';
 import useEscape from '../../hooks/useEscape';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
+/**
+ * Projects lists highlight projects and opens detail slides in a modal portal.
+ * @returns {JSX.Element}
+ */
 const Projects = () => {
   const { t } = useLang();
 
-  const [active, setActive] = useState(null); // 'join' | 'pollo' | 'bubble' | null
+  const [active, setActive] = useState(null);
 
   const openProject = (key) => setActive(key);
   const closeProject = () => setActive(null);
 
-  // Close on ESC and robustly lock body scroll while open (mobile-safe)
   useEscape(() => active && closeProject(), !!active);
   useBodyScrollLock(!!active, { preserveScroll: true });
 
@@ -76,8 +79,6 @@ const Projects = () => {
     <section className="text-white py-8 relative overflow-hidden debug-component" id="projects">
       <PageContainer>
         <div className="flex justify-start gap-8">
-        
-        {/* Left Card */}
         <div className="w-full max-w-[831px] h-auto lg:h-[var(--card-size)]">
           <p className="font-karla text-sm text-secondary mb-2">{t('projects.label')}</p>
 
@@ -89,10 +90,8 @@ const Projects = () => {
             {t('projects.intro')}
           </p>
 
-          {/* Top Divider */}
           <div className="border-t border-secondary"></div>
           
-          {/* Project List */}
           <div className="">
             <ProjectListItem
               className="project1"
@@ -121,7 +120,6 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Modal Overlay */}
         {active && createPortal(
           (
             <div
@@ -146,8 +144,6 @@ const Projects = () => {
           ),
           document.body
         )}
-
-        {/* Right Card */}
 
         </div>
       </PageContainer>

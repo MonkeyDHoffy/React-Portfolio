@@ -12,6 +12,10 @@ import useEscape from '../../hooks/useEscape';
 import useClickOutside from '../../hooks/useClickOutside';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 
+/**
+ * Header renders the responsive navigation bar with logo, links, and language toggle.
+ * @returns {JSX.Element}
+ */
 const Header = () => {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
@@ -20,21 +24,17 @@ const Header = () => {
   useEscape(() => setOpen(false), open);
 
   useClickOutside(menuRef, open, () => setOpen(false));
-  // Lock body scroll when menu is open
   useBodyScrollLock(open);
 
   const closeMenu = () => setOpen(false);
   const toggleMenu = () => setOpen((v) => !v);
   return (
     <header className="header-gradient text-text-primary h-[64px] md:h-[98px]">
-      {/* Mobile Header */}
       <div className="md:hidden">
         <PageContainer className="flex h-[64px] items-center justify-between">
-          {/* Logo left */}
           <Link to="/" className="inline-flex items-center">
             <img src={mobileLogo} alt="Logo" className="h-8 w-auto" />
           </Link>
-          {/* Hamburger right */}
           <button
             type="button"
             aria-label="Menü öffnen"
@@ -47,12 +47,9 @@ const Header = () => {
           </button>
         </PageContainer>
 
-        {/* Mobile Menu Overlay via Portal */}
         {open && createPortal(
           <div className="fixed inset-0 z-[9999]" aria-modal="true" role="dialog">
-            {/* Backdrop */}
             <div className="absolute inset-0 bg-black/50 z-10" />
-            {/* Card */}
             <div
               ref={menuRef}
               id="mobile-menu"
@@ -70,7 +67,6 @@ const Header = () => {
         )}
       </div>
 
-      {/* Desktop Header */}
       <div className="hidden md:block">
         <PageContainer className="flex h-[98px] items-center justify-between">
           <div className="HeaderNavigation justify-between items-center flex flex-wrap gap-4 sm:gap-6 md:gap-8">

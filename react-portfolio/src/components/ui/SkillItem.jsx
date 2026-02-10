@@ -1,6 +1,10 @@
 import React from 'react';
 
-// Small presentational component for a skill icon + label
+/**
+ * SkillItem displays a skill icon with label and hover animation.
+ * @param {{ icon: string, label: string, className?: string }} props
+ * @returns {JSX.Element}
+ */
 const SkillItem = ({ icon, label, className = '' }) => {
   return (
     <div className={("skill-item flex flex-col items-center text-center hover:scale-110 transition-transform " + className).trim()}>

@@ -1,6 +1,10 @@
 import React from 'react';
 
-// Matches Contact field markup for input or textarea without behavior changes.
+/**
+ * FormField renders either an input or textarea with shared contact styling.
+ * @param {{ label: string, type?: string, textarea?: boolean, rows?: number }} props
+ * @returns {JSX.Element}
+ */
 const FormField = ({
   label,
   type = 'text',

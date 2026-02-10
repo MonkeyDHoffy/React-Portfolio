@@ -1,21 +1,3 @@
-/**
- * Contact form for hoffja.de
- *
- * Sends form data to:
- *   POST https://api.hoffja.de/api/send-mail
- *
- * Payload (JSON):
- * {
- *   name: string
- *   email: string
- *   message: string
- *   company?: string  // honeypot, must be empty
- * }
- *
- * Expected response:
- * 200 { status: "ok", message: "Message sent" }
- */
-
 import React, { useEffect, useState } from 'react';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from '../layout/PageContainer';
@@ -24,6 +6,11 @@ import './contact.css';
 
 const TOAST_DURATION = 4600;
 
+/**
+ * ToastMessage renders the animated notification shown after submitting the form.
+ * @param {{ type: 'success'|'error', title: string, message: string, closeLabel: string, onDismiss: () => void }} props
+ * @returns {JSX.Element}
+ */
 const ToastMessage = ({ type, title, message, closeLabel, onDismiss }) => (
   <div
     className={`contact-toast contact-toast--${type}`}
@@ -44,7 +31,10 @@ const ToastMessage = ({ type, title, message, closeLabel, onDismiss }) => (
     <span className="contact-toast__timer" />
   </div>
 );
-
+/**
+ * Contact renders the multilingual contact form and orchestrates API submission.
+ * @returns {JSX.Element}
+ */
 const Contact = () => {
   const { t } = useLang();
 
@@ -52,7 +42,7 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
-    company: '', // honeypot
+    company: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +51,6 @@ const Contact = () => {
   useEffect(() => {
     if (!notification) return undefined;
 
-    // Keep the toast on screen only for the duration of its animation.
     const timeout = setTimeout(() => setNotification(null), TOAST_DURATION);
     return () => clearTimeout(timeout);
   }, [notification]);
@@ -137,7 +126,6 @@ const Contact = () => {
       <PageContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          {/* LEFT CARD */}
           <div className="rounded-2xl w-full lg:w-[var(--card-size)]">
             <p className="text-sm font-karla text-secondary mb-4">
               {t('contact.label')}
@@ -163,11 +151,8 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* RIGHT CARD */}
           <div className="rounded-2xl w-full lg:w-[var(--card-size)]">
             <form className="space-y-8" onSubmit={handleSubmit}>
-
-              {/* Honeypot (hidden) */}
               <input
                 type="text"
                 name="company"
@@ -210,8 +195,6 @@ const Contact = () => {
                 placeholder={t('contact.form.message_ph')}
                 required
               />
-
-              {/* Privacy */}
               <div className="flex items-start gap-3 text-sm text-gray-400">
                 <input
                   type="checkbox"
@@ -228,8 +211,6 @@ const Contact = () => {
                   </span>
                 </p>
               </div>
-
-              {/* Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -243,7 +224,6 @@ const Contact = () => {
                   ? t('contact.form.sending')
                   : t('contact.form.submit')}
               </button>
-
             </form>
           </div>
         </div>
@@ -268,66 +248,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-// from fastapi import FastAPI
-// from pydantic import BaseModel, EmailStr
-//
-// app = FastAPI()
-//
-//
-// # Beschreibt das JSON, das wir erwarten:
-// # {
-// #   "name": "...",
-// #   "email": "...",
-// #   "message": "..."
-// # }
-// class ContactForm(BaseModel):
-//     name: str
-//     email: EmailStr
-//     message: str
-//
-//
-// @app.post("/api/send-mail")
-// async def send_mail(form: ContactForm):
-//     return {
-//         "success": True,
-//         "received": {
-//             "name": form.name,
-//             "email": form.email,
-//             "message": form.message,
-//         },
-//     }
-
-
-
-// das ist meine main.py, die den FastAPI-Server startet. Darin definiere ich auch die API-Route, die das Kontaktformular ansprechen wird. + honeypot verfahren
-// from fastapi import FastAPI, HTTPException
-// from pydantic import BaseModel, EmailStr, Field
-
-// app = FastAPI()
-
-
-// class ContactForm(BaseModel):
-//     name: str = Field(..., min_length=1, max_length=100)
-//     email: EmailStr
-//     message: str = Field(..., min_length=1, max_length=2000)
-
-//     # Honeypot-Feld (unsichtbar im Frontend)
-//     company: str | None = None
-
-
-// @app.post("/api/send-mail")
-// async def send_mail(form: ContactForm):
-//     # Honeypot-Check
-//     if form.company:
-//         raise HTTPException(
-//             status_code=400,
-//             detail="Bot detected"
-//         )
-
-//     # (Optional) Extra-Logik – hier später Mailversand
-//     return {
-//         "status": "ok",
-//         "message": "Message accepted"
-//     }

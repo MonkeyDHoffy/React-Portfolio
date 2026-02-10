@@ -1,5 +1,11 @@
 import React from 'react';
 import defaultImg from '../../assets/aboutme/thedeveloper.jpg';
+
+/**
+ * Contactpopup renders the framed image used in project popups.
+ * @param {{ img?: string, alt?: string }} props
+ * @returns {JSX.Element}
+ */
 const Contactpopup = ({ img, alt = 'Project preview' }) => {
     return (
       <div className="popup relative w-[296px] h-[192px] rounded-[30px] overflow-visible">

@@ -1,8 +1,18 @@
 import React from 'react';
 import Contactpopup from '../sections/Contactpopup';
 
-// Encapsulates a project list row and its hover preview.
-// Preserves exact classes and structure; accepts stackSegments array.
+/**
+ * ProjectListItem renders a clickable project row with hover preview imagery.
+ * @param {{
+ *  className?: string,
+ *  title: string,
+ *  stackSegments?: string[],
+ *  previewImg: string,
+ *  previewAlt?: string,
+ *  onClick?: () => void
+ * }} props
+ * @returns {JSX.Element}
+ */
 const ProjectListItem = ({
   className,
   title,

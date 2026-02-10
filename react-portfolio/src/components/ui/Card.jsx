@@ -1,6 +1,10 @@
 import React from 'react';
 
-// Card component to display project or skill information
+/**
+ * Card displays an image with title and description content.
+ * @param {{ title: string, description: string, image?: string }} props
+ * @returns {JSX.Element}
+ */
 const Card = ({ title, description, image }) => {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -12,7 +16,5 @@ const Card = ({ title, description, image }) => {
     </div>
   );
 };
-
-// TODO: Add PropTypes for type checking
 
 export default Card;

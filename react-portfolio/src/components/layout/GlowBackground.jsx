@@ -1,14 +1,18 @@
 import React from 'react';
 
+/**
+ * GlowBackground renders a radial glow layer behind its children.
+ * @param {{ children: React.ReactNode }} props
+ * @returns {JSX.Element}
+ */
 const GlowBackground = ({ children }) => {
   return (
     <div 
       className="relative"
       style={{
-        clipPath: 'inset(0 0 0 0)'  // Clippt nur außerhalb, blockiert nicht Scroll-Timeline
+        clipPath: 'inset(0 0 0 0)'
       }}
     >
-      {/* Linker Halbkreis-Glow-Effekt */}
       <div 
         className="absolute left-0 top-1/2 -translate-y-1/2 w-[800px] h-[1200px] pointer-events-none"
         style={{
@@ -18,7 +22,6 @@ const GlowBackground = ({ children }) => {
         }}
       />
 
-      {/* Content */}
       <div className="relative z-10">
         {children}
       </div>

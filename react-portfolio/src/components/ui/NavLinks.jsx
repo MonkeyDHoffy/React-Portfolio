@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Renders header navigation links with identical markup/classes.
-// variant: 'inline' for desktop (anchors), 'list' for mobile (<ul><li> anchors)
+/**
+ * NavLinks renders the localized navigation links for both inline and list variants.
+ * @param {{ t: (key: string) => string, onClick?: () => void, variant?: 'inline'|'list' }} props
+ * @returns {JSX.Element}
+ */
 const NavLinks = ({ t, onClick, variant = 'inline' }) => {
   const linkClass = "font-firacode text-text-primary hover:text-[#3DCFB6] transition-colors";
   const items = [

@@ -15,6 +15,10 @@ import scrumIcon from '../../assets/skills/scrum.png';
 import growIcon from '../../assets/skills/grow.png';
 import SkillItem from '../ui/SkillItem';
 
+/**
+ * Skills showcases the capability card and grid of individual skills.
+ * @returns {JSX.Element}
+ */
 const Skills = () => {
   const { t } = useLang();
   return (
@@ -25,8 +29,6 @@ const Skills = () => {
       <PageContainer>
         <div className="flex justify-center items-center">
           <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
-            
-            {/* LEFT: Skill Card */}
             <div className="flex flex-col">
               <p className="mb-5 font-karla text-secondary">{t('skills.label')}</p>
               <div className="relative w-full lg:w-[var(--card-size)] max-w-[var(--card-size)] h-auto lg:h-[var(--card-size)] mx-auto lg:mx-0">
@@ -54,7 +56,6 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* RIGHT: Skills Grid */}
             <div className="w-full lg:w-[var(--card-size)] max-w-[var(--card-size)] h-auto lg:h-[var(--card-size)] grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8 place-items-center content-center">
               {[
                 { icon: htmlIcon, label: 'HTML' },
@@ -80,5 +81,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-// bg-gradient-to-br from-teal-900/40 to-neutral-900 border border-teal-500/30 rounded-[30px] p-10 backdrop-blur-md shadow-[0_0_60px_rgba(45,212,191,0.15)] w-full h-full flex flex-col justify-between

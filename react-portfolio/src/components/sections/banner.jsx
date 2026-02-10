@@ -2,6 +2,11 @@ import React from 'react';
 import './banner.css';
 import { useLang } from '../../context/LanguageContext';
 
+/**
+ * Banner renders the animated marquee used in the hero section.
+ * @param {{ children?: React.ReactNode }} props
+ * @returns {JSX.Element}
+ */
 export default function Banner({ children }) {
   const { t } = useLang();
 

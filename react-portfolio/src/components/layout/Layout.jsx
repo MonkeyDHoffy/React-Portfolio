@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-// Diese Komponente umschließt alle anderen Komponenten und steuert den Spotlight-Cursor
+/**
+ * Layout wraps the entire application and controls the spotlight cursor logic.
+ * @param {{ children: React.ReactNode }} props
+ * @returns {JSX.Element}
+ */
 function Layout({ children }) {
   const DEBUG_LAYOUT = false;
   const layoutRef = useRef(null);

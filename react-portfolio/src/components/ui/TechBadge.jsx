@@ -1,6 +1,10 @@
 import React from 'react';
 
-// Tech badge with optional icon, styled exactly like in ProjectSlide.
+/**
+ * TechBadge shows a pill-shaped label with an optional icon.
+ * @param {{ label: string, iconSrc?: string }} props
+ * @returns {JSX.Element}
+ */
 const TechBadge = ({ label, iconSrc }) => {
   return (
     <span className="flex items-center gap-2 px-3 py-1 rounded-full border-white/20 text-sm text-white/90 font-firacode">

@@ -5,6 +5,10 @@ import PageContainer from '../layout/PageContainer';
 import colors from '../../theme/colors';
 import { useLang } from '../../context/LanguageContext';
 
+/**
+ * Gallery cycles through testimonial cards with keyboard and click controls.
+ * @returns {JSX.Element}
+ */
 const Gallery = () => {
     const { t } = useLang();
     const cards = [
@@ -28,7 +32,7 @@ const Gallery = () => {
 	const cardHeight = 240;
 	const cardGap = Math.min(48, Math.floor(vw * 0.05));
 	const trackOffset = (cardWidth + cardGap) * activeIndex;
-	const cardTopOffset = 36; // mt-8 on cards = 2rem = 32px
+	const cardTopOffset = 36;
 
 	const goPrev = () => setActiveIndex((i) => (i - 1 + total) % total);
 	const goNext = () => setActiveIndex((i) => (i + 1) % total);
@@ -77,7 +81,6 @@ const Gallery = () => {
 							))}
 						</div>
 
-						{/* Edge shadows aligned with card height/position (with fade) */}
 						<div
 							aria-hidden
 							className={`pointer-events-none absolute left-0 w-[100px] bg-gradient-to-r from-black/25 to-transparent transition-opacity duration-0.0001 ${activeIndex > 0 ? 'opacity-100' : 'opacity-0'}`}

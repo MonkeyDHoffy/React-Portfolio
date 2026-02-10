@@ -1,6 +1,10 @@
 import React from 'react';
 
-// Minimal wrapper to keep consistent rounded border + background styling
+/**
+ * RoundedCard enforces the shared rounded border and background styling.
+ * @param {{ children: React.ReactNode, className?: string, style?: React.CSSProperties }} props
+ * @returns {JSX.Element}
+ */
 const RoundedCard = ({ children, className = '', style }) => {
   return (
     <div

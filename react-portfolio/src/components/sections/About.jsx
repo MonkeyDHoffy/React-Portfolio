@@ -8,6 +8,10 @@ import { useLang } from '../../context/LanguageContext';
 import PageContainer from '../layout/PageContainer';
 import RoundedCard from '../ui/RoundedCard';
 
+/**
+ * About highlights the personal introduction card with animated portrait.
+ * @returns {JSX.Element}
+ */
 const About = () => {
   const { t } = useLang();
   const imgRef = useRef(null);

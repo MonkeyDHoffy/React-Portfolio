@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+/**
+ * FadeText crossfades between text values when the `text` prop changes.
+ * @param {{ text: string, as?: keyof JSX.IntrinsicElements, className?: string, duration?: number }} props
+ * @returns {JSX.Element}
+ */
 export default function FadeText({ text, as = 'span', className = '', duration = 200 }) {
   const [display, setDisplay] = useState(text);
   const [visible, setVisible] = useState(true);

@@ -5,6 +5,11 @@ import englishHover from '../../assets/headerpics/englishHover.png';
 import german from '../../assets/headerpics/german.png';
 import germanHover from '../../assets/headerpics/germanHover.png';
 
+/**
+ * LanguageToggle switches the language context and swaps the illustrated flag.
+ * @param {{ size?: 'default' }} props
+ * @returns {JSX.Element}
+ */
 export default function LanguageToggle({ size = 'default' }) {
   const { lang, setLang } = useLang();
   const [isHover, setIsHover] = useState(false);

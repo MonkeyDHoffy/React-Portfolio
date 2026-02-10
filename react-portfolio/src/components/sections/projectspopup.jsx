@@ -6,13 +6,8 @@ import closeHover from "../../assets/projects/close.png";
 import arrowForward from "../../assets/projects/arrow_forward.png";
 import arrowOutward from "../../assets/projects/arrow_outward.png";
 /**
- * Dynamisches Icon-Mapping (Vite):
- * - import.meta.glob lädt alle Bilddateien im Ordner assets/projects.
- * - { eager: true } sorgt dafür, dass die Dateien sofort (synchron) importiert werden.
- * - Wir extrahieren den Dateinamen ohne Endung, wandeln ihn in lowercase um
- *   (z. B. "Angular.png" -> "angular") und verwenden ihn als Schlüssel.
- * - Das Ergebnis ist ein Objekt wie { angular: "/assets/Angular.abcd123.png", ... },
- *   das wir im Rendern des Tech-Stacks nutzen.
+ * Loads all project icon assets so tech stack entries can reference them by name.
+ * @type {Record<string, unknown>}
  */
 const projectIconModules = import.meta.glob(
   "../../assets/projects/*.{png,svg,jpg,jpeg}",
@@ -20,15 +15,29 @@ const projectIconModules = import.meta.glob(
 );
 const projectIcons = Object.fromEntries(
   Object.entries(projectIconModules).map(([path, mod]) => {
-    // Beispiel: path = "../../assets/projects/Angular.png"
     const file = path.split("/").pop();
-    // name = "angular" (ohne Endung, in Kleinbuchstaben), passt zu tech.toLowerCase()
     const name = file ? file.replace(/\.[^.]+$/, "").toLowerCase() : "";
-    // mod.default enthält die von Vite generierte URL zum Asset
     return [name, (mod && mod.default) || mod];
   })
 );
 
+/**
+ * ProjectSlide presents extended project details inside the modal overlay.
+ * @param {{
+ *  index: string,
+ *  title: string,
+ *  question: string,
+ *  description: string,
+ *  techStack: string[],
+ *  imageSrc: string,
+ *  imageAlt?: string,
+ *  primaryActions?: Array<{ label: string, href?: string, variant?: string, onClick?: () => void }>,
+ *  nextLabel?: string,
+ *  onNextClick?: () => void,
+ *  onClose?: () => void
+ * }} props
+ * @returns {JSX.Element}
+ */
 export const ProjectSlide = ({
   index,
   title,
@@ -54,7 +63,6 @@ export const ProjectSlide = ({
     <div
       className="relative w-[min(92vw,1100px)] rounded-[30px] bg-background-greencontainer border border-secondary shadow-2xl my-8 font-karla green-card-gradient"
     >
-      {/* Close Icon */}
       <button
         type="button"
         aria-label="Close"
@@ -71,7 +79,6 @@ export const ProjectSlide = ({
       </button>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-10 lg:px-12 py-8 md:py-10">
-        {/* Image – on mobile top, on desktop right */}
         <div className="order-first md:order-last md:w-1/2 md:flex md:flex-col md:justify-start">
           <div className="h-8 md:h-10" aria-hidden="true" />
           <div className="rounded-2xl  overflow-hidden">
@@ -79,7 +86,6 @@ export const ProjectSlide = ({
           </div>
         </div>
 
-        {/* Text Content */}
         <div className="md:w-1/2 flex flex-col justify-between gap-8 text-white">
           <div>
             <p className="text-5xl md:text-6xl font-karla font-bold tracking-tight text-secondary ">{index}</p>
@@ -91,7 +97,6 @@ export const ProjectSlide = ({
             <p className="font-karla text-primary leading-relaxed">{localize(description)}</p>
           </div>
 
-          {/* Tech-Stack mit Icon links vom Namen (falls vorhanden) */}
           <div className="flex flex-wrap items-center gap-3">
             {techStack.map((tech) => (
               <TechBadge key={tech} label={tech} iconSrc={projectIcons[tech.toLowerCase()]} />

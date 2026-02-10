@@ -11,6 +11,10 @@ const infoSectionKeys = [
 	'disclaimer',
 ];
 
+/**
+ * LegalNotice renders the translated imprint and policy copy with spotlight background.
+ * @returns {JSX.Element}
+ */
 const LegalNotice = () => {
 	const { t } = useLang();
 
