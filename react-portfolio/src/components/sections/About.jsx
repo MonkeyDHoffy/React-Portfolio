@@ -7,6 +7,7 @@ import colors from '../../theme/colors';
 import { useLang } from '../../context/LanguageContext';
 import PageContainer from '../layout/PageContainer';
 import RoundedCard from '../ui/RoundedCard';
+import './about.css';
 
 /**
  * About highlights the personal introduction card with animated portrait.

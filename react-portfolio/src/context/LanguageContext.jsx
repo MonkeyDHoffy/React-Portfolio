@@ -21,37 +21,37 @@ const translations = {
     whoiam:       { de: 'Wer ich bin', en: 'Who I Am' },
     title:        { de: 'Über mich', en: 'About Me' },
     p1:           {
-      de: 'Softwareentwickler mit Schwerpunkt auf sauberer Architektur, klarer Problemlösung und professioneller Zusammenarbeit. Ich entwickle performante, zugängliche Anwendungen und arbeite qualitäts‑ sowie testorientiert mit effizienten Workflows (Versionierung, Code‑Reviews).',
-      en: 'Software developer focused on clean architecture, structured problem solving, and professional collaboration. I build performant, accessible applications and work in a quality‑ and test‑driven way using efficient workflows (version control, code reviews).',
+      de: 'Hey, ich bin Jannik – leidenschaftlicher Softwareentwickler mit starkem Interesse an modernen Frontend- und Backend-Technologien. Mich motiviert, reale, funktionale Projekte von Grund auf zu bauen und sie kontinuierlich zu verbessern – Ideen in laufende Anwendungen zu verwandeln treibt mich an.',
+      en: "Hey, I'm Jannik — a passionate software developer with a strong interest in modern frontend and backend technologies. Building real, functional projects from scratch and improving them continuously motivates me to turn ideas into working applications.",
     },
     location:     {
-      de: 'Ansässig in Saarlouis; offen für Remote sowie Hybrid in der Region.',
-      en: 'Based in Saarlouis; open to remote and hybrid roles.',
+      de: 'Ansässig in Deutschland; offen für Remote-Arbeit und bei der passenden Gelegenheit auch für einen Umzug. Ich arbeite gern eigenständig und ebenso gern in strukturierten Umgebungen mit klarer Kommunikation und Zusammenarbeit.',
+      en: 'Based in Germany; open to remote work and relocation for the right opportunity. I enjoy working independently as well as in structured environments where clear communication and collaboration matter.',
     },
     cognition:    {
-      de: 'Analytisch und lösungsorientiert: klare Architektur, Performance, Accessibility und eine starke Developer Experience stehen für mich im Fokus.',
-      en: 'Analytical and solution‑oriented: I prioritize clean architecture, performance, accessibility, and strong developer experience.',
+      de: 'Offen und lernbereit: Ich probiere neue Tools und Frameworks aus, verbessere kontinuierlich meinen Workflow und die Codequalität und sehe Lernen als festen Bestandteil meiner Entwicklung.',
+      en: 'Open-minded and eager to learn: I explore new tools and frameworks, keep refining my workflow and code quality, and treat continuous learning as core to my growth.',
     },
     releases:     {
-      de: 'Mein Portfolio zeigt reale Projekte aus der Weiterbildung und eigene Arbeiten. Eine Auswahl findest du unten.',
-      en: 'My portfolio showcases real training projects and personal work. A selection is below.',
+      de: 'Probleme löse ich strukturiert und analytisch: Ich zerlege komplexe Aufgaben, experimentiere mit Lösungen und verbessere sie schrittweise. Beharrlichkeit, Kreativität und Zusammenarbeit prägen meinen Ansatz.',
+      en: 'I tackle problems in a structured, analytical way: breaking challenges down, experimenting with solutions, and refining them step by step. Persistence, creativity, and collaboration shape how I work.',
     },
     new_releases: {
-      de: 'Aktuell erweitere ich mein Portfolio mit weiteren praxisnahen Projekten – eine Auswahl findest du unten.',
-      en: 'I am currently adding more practice‑driven projects to my portfolio — see a selection below.',
+      de: 'Ich baue aktiv an eigenen Projekten, erkunde neue Werkzeuge und erweitere mein Portfolio laufend – immer mit dem Ziel, sauberer, wartbarer und effizienter zu entwickeln.',
+      en: 'I actively work on personal projects, explore new tools, and keep expanding my portfolio — always aiming to build cleaner, more maintainable, and more efficient software.',
     },
   },
   skills: {
     label:        { de: 'Technologien', en: 'Technologies' },
     title:        { de: 'Skill Set', en: 'Skill Set' },
     intro:        {
-      de: 'Fundierte Basis in modernen Frontend‑Stacks. Saubere Komponenten, State‑Management, Accessibility, Tests und Performance gehören zu meinem Werkzeugkasten. Praxisnahe Projekte und kontinuierliche Reviews haben meine Fähigkeiten in realen Szenarien geschärft.',
-      en: 'Solid grounding in modern frontend stacks. Clean components, state management, accessibility, testing, and performance are part of my toolkit. Practice‑driven projects and continuous reviews have honed these skills on real scenarios.',
+      de: 'Hands-on Erfahrung mit modernen Webtechnologien, vor allem JavaScript, HTML und CSS. Ich baue interaktive, responsive UIs und verbinde sie mit klarer, strukturierter Logik. Über persönliche Projekte vertiefe ich laufend mein Verständnis für Frontend-Entwicklung und Anwendungsfluss. Ich bin offen für neue Frameworks, Tools und Best Practices und passe mich aktiv an, wenn sich Webentwicklung weiterentwickelt – durch Experimentieren, Refactoring und Verbesserungen halte ich meinen Stack aktuell.',
+      en: 'I have hands-on experience with modern web technologies, primarily focusing on JavaScript, HTML, and CSS. I enjoy building interactive, responsive user interfaces and connecting them with clean, structured logic. Through personal projects, I continuously strengthen my understanding of frontend development and application flow. I am open to learning new frameworks, tools, and best practices, and I actively adapt to new technologies as web development evolves — regularly experimenting, refactoring, and improving existing projects to keep my stack current.',
     },
     prompt:       { de: 'Sie brauchen eine andere Technologie?', en: 'Need another technology?' },
     outro:        {
-      de: 'Sprechen Sie mich gern an – ich erweitere mein Know‑how kontinuierlich und arbeite mich zügig in neue Tools ein.',
-      en: 'Feel free to reach out — I continuously expand my skill set and ramp up quickly on new tools.',
+      de: 'Wenn Sie einen Entwickler suchen, der motiviert ist zu wachsen, sich anzupassen und neue Skills aufzubauen, melden Sie sich gern.',
+      en: 'If you are looking for a developer who is motivated to grow, adapt, and learn new skills, feel free to reach out.',
     },
     cta:          { de: "Let's Talk", en: "Let's Talk" },
   },
@@ -95,21 +95,21 @@ const translations = {
   gallery: {
     card1: {
       title:  { de: '', en: '' },
-    text:   {
+      text:   {
         de: 'Klarer Code, gute Tests und sinnvolle Komponenten. Jannik Hoff\'s Frontend‑Workflows sind effizient und professionell.',
         en: 'Clear code, solid tests, and well‑structured components. Jannik Hoff’s frontend workflows are efficient and professional.',
       },
       sender: { de: 'GitHub Copilot', en: 'GitHub Copilot' },
     },
     card2: {
-     title:  { de: '', en: '' },
+      title:  { de: '', en: '' },
       text:   {
         de: 'Zuverlässig, performant und gut gepflegt. Jannik Hoff hält sein Entwicklungs‑Setup schlank und sorgt für reibungslose Workflows.',
         en: 'Reliable, performant, and well maintained. Jannik Hoff keeps his development setup lean and ensures smooth workflows.',
       },
       sender: { de: 'Alexander Schulz', en: 'Alexander Schulz' },
     },
-   card3: {
+    card3: {
       title:  { de: '', en: '' },
       text:   {
         de: 'Strukturiert, präzise und lösungsorientiert. Jannik Hoff kombiniert saubere Architektur mit solider UX und sorgt für wartbaren Code.',
@@ -117,7 +117,6 @@ const translations = {
       },
       sender: { de: 'ChatGPT', en: 'ChatGPT' },
     },
-    // NEW: 4th review card
     card4: {
       title:  { de: '', en: '' },
       text:   {
@@ -126,9 +125,8 @@ const translations = {
       },
       sender: { de: 'Nicolas Tran', en: 'Nicolas Tran' },
     },
-    // NEW: 5th review card
     card5: {
-        title:  { de: '', en: '' },
+      title:  { de: '', en: '' },
       text:   {
         de: 'Produktiv, fokussiert und schnell. Er nutzt das Tooling sinnvoll (Terminal, Tasks, Debugging) und hält das Projekt sauber.',
         en: 'Productive, focused, and fast. He uses the tooling effectively (terminal, tasks, debugging) and keeps the project clean.',
@@ -141,10 +139,10 @@ const translations = {
     title:        { de: 'Lass uns zusammenarbeiten', en: "Let's work together" },
     question:     { de: 'Welche Herausforderung lösen wir gemeinsam?', en: 'Which challenge can we solve together?' },
     blurb:        {
-      de: 'Beschreibe kurz dein Projekt oder die Rolle. Ich bringe mich pragmatisch ein, liefere zuverlässig und arbeite professionell, strukturiert und kollaborativ in Frontend‑Teams.',
-      en: 'Describe your project or the role. I contribute pragmatically, deliver reliably, and work professionally, with structure and collaboration in frontend teams.',
+      de: 'Beschreibe kurz dein Projekt oder die Rolle. Ich bringe mich pragmatisch ein, liefere zuverlässig und arbeite professionell, strukturiert und kollaborativ in Entwicklerteams.',
+      en: 'Describe your project or the role. I contribute pragmatically, deliver reliably, and work professionally, with structure and collaboration in  developer teams.',
     },
-    needdev:      { de: 'Sie suchen einen Frontend‑Entwickler?', en: 'Looking for a frontend developer?' },
+    needdev:      { de: 'Sie suchen einen Softwareentwickler?', en: 'Looking for a software developer?' },
     needdev_cta:  { de: 'Lass uns reden!', en: 'Let’s talk!' },
     form: {
       name_label:     { de: 'Wie heißt du?', en: "What's your name?" },

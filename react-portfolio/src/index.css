@@ -18,7 +18,7 @@
 }
 
 body {
-  cursor: var(--cursor-default);
+  cursor: url('./src/assets/cursor.png'), auto;
 }
 
 .cursor-pointer,

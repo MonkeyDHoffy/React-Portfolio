@@ -1,0 +1,14 @@
+/* About section custom styles */
+.aboutme-description {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 1024px) {
+  .aboutme-description {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
