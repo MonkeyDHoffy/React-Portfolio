@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+const DEFAULT_CURSOR_SIZE = 220;
+const POINTER_CURSOR_SIZE = 320;
+
 /**
  * Layout wraps the entire application and controls the spotlight cursor logic.
  * @param {{ children: React.ReactNode }} props
@@ -9,10 +12,32 @@ function Layout({ children }) {
   let DEBUG_LAYOUT = false;
   let layoutRef = useRef(null);
   let activeTouchId = useRef(null);
+  let pointerModeRef = useRef(false);
 
   let setCursorVisibility = (visible) => {
     if (!layoutRef.current) return;
     layoutRef.current.style.setProperty('--cursor-opacity', visible ? '1' : '0');
+  };
+
+  let setCursorSize = (sizePx) => {
+    if (!layoutRef.current) return;
+    layoutRef.current.style.setProperty('--cursor-size', `${sizePx}px`);
+  };
+
+  let setPointerMode = (isPointer) => {
+    if (pointerModeRef.current === isPointer) return;
+    pointerModeRef.current = isPointer;
+    setCursorSize(isPointer ? POINTER_CURSOR_SIZE : DEFAULT_CURSOR_SIZE);
+  };
+
+  let updatePointerModeFromTarget = (target) => {
+    if (typeof window === 'undefined') return;
+    if (!(target instanceof Element)) {
+      setPointerMode(false);
+      return;
+    }
+    const cursorValue = window.getComputedStyle(target).cursor || '';
+    setPointerMode(cursorValue.includes('pointer'));
   };
 
   let updateCursorPosition = (x, y) => {
@@ -23,17 +48,20 @@ function Layout({ children }) {
 
   let handlePointerMove = (event) => {
     if (event.pointerType === 'touch') return;
+    updatePointerModeFromTarget(event.target);
     updateCursorPosition(event.clientX, event.clientY);
     setCursorVisibility(true);
   };
 
   let handlePointerLeave = (event) => {
     if (event.pointerType === 'touch') return;
+    setPointerMode(false);
     setCursorVisibility(false);
   };
 
   let handlePointerDown = (event) => {
     if (event.pointerType === 'touch') return;
+    updatePointerModeFromTarget(event.target);
     updateCursorPosition(event.clientX, event.clientY);
     setCursorVisibility(true);
   };
@@ -44,6 +72,8 @@ function Layout({ children }) {
   };
 
   useEffect(() => {
+    setCursorSize(DEFAULT_CURSOR_SIZE);
+
     let layoutEl = layoutRef.current;
     if (!layoutEl) return undefined;
 
