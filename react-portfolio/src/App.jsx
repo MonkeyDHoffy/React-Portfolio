@@ -10,6 +10,7 @@ import About from './components/sections/About';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
+import Runner from './components/sections/runner';
 import GlowBackground from './components/layout/GlowBackground';
 import { LanguageProvider } from './context/LanguageContext';
 import Banner from './components/sections/banner';
@@ -56,6 +57,7 @@ const App = () => {
                       </GlowBackground>
                       <Gallery />
                       <Contact />
+                      <Runner />
                     </>
                   )}
                 />
