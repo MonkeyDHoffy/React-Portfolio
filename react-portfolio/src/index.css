@@ -240,3 +240,61 @@ section[id] {
   color: var(--selection-text);
 }
 
+.skill-pulse-scale {
+  animation: skill-pulse-scale 1.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes skill-pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.skill-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px) scale(0.98);
+  padding: 0.65rem 0.9rem;
+  min-width: 220px;
+  background: #1C1C1C;
+  border: 1px solid #3DCFB6;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 10;
+}
+
+.skill-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -1px);
+  width: 10px;
+  height: 10px;
+  background: #1C1C1C;
+  border-left: 1px solid #3DCFB6;
+  border-bottom: 1px solid #3DCFB6;
+  border-radius: 2px;
+  rotate: 45deg;
+  box-sizing: border-box;
+}
+
+.skill-item.group:hover .skill-tooltip,
+.skill-item.group:focus-within .skill-tooltip {
+  opacity: 1;
+  transform: translate(-50%, -16px) scale(1);
+}
+

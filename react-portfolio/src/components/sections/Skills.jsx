@@ -74,9 +74,15 @@ let Skills = () => {
                 { icon: gitIcon, label: 'Git' },
                 { icon: apiIcon, label: 'REST-API' },
                 { icon: scrumIcon, label: 'Scrum' },
-                { icon: growIcon, label: 'Growth mindset', className: 'text-teal-400' },
+                { icon: growIcon, label: 'Growth mindset', className: 'text-teal-400 cursor-pointer skill-pulse-scale', tooltip: 'I have special interest in learning: Server-Logik, Python/Django, Datenbanken, APIs, Auth, Deployment' },
               ].map(({ icon, label, className }) => (
-                <SkillItem key={label} icon={icon} label={label} className={className} />
+                <SkillItem
+                  key={label}
+                  icon={icon}
+                  label={label}
+                  className={className}
+                  tooltip={label === 'Growth mindset' ? 'I am learning: Python/Django' : undefined}
+                />
               ))}
             </div>
           </div>
