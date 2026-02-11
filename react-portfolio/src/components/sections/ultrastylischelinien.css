@@ -120,6 +120,10 @@
     position: relative;
     top: var(--icon-top-adjust);
   }
+  .hero-contact-indicator {
+    opacity: 0;
+    visibility: hidden;
+  }
   .ultrastylischelinierechts .rightCircle {
     width: clamp(22px, 3.2vw, 40px);
   }
@@ -159,7 +163,12 @@ letter-spacing: 0%;
 }
 
 .pointercss {
-  cursor: pointer;
+  cursor: var(--cursor-pointer, pointer);
+}
+
+.hero-contact-indicator {
+  top: calc(40% + var(--icon-top-adjust, 0px));
+  transform: translateY(-50%) translateY(200px);
 }
 
 /* TABLET TUNING (md to <lg): longer lines and adjusted icon placement */

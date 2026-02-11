@@ -10,6 +10,7 @@ const colors = {
   
   // Hintergrundfarben
   background: {
+    primary: '#3DCFB6',   // Akzentuierte Primärfarbe für interaktive Marker
     main: '#1C1C1C',      // Haupthintergrund (dunkel)
     greencontainer: '#3DCFB61A',
     dark: '#0F0F0F',      // Noch dunkler Hintergrund für Sections

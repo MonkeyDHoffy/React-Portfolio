@@ -2,35 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Layout vars aligned with PageContainer */
 :root {
-  --page-max-width: 80rem; /* max-w-7xl */
-  --page-padding: clamp(1.5rem, 2vw, 3rem); /* px-6 → px-12 */
+  --page-max-width: 80rem;
+  --page-padding: clamp(1.5rem, 2vw, 3rem);
   --page-container-offset: max(
     var(--page-padding),
     calc((100vw - var(--page-max-width)) / 2 + var(--page-padding))
   );
-  /* Centralized card size used across About/Skills/Contact */
   --card-size: 568px;
-  /* Auswahlfarben (Textmarkierung) an dein Design anpassen */
-  --selection-bg: rgba(45, 212, 191, 0.25); /* sekundärfarbe leicht transparent */
-  --selection-text: #eafff8;                 /* heller Text auf Auswahl */
+  --selection-bg: rgba(45, 212, 191, 0.25);
+  --selection-text: #eafff8;
   --cursor-opacity: 1;
+  --cursor-default: auto;
+  --cursor-pointer: pointer;
 }
 
-/* Custom global styles can be added below this line */
-
-/* TODO: Add any additional custom styles for your portfolio here */
-
 body {
-  /* Use relative asset so Vite rewrites with base */
-  cursor: url('./assets/cursor.png'), auto;
+  cursor: var(--cursor-default);
+}
+
+.cursor-pointer,
+.pointercss,
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+label,
+select,
+summary,
+[onclick],
+[aria-haspopup="true"],
+.hover\:cursor-pointer:hover,
+.focus\:cursor-pointer:focus {
+  cursor: var(--cursor-pointer) !important;
 }
 
 /* Prevent horizontal whitespace/scroll bleeding on small viewports */
 html, body {
   overflow-x: hidden;
-  background-color: #0F0F0F; /* match dark theme to avoid white edge */
+  background-color: #0F0F0F;
 }
 
 /* Smooth anchor scroll */
@@ -40,41 +52,38 @@ html {
 
 /* Prevent header overlap on anchor navigation */
 section[id] {
-  scroll-margin-top: 96px; /* header height on md+, safe default */
+  scroll-margin-top: 96px;
 }
 
 @media (max-width: 768px) {
   section[id] {
-    scroll-margin-top: 72px; /* smaller header on mobile */
+    scroll-margin-top: 72px;
   }
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1C1C1C; /* Dunkler Hintergrund wie deine Webseite */
+  background: #1C1C1C;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3DCFB6; /* Deine Secondary-Farbe */
+  background: #3DCFB6;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2db89f; /* Etwas dunkler beim Hover */
+  background: #2db89f;
 }
 
-/* Firefox Scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: #3DCFB6 #1C1C1C;
 }
 
 .hero-gradient {
-  /* Erklärung: Eigene Klasse ist lesbarer als komplexe Tailwind-Utilities */
   background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,14 +91,12 @@ section[id] {
 }
 
 .header-gradient {
-  /* Erklärung: leichte Schattierung über dem Hero-Hintergrund */
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-/* Reusable green card gradient used in modals/menus */
 .green-card-gradient {
   background-image: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
   background-repeat: no-repeat;
@@ -97,7 +104,6 @@ section[id] {
   background-position: center;
 }
 
-/* Cursor-Spotlight Overlay (global) */
 @property --cursor-size {
   syntax: '<length>';
   inherits: true;
@@ -105,9 +111,9 @@ section[id] {
 }
 
 .cursor-spotlight {
-  pointer-events: none;            /* keine Blockade für Maus-Events */
+  pointer-events: none;
   position: fixed;
-  inset: 0;                        /* füllt die Viewport-Fläche */
+  inset: 0;
   background: radial-gradient(
     var(--cursor-size, 220px) circle at var(--x, -100px) var(--y, -100px),
     #3DCFB680 0%,
@@ -115,7 +121,6 @@ section[id] {
   );
   opacity: var(--cursor-opacity, 1);
   transition: --cursor-size 240ms ease, opacity 200ms ease;
-  /* TODO: Radius (200px) und Übergang (60%) feinjustieren */
 }
 
 .font-firacode {
@@ -133,8 +138,7 @@ section[id] {
 .movingpic {
   transform: translate(0, 0);
   animation: reveal-image linear forwards;
-  animation-duration: 1s; /* required for scroll-timeline to map progress */
-  /* Use explicit view timeline for robust scroll-driven animations */
+  animation-duration: 1s;
   view-timeline-name: --movingpic;
   view-timeline-axis: block;
   animation-timeline: --movingpic;
@@ -178,34 +182,33 @@ section[id] {
 .diagonalShadow {
   position: absolute;
   inset: 0;
-  transform: translate(0px, 0px); /* Versatz nach links unten */
+  transform: translate(0px, 0px);
   border-radius: 30px;
   z-index: 0;
   background: repeating-linear-gradient(
     45deg,
     #3DCFB6 0px,
-    #3DCFB6 1px,      /* Etwas dicker = konsistenter */
+    #3DCFB6 1px,
     transparent 2px,
-    transparent 30px  /* Angepasster Abstand */
+    transparent 30px
   );
 }
 
 .diagonalShadowPopup {
   position: absolute;
   inset: 0;
-  transform: translate(32px, 32px); /* Versatz nach links unten */
+  transform: translate(32px, 32px);
   border-radius: 30px;
   z-index: 0;
   background: repeating-linear-gradient(
     135deg,
     #3DCFB6 0px,
-    #3DCFB6 1px,      /* Etwas dicker = konsistenter */
+    #3DCFB6 1px,
     transparent 2px,
-    transparent 16px  /* Engerer Abstand für mehr Linien */
+    transparent 16px
   );
 }
 
-/* Debug: Layout-Grenzen sichtbar machen */
 [data-debug="true"] .page-container {
   outline: 1px dashed #f97316;
   outline-offset: -1px;
@@ -221,11 +224,10 @@ section[id] {
   outline-offset: -1px;
 }
 
-/* Auswahlfarben (Textmarkierung) an dein Design anpassen */
+
 :root {
-  /* Passe diese beiden Werte an dein Design an */
-  --selection-bg: #3DCFB6; /* sekundärfarbe leicht transparent */
-  --selection-text: #eafff8;                 /* heller Text auf Auswahl */
+  --selection-bg: #3DCFB6;
+  --selection-text: #eafff8;
 }
 
 ::selection {

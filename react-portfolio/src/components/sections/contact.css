@@ -55,7 +55,7 @@ background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
   color: #3dcfb6;
   font-size: 1.1rem;
   padding: 0.15rem;
-  cursor: pointer;
+  cursor: var(--cursor-pointer, pointer);
   opacity: 0.65;
   transition: opacity 0.2s ease;
 }
