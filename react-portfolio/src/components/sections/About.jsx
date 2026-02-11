@@ -89,7 +89,7 @@ let About = () => {
         <div className="whoiam flex flex-col lg:ml-20 ml-0 w-full lg:w-auto">
           <h1 className="mb-5 font-karla text-secondary">{t('about.whoiam')}</h1>
           <RoundedCard 
-            className="aboutme-description gap-8 p-10 flex flex-col justify-start w-full lg:w-[var(--card-size)] h-auto lg:h-[var(--card-size)]"
+            className="aboutme-description gap-8 p-10 flex flex-col justify-start w-full lg:w-[var(--card-size)] h-auto lg:h-auto min-h-0"
           >
             <h2 className="font-firacode font-bold text-[64px] leading-[100%] tracking-[-0.03em] text-text-secondary">{t('about.title')}</h2>
             <span>{t('about.p1')}</span>

@@ -1,0 +1,31 @@
+@media (max-width: 1203px) {
+  .skills-flex-break {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  .skills-grid-break {
+    width: 100% !important;
+    max-width: var(--card-size) !important;
+    height: auto !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+@media (max-width: 700px) {
+  .skills-grid-break {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (min-width: 1204px) {
+  .skills-flex-break {
+    flex-direction: row !important;
+    gap: 3rem !important;
+  }
+  .skills-grid-break {
+    width: var(--card-size) !important;
+    max-width: var(--card-size) !important;
+    height: var(--card-size) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
