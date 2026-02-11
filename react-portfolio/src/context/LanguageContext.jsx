@@ -5,11 +5,11 @@ const LanguageContext = createContext(null);
 const translations = {
   hero: {
     title:        { de: 'Jannik Hoff', en: 'Jannik Hoff' },
-    subtitle:     { de: 'Frontendentwickler', en: 'Frontend Developer' },
+    subtitle:     { de: 'Softwareentwickler', en: 'Software Developer' },
     workbtn:      { de: 'Meine Projekte', en: 'Check my work' },
     contactbtn:   { de: 'Kontaktier mich', en: 'Contact Me' },
     bannerone:    { de: 'Verfügbar für Remote-Arbeit', en: 'Available for remote work' },
-    bannertwo:    { de: 'Frontendentwickler', en: 'Frontend Developer' },
+    bannertwo:    { de: 'Softwareentwickler', en: 'Software Developer' },
     bannerthree:  { de: 'Ansässig in Saarlouis', en: 'Based in Saarlouis' },
   },
   header: {
